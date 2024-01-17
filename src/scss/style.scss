@@ -1,0 +1,27 @@
+@import 'normalize';
+
+body {
+	background-image: url('../../src/images/25377031_GIU\ AMA\ 010-10.jpg');
+	background-size: cover;
+}
+
+.container {
+	max-width: 1920px;
+	margin: 0 auto;
+}
+
+.devil {
+	width: 100px;
+	position: absolute;
+	bottom: calc(50% - 57.32px);
+	left: calc(50% - 50px);
+	z-index: 1;
+}
+
+.play {
+	width: 80px;
+	position: absolute;
+	bottom: 0;
+	left: calc(50% - 40px);
+	fill: crimson;
+}
