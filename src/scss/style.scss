@@ -11,11 +11,17 @@ body {
 }
 
 .devil {
-	width: 100px;
+	display: none;
+	width: 110px;
 	position: absolute;
 	bottom: calc(50% - 57.32px);
-	left: calc(50% - 50px);
+	left: calc(50% - 55px);
 	z-index: 1;
+	cursor: pointer;
+}
+
+.devil_appear {
+	display: block;
 }
 
 .play {
@@ -23,5 +29,18 @@ body {
 	position: absolute;
 	bottom: 0;
 	left: calc(50% - 40px);
-	fill: crimson;
+	fill: rgb(0, 0, 0);
+}
+
+.play__active {
+	animation: changeColor 1s infinite;
+}
+
+@keyframes changeColor {
+	0% {
+		fill: rgb(255, 0, 0);
+	}
+	110% {
+		fill: rgb(0, 0, 0);
+	}
 }
