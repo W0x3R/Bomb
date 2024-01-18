@@ -19,7 +19,7 @@ body {
 	color: #ff0000;
 	font-family: OptimusPrinceps, sans-serif;
 	letter-spacing: 5px;
-	font-size: 8em;
+	font-size: 130px;
 	font-weight: 400;
 	position: absolute;
 
@@ -128,6 +128,7 @@ body {
 .devil {
 	display: none;
 	width: 110px;
+	left: calc(50% - 55px);
 	position: absolute;
 	z-index: 1;
 	cursor: pointer;
@@ -138,11 +139,9 @@ body {
 }
 
 .book {
-	width: 220px;
-	height: 220px;
+	width: clamp(150px, 23vw, 220px);
+	height: clamp(150px, 23vw, 220px);
 	position: absolute;
-	bottom: calc(50% - 110px);
-	left: calc(50% - 110px);
 
 	&_red {
 		animation: shake 1s infinite;
@@ -335,3 +334,25 @@ body {
 		transform: translate(0, 0) rotate(0);
 	}
 }
+
+.questions {
+	display: none;
+	position: absolute;
+	bottom: 5%;
+	left: calc(50% - 390px);
+	width: 780px;
+	height: 90px;
+	border-radius: 20px;
+	border: 2px solid black;
+	background-color: grey;
+	color: white;
+	font-size: 32px;
+
+	&_show {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+@import 'adaptive';

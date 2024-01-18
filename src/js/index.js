@@ -5,7 +5,66 @@ const newGameButton = document.querySelector('.death-display__button');
 const book = document.querySelector('.book')
 const bookStar = document.querySelector('.book__star')
 const bookEllipse = document.querySelector('.book__ellipse')
+const questionsBlock = document.querySelector('.questions')
 let width = 110;
+
+
+function ret() {
+	if (document.documentElement.getBoundingClientRect().width <= 560) {
+		return 0.8
+	}
+	if (document.documentElement.getBoundingClientRect().height >= 1000) {
+		return 3.2
+	}
+	else if (document.documentElement.getBoundingClientRect().height < 1000 && document.documentElement.getBoundingClientRect().height >= 850) {
+		return 2.7
+	}
+	else if (document.documentElement.getBoundingClientRect().height < 850 && document.documentElement.getBoundingClientRect().height >= 780) {
+		return 2.4
+	}
+	else if (document.documentElement.getBoundingClientRect().height < 780 && document.documentElement.getBoundingClientRect().height >= 702) {
+		return 2.1
+	}
+	else if (document.documentElement.getBoundingClientRect().height < 702 && document.documentElement.getBoundingClientRect().height >= 590) {
+		return 1.8
+	}
+	else if (document.documentElement.getBoundingClientRect().height < 590 && document.documentElement.getBoundingClientRect().height >= 525) {
+		return 1.5
+	}
+	else if (document.documentElement.getBoundingClientRect().height < 525 && document.documentElement.getBoundingClientRect().height >= 450) {
+		return 1.2
+	}
+	else if (document.documentElement.getBoundingClientRect().height < 450) {
+		return 0.8
+	}
+}
+
+const questions = [
+	'Назовите слова,связанные с органами человека.',
+	'Назовите женские имена',
+	'Назовите мужские имена',
+	'Назовите города Беларуси',
+	'Назовите города России',
+	'Назовите города Украниы',
+	'Назовите слова связанные с космосом',
+	'Назовите слова связанные с нечистью',
+	'Назовите слова связанные с магазином',
+	'Назовите названия цветов',
+	'Назовите стили татуировок',
+	'Назовите бренды мобильных телефонов',
+	'Назовите героев из сериала Сверхъестественное',
+	'Назовите название газированных напитков',
+	'Назовите названия шоколадных батончиков',
+	'Назовите названия шоколадок',
+	'Назовите сериалы',
+	'Назовите фильмы',
+]
+
+function getRandomNumber() {
+	let min = 0;
+	let max = questions.length
+	return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
 function delay(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
@@ -16,8 +75,23 @@ function getCenterOfDisplay(value) {
 }
 
 function getHeightOfDevil() {
-	return (devil.getBoundingClientRect().height);
+	return (devil.getBoundingClientRect().width);
 }
+
+function positioningBook() {
+	book.style.left = getCenterOfDisplay('width') - book.getBoundingClientRect().width / 2 + 'px'
+	book.style.bottom = getCenterOfDisplay('height') - book.getBoundingClientRect().height / 2 + 'px'
+}
+positioningBook()
+
+function positioningDevil() {
+	devil.style.left = getCenterOfDisplay('width') - width / 2 + 'px'
+	devil.style.bottom = getCenterOfDisplay('height') - getHeightOfDevil() / 2 + 'px'
+}
+
+window.addEventListener('resize', function () {
+	positioningBook()
+})
 
 function clickedDevilSound() {
 	new Audio("devil-breath.mp3").play()
@@ -29,10 +103,13 @@ function startGame() {
 	bookStar.classList.add('book__star_red');
 	bookEllipse.classList.add('book__ellipse_red')
 	new Audio("call-devil.mp3").play()
+	new Audio("shake-book.mp3").play()
 }
 
 function showDevil() {
 	delay(8000).then(() => {
+		questionsBlock.classList.add('questions_show')
+		questionsBlock.textContent = questions[getRandomNumber()]
 		book.classList.remove('book_red')
 		book.classList.add('book_hide')
 		devil.classList.add('devil_show')
@@ -45,7 +122,9 @@ function showDevil() {
 function scaleDevil() {
 	delay(9001).then(() => {
 		setInterval(() => {
-			width += 1.8
+			let scaleWidth = ret()
+			console.log(scaleWidth);
+			width += scaleWidth
 			devil.style.width = width + 'px'
 			devil.style.left = getCenterOfDisplay('width') - width / 2 + 'px'
 			devil.style.bottom = getCenterOfDisplay('height') - getHeightOfDevil() / 2 + 'px'
