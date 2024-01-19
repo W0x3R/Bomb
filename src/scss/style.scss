@@ -336,23 +336,35 @@ body {
 }
 
 .questions {
-	display: none;
+	display: flex;
+	align-items: center;
 	position: absolute;
 	bottom: 5%;
-	left: calc(50% - 390px);
-	width: 780px;
+	left: calc(50% - 350px);
+	width: 700px;
 	height: 90px;
+	padding: 5px;
 	border-radius: 20px;
 	border: 2px solid black;
 	background-color: grey;
-	color: white;
-	font-size: 32px;
 
-	&_show {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+	&__pento {
+		width: 60px;
+		height: 60px;
+		&:not(:last-child) {
+			margin-right: 10px;
+		}
 	}
+}
+
+.pento {
+	display: none;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	opacity: 0.1;
+	cursor: auto;
+	z-index: 100;
 }
 
 @import 'adaptive';

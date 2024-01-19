@@ -2,10 +2,13 @@ const devil = document.querySelector('.devil');
 const playButton = document.querySelector('.play');
 const deathBackground = document.querySelector('.death-display');
 const newGameButton = document.querySelector('.death-display__button');
-const book = document.querySelector('.book')
-const bookStar = document.querySelector('.book__star')
-const bookEllipse = document.querySelector('.book__ellipse')
-const questionsBlock = document.querySelector('.questions')
+const book = document.querySelector('.book');
+const bookStar = document.querySelector('.book__star');
+const bookEllipse = document.querySelector('.book__ellipse');
+const questionsBlock = document.querySelector('.questions');
+const pento = document.querySelector('.pento')
+
+
 let width = 110;
 
 
@@ -37,33 +40,6 @@ function ret() {
 	else if (document.documentElement.getBoundingClientRect().height < 450) {
 		return 0.8
 	}
-}
-
-const questions = [
-	'Назовите слова,связанные с органами человека.',
-	'Назовите женские имена',
-	'Назовите мужские имена',
-	'Назовите города Беларуси',
-	'Назовите города России',
-	'Назовите города Украниы',
-	'Назовите слова связанные с космосом',
-	'Назовите слова связанные с нечистью',
-	'Назовите слова связанные с магазином',
-	'Назовите названия цветов',
-	'Назовите стили татуировок',
-	'Назовите бренды мобильных телефонов',
-	'Назовите героев из сериала Сверхъестественное',
-	'Назовите название газированных напитков',
-	'Назовите названия шоколадных батончиков',
-	'Назовите названия шоколадок',
-	'Назовите сериалы',
-	'Назовите фильмы',
-]
-
-function getRandomNumber() {
-	let min = 0;
-	let max = questions.length
-	return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 function delay(ms) {
@@ -98,6 +74,7 @@ function clickedDevilSound() {
 }
 
 function startGame() {
+
 	playButton.classList.add('play_active');
 	book.classList.add('book_red')
 	bookStar.classList.add('book__star_red');
@@ -106,10 +83,23 @@ function startGame() {
 	new Audio("shake-book.mp3").play()
 }
 
+function generateRandomPositionOfPentoLeft() {
+	let min = 25;
+	let max = Math.floor(getCenterOfDisplay('width') - 25);
+	return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function generateRandomPositionOfPentoBottom() {
+	let min = 25;
+	let max = Math.floor(getCenterOfDisplay('height') - 25);
+	return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 function showDevil() {
 	delay(8000).then(() => {
-		questionsBlock.classList.add('questions_show')
-		questionsBlock.textContent = questions[getRandomNumber()]
+		pento.style.display = 'inline-block';
+		pento.style.left = generateRandomPositionOfPentoLeft() * 2
+		pento.style.bottom = generateRandomPositionOfPentoBottom() * 2
 		book.classList.remove('book_red')
 		book.classList.add('book_hide')
 		devil.classList.add('devil_show')
@@ -118,6 +108,11 @@ function showDevil() {
 		new Audio("main-sound.mp3").play()
 	})
 }
+
+pento.addEventListener('click', function (e) {
+	pento.style.left = generateRandomPositionOfPentoLeft() * 2
+	pento.style.bottom = generateRandomPositionOfPentoBottom() * 2
+})
 
 function scaleDevil() {
 	delay(9001).then(() => {
