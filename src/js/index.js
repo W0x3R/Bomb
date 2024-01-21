@@ -1,8 +1,8 @@
 const devil = document.querySelector('.devil');
 const playButton = document.querySelector('.play');
-const deathBackground = document.querySelector('.death-display');
-const deathText = document.querySelector('.death-display__text')
-const newGameButton = document.querySelector('.death-display__button');
+const deathBackground = document.querySelector('.result-display');
+const deathText = document.querySelector('.result-display__text')
+const newGameButton = document.querySelector('.result-display__button');
 const book = document.querySelector('.book');
 const bookStar = document.querySelector('.book__star');
 const bookEllipse = document.querySelector('.book__ellipse');
@@ -17,23 +17,23 @@ function checkWidthIncreaseFactor() {
 	const width = getSizeOfDisplay('width');
 
 	if (width <= 560) {
-		return 0.7
+		return 0.8
 	} if (height >= 1000) {
-		return 3.1
+		return 3.2
 	} else if (height < 1000 && height >= 850) {
-		return 2.6
+		return 2.7
 	} else if (height < 850 && height >= 780) {
-		return 2.3
+		return 2.4
 	} else if (height < 780 && height >= 702) {
-		return 2
+		return 2.1
 	} else if (height < 702 && height >= 590) {
-		return 1.7
+		return 1.8
 	} else if (height < 590 && height >= 525) {
-		return 1.4
+		return 1.5
 	} else if (height < 525 && height >= 450) {
-		return 1.1
+		return 1.2
 	} else if (height < 450) {
-		return 0.7
+		return 0.8
 	}
 }
 
@@ -118,19 +118,25 @@ let count = 0;
 searchedItem.addEventListener('click', function (e) {
 
 	if (count < 10) {
-		if (count === 5) {
-			new Audio('50-completed-sound.mp3').play()
-		}
 		new Audio('finded-sound.mp3').play()
-		searchedItem.style.left = generateSearchedItemNumLeft() * 2
-		searchedItem.style.bottom = generateSearchedItemNumBottom() * 2
+		delay(500).then(() => {
+			searchedItem.style.left = generateSearchedItemNumLeft() * 2
+			searchedItem.style.bottom = generateSearchedItemNumBottom() * 2
 
-		pento[count].classList.add('pento_finded')
-		++count
+			pento[count].classList.add('pento_finded')
+			++count
+		})
+
+
 	}
-	if (count === 10) {
-		showResultDisplay('YOU ALIVE', 'death-display_win')
+	if (count === 9) {
+		showResultDisplay('YOU SURVIVED', 'result-display_win', 'result-display__button_win')
 		mainThemeSound.pause()
+		searchedItem.remove()
+		delay(1000).then(() => {
+			new Audio('win-sound.mp3').play()
+		})
+		clearInterval(timerIdEnd)
 	}
 })
 
@@ -148,12 +154,17 @@ function scaleDevil() {
 	})
 }
 
-function showResultDisplay(value, classList) {
+function showResultDisplay(value, classList, newGameStyle) {
 	deathBackground.classList.add(classList)
 	devil.classList.remove('devil_show')
 	deathText.textContent = value
 	clearInterval(timerId)
+	newGameButton.classList.add(newGameStyle)
 }
+
+let timer = 0;
+
+let timerIdEnd;
 
 function loadGame() {
 	startGame()
@@ -161,20 +172,24 @@ function loadGame() {
 	showDevil()
 
 	scaleDevil()
+
+
+
+	timerIdEnd = setInterval(() => {
+		++timer
+		if (timer === 57) {
+			showResultDisplay('YOU DIED', 'result-display_loose', 'result-display__button_loose')
+			searchedItem.remove()
+		}
+	}, 1000)
+	playButton.removeEventListener('click', loadGame);
 }
 
 devil.addEventListener('click', clickedDevilSound)
 
 playButton.addEventListener('click', loadGame)
 
-let timer = 0;
 
-setInterval(() => {
-	++timer
-	if (timer === 58) {
-		showResultDisplay('YOU DIED', 'death-display_loose')
-	}
-}, 1000)
 
 newGameButton.addEventListener('click', function () {
 	location.reload()
