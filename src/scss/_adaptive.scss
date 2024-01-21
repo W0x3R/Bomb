@@ -1,23 +1,35 @@
 .questions {
 	@media screen and (max-width: 880px) {
-		left: calc(50% - 300px);
-		width: 600px;
+		left: calc(50% - 325px);
+		width: 650px;
 		height: 80px;
-		font-size: 26px;
+
+		&__pento {
+			width: 55px;
+			height: 55px;
+		}
 	}
 
 	@media screen and (max-width: 680px) {
-		left: calc(50% - 200px);
-		width: 400px;
-		font-size: 18px;
+		left: calc(50% - 250px);
+		width: 500px;
 		height: 70px;
+
+		&__pento {
+			width: 50px;
+			height: 50px;
+		}
 	}
 
-	@media screen and (max-width: 440px) {
-		left: calc(50% - 140px);
-		width: 280px;
+	@media screen and (max-width: 540px) {
+		left: calc(50% - 160px);
+		width: 320px;
 		height: 50px;
-		font-size: 12px;
+
+		&__pento {
+			width: 45px;
+			height: 45px;
+		}
 	}
 }
 

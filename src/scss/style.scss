@@ -16,21 +16,32 @@ body {
 	width: 100vw;
 	height: 100vh;
 	text-align: center;
-	color: #ff0000;
 	font-family: OptimusPrinceps, sans-serif;
 	letter-spacing: 5px;
 	font-size: 130px;
 	font-weight: 400;
 	position: absolute;
 
-	&_show {
+	&_win {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		animation:
 			text-zoom 5s linear,
-			blood 5s linear;
+			blood-win 5s linear;
 		z-index: 10;
+		color: #00ff04;
+	}
+
+	&_loose {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		animation:
+			text-zoom 5s linear,
+			blood-loose 5s linear;
+		z-index: 10;
+		color: #ff0000;
 	}
 
 	&__text {
@@ -43,7 +54,7 @@ body {
 		height: 46px;
 		position: absolute;
 		fill: white;
-		bottom: 0;
+		bottom: 5%;
 	}
 }
 
@@ -65,7 +76,7 @@ body {
 	}
 }
 
-@keyframes blood {
+@keyframes blood-loose {
 	0% {
 		text-shadow: 4px 4px 1px #300000;
 	}
@@ -125,16 +136,78 @@ body {
 	}
 }
 
-.devil {
-	display: none;
-	width: 110px;
-	left: calc(50% - 55px);
-	position: absolute;
-	z-index: 1;
-	cursor: pointer;
+@keyframes blood-win {
+	0% {
+		text-shadow: 4px 4px 1px #003006;
+	}
+	5% {
+		text-shadow: 4px 6px 1px #004006;
+	}
+	10% {
+		text-shadow: 4px 8px 1px #005006;
+	}
+	15% {
+		text-shadow: 4px 10px 1px #006006;
+	}
+	20% {
+		text-shadow: 4px 12px 1px #007006;
+	}
+	25% {
+		text-shadow: 4px 14px 1px #008006;
+	}
+	30% {
+		text-shadow: 4px 16px 1px #009006;
+	}
+	35% {
+		text-shadow: 4px 18px 1px #019f06;
+	}
+	40% {
+		text-shadow: 4px 20px 1px #019d06;
+	}
+	45% {
+		text-shadow: 4px 22px 1px #02ac07;
+	}
+	50% {
+		text-shadow: 4px 24px 1px #08ba0e;
+	}
+	55% {
+		text-shadow: 4px 26px 1px #10c916;
+	}
+	60% {
+		text-shadow: 4px 28px 1px #12d518;
+	}
+	65% {
+		text-shadow: 4px 30px 1px #11df18;
+	}
+	70% {
+		text-shadow: 4px 32px 1px #0edf15;
+	}
+	75% {
+		text-shadow: 4px 34px 1px #0adf11;
+	}
+	80% {
+		text-shadow: 4px 36px 1px #09e911;
+	}
+	85% {
+		text-shadow: 4px 38px 1px #07f00f;
+	}
+	90% {
+		text-shadow: 4px 40px 2px #00ff08;
+	}
+}
 
-	&_show {
-		display: block;
+.pento {
+	display: none;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	opacity: 0.1;
+	cursor: auto;
+	z-index: 100;
+	fill: rgba(255, 255, 255, 0.278);
+
+	&_finded {
+		fill: #a00000;
 	}
 }
 
@@ -157,6 +230,19 @@ body {
 
 	&__ellipse_red {
 		animation: changeColor 1s infinite;
+	}
+}
+
+.devil {
+	display: none;
+	width: 110px;
+	left: calc(50% - 55px);
+	position: absolute;
+	z-index: 1;
+	cursor: pointer;
+
+	&_show {
+		display: block;
 	}
 }
 
@@ -338,6 +424,7 @@ body {
 .questions {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	position: absolute;
 	bottom: 5%;
 	left: calc(50% - 350px);
@@ -351,20 +438,11 @@ body {
 	&__pento {
 		width: 60px;
 		height: 60px;
+
 		&:not(:last-child) {
 			margin-right: 10px;
 		}
 	}
-}
-
-.pento {
-	display: none;
-	width: 25px;
-	height: 25px;
-	position: absolute;
-	opacity: 0.1;
-	cursor: auto;
-	z-index: 100;
 }
 
 @import 'adaptive';
