@@ -18,23 +18,23 @@ function checkWidthIncreaseFactor() {
 	const width = getSizeOfDisplay('width');
 
 	if (width <= 560) {
-		return 0.8
-	} if (height >= 1000) {
-		return 3.2
-	} else if (height < 1000 && height >= 850) {
-		return 2.7
-	} else if (height < 850 && height >= 780) {
-		return 2.4
-	} else if (height < 780 && height >= 702) {
-		return 2.1
-	} else if (height < 702 && height >= 590) {
 		return 1.8
+	} if (height >= 1000) {
+		return 3.3
+	} else if (height < 1000 && height >= 850) {
+		return 2.8
+	} else if (height < 850 && height >= 780) {
+		return 2.5
+	} else if (height < 780 && height >= 702) {
+		return 2.2
+	} else if (height < 702 && height >= 590) {
+		return 1.9
 	} else if (height < 590 && height >= 525) {
-		return 1.5
+		return 1.6
 	} else if (height < 525 && height >= 450) {
-		return 1.2
+		return 1.3
 	} else if (height < 450) {
-		return 0.8
+		return 0.9
 	}
 }
 
@@ -118,9 +118,13 @@ searchedItem.addEventListener('click', function (e) {
 			})
 		}
 		new Audio('finded-sound.mp3').play()
-		pento[count].classList.add('questions__pento_found')
-		++count
-	} if (count === 10) {
+		delay(1000).then(() => {
+
+			pento[count].classList.add('questions__pento_found')
+			++count
+		})
+
+	} if (count === 9) {
 		showResultDisplay('YOU SURVIVED', 'result-display_win', 'result-display__button_win')
 		mainThemeSound.pause()
 		this.remove()
@@ -136,6 +140,7 @@ let timerScaleDevil;
 function scaleDevil() {
 	delay(9001).then(() => {
 		timerScaleDevil = setInterval(() => {
+			console.log(checkWidthIncreaseFactor());
 			let scaleWidth = checkWidthIncreaseFactor()
 			startWidthOfDevil += scaleWidth
 			devil.style.width = startWidthOfDevil + 'px'
@@ -169,7 +174,7 @@ function loadGame() {
 		if (timer === 56) {
 			showResultDisplay('YOU DIED', 'result-display_loose', 'result-display__button_loose')
 			searchedItem.remove()
-			delay(4000).then(() => {
+			delay(8000).then(() => {
 				new Audio('loose-sound.mp3').play()
 			})
 
