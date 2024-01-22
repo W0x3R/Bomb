@@ -77,6 +77,10 @@ body {
 	cursor: auto;
 	z-index: 100;
 	fill: rgba(255, 0, 0, 0.59);
+
+	&_hide {
+		opacity: 0;
+	}
 }
 
 .book {

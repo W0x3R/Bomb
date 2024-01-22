@@ -118,11 +118,16 @@ let count = 0;
 searchedItem.addEventListener('click', function (e) {
 
 	if (count < 10) {
-		if (count === 5) {
-			questionsBlock.classList.add('questions__pento_shake')
+		if (count === 4) {
+			delay(1000).then(() => {
+				questionsBlock.classList.add('questions__pento_shake')
+			})
+
 		}
 		new Audio('finded-sound.mp3').play()
-		delay(500).then(() => {
+		searchedItem.classList.add('pento_hide')
+		delay(1000).then(() => {
+			searchedItem.classList.remove('pento_hide')
 			searchedItem.style.left = generateSearchedItemNumLeft() * 2
 			searchedItem.style.bottom = generateSearchedItemNumBottom() * 2
 
