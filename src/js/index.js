@@ -125,9 +125,6 @@ searchedItem.addEventListener('click', function (e) {
 			})
 		}
 		new Audio('finded-sound.mp3').play()
-		searchedItem.classList.add('pento_hide')
-
-		searchedItem.classList.remove('pento_hide')
 		pento[count].classList.add('questions__pento_found')
 		++count
 
