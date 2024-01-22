@@ -1,4 +1,5 @@
 const devil = document.querySelector('.devil');
+let startWidthOfDevil;
 const startGameButton = document.querySelector('.play');
 const resultDisplay = document.querySelector('.result-display');
 const resultText = document.querySelector('.result-display__text')
@@ -10,9 +11,6 @@ const questionsBlock = document.querySelector('.questions');
 const searchedItem = document.querySelector('.pento');
 let searchedItemSize;
 const pento = document.querySelectorAll('.questions__pento');
-
-
-let width = 110;
 
 function checkWidthIncreaseFactor() {
 	const height = getSizeOfDisplay('height');
@@ -70,7 +68,6 @@ window.addEventListener('resize', function () {
 	positioningBook()
 })
 
-
 function startGame() {
 	startGameButton.classList.add('play_active');
 	book.classList.add('book_red')
@@ -96,6 +93,7 @@ function showDevil() {
 		book.classList.remove('book_red')
 		book.classList.add('book_hide')
 		devil.classList.add('devil_show')
+		startWidthOfDevil = getSizeOfDevil('width')
 		devil.style.left = getCenterOfDisplay('width') - getSizeOfDevil('width') / 2 + 'px'
 		devil.style.bottom = getCenterOfDisplay('height') - getSizeOfDevil('height') / 2 + 'px'
 		mainThemeSound.play()
@@ -119,7 +117,6 @@ searchedItem.addEventListener('click', function (e) {
 		new Audio('finded-sound.mp3').play()
 		pento[count].classList.add('questions__pento_found')
 		++count
-
 	}
 	if (count === 9) {
 		showResultDisplay('YOU SURVIVED', 'result-display_win', 'result-display__button_win')
@@ -139,9 +136,9 @@ function scaleDevil() {
 	delay(9001).then(() => {
 		timerId = setInterval(() => {
 			let scaleWidth = checkWidthIncreaseFactor()
-			width += scaleWidth
-			devil.style.width = width + 'px'
-			devil.style.left = getCenterOfDisplay('width') - width / 2 + 'px'
+			startWidthOfDevil += scaleWidth
+			devil.style.width = startWidthOfDevil + 'px'
+			devil.style.left = getCenterOfDisplay('width') - startWidthOfDevil / 2 + 'px'
 			devil.style.bottom = getCenterOfDisplay('height') - getSizeOfDevil('height') / 2 + 'px'
 		}, 200);
 	})
