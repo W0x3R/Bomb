@@ -109,7 +109,7 @@ function showDevil() {
 		setInterval(() => {
 			searchedItem.style.left = generateSearchedItemNumLeft() * 2
 			searchedItem.style.bottom = generateSearchedItemNumBottom() * 2
-		}, 800)
+		}, 900)
 	})
 
 }
