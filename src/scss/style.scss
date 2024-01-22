@@ -8,8 +8,9 @@ body {
 }
 
 .container {
-	max-width: 1920px;
+	max-width: 1680px;
 	margin: 0 auto;
+	min-height: 100%;
 }
 
 .result-display {
@@ -70,13 +71,13 @@ body {
 
 .pento {
 	display: none;
-	width: 30px;
-	height: 30px;
+	width: 40px;
+	height: 40px;
 	position: absolute;
-	opacity: 0.2;
+	opacity: 0.3;
 	cursor: auto;
 	z-index: 100;
-	fill: rgb(255 0 0);
+	fill: rgb(255, 255, 255);
 }
 
 .book {
@@ -114,10 +115,10 @@ body {
 }
 
 .play {
-	width: 90px;
+	width: 100px;
 	position: absolute;
 	top: 0;
-	left: calc(50% - 45px);
+	left: calc(50% - 50px);
 	fill: rgb(0, 0, 0);
 
 	&_active {
@@ -132,8 +133,8 @@ body {
 	justify-content: center;
 	position: absolute;
 	bottom: 5%;
-	left: calc(50% - 350px);
-	width: 700px;
+	left: calc(50% - 440px);
+	width: 880px;
 	height: 72px;
 	padding: 5px;
 	border-radius: 20px;
@@ -141,7 +142,6 @@ body {
 	background-color: grey;
 
 	&__pento {
-		width: 60px;
 		height: 60px;
 		cursor: auto;
 

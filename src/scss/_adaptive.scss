@@ -1,58 +1,72 @@
 .questions {
-	@media screen and (max-width: 860px) {
-		left: calc(50% - 300px);
-		width: 600px;
+	@media screen and (max-width: 920px) {
+		left: calc(50% - 350px);
+		width: 700px;
 		height: 62px;
 
 		&__pento {
-			width: 50px;
 			height: 50px;
 		}
 	}
 
-	@media screen and (max-width: 680px) {
-		left: calc(50% - 250px);
-		width: 500px;
+	@media screen and (max-width: 750px) {
+		left: calc(50% - 275px);
+		width: 550px;
 		height: 52px;
 
 		&__pento {
-			width: 50px;
-			height: 50px;
+			height: 40px;
 		}
 	}
 
-	@media screen and (max-width: 540px) {
-		left: calc(50% - 210px);
-		width: 420px;
+	@media screen and (max-width: 620px) {
+		left: calc(50% - 230px);
+		width: 460px;
 		height: 48px;
 
 		&__pento {
-			width: 45px;
-			height: 45px;
+			height: 36px;
 		}
 	}
 
-	@media screen and (max-width: 430px) {
-		left: calc(50% - 150px);
-		width: 300px;
-		height: 34px;
+	@media screen and (max-width: 500px) {
+		left: calc(50% - 200px);
+		width: 400px;
+		height: 40px;
 
 		&__pento {
-			width: 42px;
-			height: 42px;
+			height: 30px;
+		}
+	}
+
+	@media screen and (max-width: 450px) {
+		left: calc(50% - 150px);
+		width: 300px;
+		height: 30px;
+
+		&__pento {
+			height: 20px;
 		}
 	}
 }
 
 .book {
-	@media screen and (max-height: 460px) {
+	@media screen and (max-height: 560px) {
 		width: 150px;
 		height: 150px;
 	}
 }
+
 .pento {
 	@media screen and (max-width: 600px) {
-		width: 25px;
-		height: 25px;
+		width: 28px;
+		height: 28px;
+	}
+}
+
+.play {
+	@media screen and (max-width: 620px) {
+		width: 80px;
+		left: calc(50% - 40px);
 	}
 }
