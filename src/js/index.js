@@ -123,7 +123,7 @@ searchedItem.addEventListener('click', function (e) {
 			searchedItem.style.left = generateSearchedItemNumLeft() * 2
 			searchedItem.style.bottom = generateSearchedItemNumBottom() * 2
 
-			pento[count].classList.add('pento_finded')
+			pento[count].classList.add('questions__pento_found')
 			++count
 		})
 

@@ -76,10 +76,6 @@ body {
 	cursor: auto;
 	z-index: 100;
 	fill: rgba(255, 0, 0, 0.59);
-
-	&_finded {
-		fill: #a00000;
-	}
 }
 
 .book {
@@ -149,6 +145,10 @@ body {
 		width: 60px;
 		height: 60px;
 		cursor: auto;
+
+		&_found {
+			fill: #a00000;
+		}
 
 		&:not(:last-child) {
 			margin-right: 10px;
