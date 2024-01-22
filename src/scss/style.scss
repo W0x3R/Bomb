@@ -150,6 +150,10 @@ body {
 			fill: #a00000;
 		}
 
+		&_shake {
+			animation: questions-shake 1s infinite;
+		}
+
 		&:not(:last-child) {
 			margin-right: 10px;
 		}

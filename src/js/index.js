@@ -118,6 +118,9 @@ let count = 0;
 searchedItem.addEventListener('click', function (e) {
 
 	if (count < 10) {
+		if (count === 5) {
+			questionsBlock.classList.add('questions__pento_shake')
+		}
 		new Audio('finded-sound.mp3').play()
 		delay(500).then(() => {
 			searchedItem.style.left = generateSearchedItemNumLeft() * 2
