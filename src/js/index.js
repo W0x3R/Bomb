@@ -72,10 +72,6 @@ window.addEventListener('resize', function () {
 	positioningBook()
 })
 
-function clickedDevilSound() {
-	new Audio("devil-breath.mp3").play()
-}
-
 function startGame() {
 	playButton.classList.add('play_active');
 	book.classList.add('book_red')
@@ -193,11 +189,7 @@ function loadGame() {
 	playButton.removeEventListener('click', loadGame);
 }
 
-devil.addEventListener('click', clickedDevilSound)
-
 playButton.addEventListener('click', loadGame)
-
-
 
 newGameButton.addEventListener('click', function () {
 	location.reload()
