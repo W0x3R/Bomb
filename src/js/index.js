@@ -106,7 +106,12 @@ function showDevil() {
 		devil.style.left = getCenterOfDisplay('width') - width / 2 + 'px'
 		devil.style.bottom = getCenterOfDisplay('height') - getHeightOfDevil() / 2 + 'px'
 		mainThemeSound.play()
+		setInterval(() => {
+			searchedItem.style.left = generateSearchedItemNumLeft() * 2
+			searchedItem.style.bottom = generateSearchedItemNumBottom() * 2
+		}, 800)
 	})
+
 }
 
 let count = 0;
@@ -118,19 +123,13 @@ searchedItem.addEventListener('click', function (e) {
 			delay(1000).then(() => {
 				questionsBlock.classList.add('questions__pento_shake')
 			})
-
 		}
 		new Audio('finded-sound.mp3').play()
 		searchedItem.classList.add('pento_hide')
-		delay(1000).then(() => {
-			searchedItem.classList.remove('pento_hide')
-			searchedItem.style.left = generateSearchedItemNumLeft() * 2
-			searchedItem.style.bottom = generateSearchedItemNumBottom() * 2
 
-			pento[count].classList.add('questions__pento_found')
-			++count
-		})
-
+		searchedItem.classList.remove('pento_hide')
+		pento[count].classList.add('questions__pento_found')
+		++count
 
 	}
 	if (count === 9) {
