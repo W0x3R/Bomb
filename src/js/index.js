@@ -1,7 +1,7 @@
 const devil = document.querySelector('.devil');
-const playButton = document.querySelector('.play');
-const deathBackground = document.querySelector('.result-display');
-const deathText = document.querySelector('.result-display__text')
+const startGameButton = document.querySelector('.play');
+const resultDisplay = document.querySelector('.result-display');
+const resultText = document.querySelector('.result-display__text')
 const newGameButton = document.querySelector('.result-display__button');
 const book = document.querySelector('.book');
 const bookStar = document.querySelector('.book__star');
@@ -73,7 +73,7 @@ window.addEventListener('resize', function () {
 })
 
 function startGame() {
-	playButton.classList.add('play_active');
+	startGameButton.classList.add('play_active');
 	book.classList.add('book_red')
 	bookStar.classList.add('book__star_red');
 	bookEllipse.classList.add('book__ellipse_red')
@@ -156,9 +156,9 @@ function scaleDevil() {
 }
 
 function showResultDisplay(value, classList, newGameStyle) {
-	deathBackground.classList.add(classList)
+	resultDisplay.classList.add(classList)
 	devil.classList.remove('devil_show')
-	deathText.textContent = value
+	resultText.textContent = value
 	clearInterval(timerId)
 	newGameButton.classList.add(newGameStyle)
 }
@@ -184,10 +184,10 @@ function loadGame() {
 			questionsBlock.classList.remove('questions__pento_shake')
 		}
 	}, 1000)
-	playButton.removeEventListener('click', loadGame);
+	startGameButton.removeEventListener('click', loadGame);
 }
 
-playButton.addEventListener('click', loadGame)
+startGameButton.addEventListener('click', loadGame)
 
 newGameButton.addEventListener('click', function () {
 	location.reload()
