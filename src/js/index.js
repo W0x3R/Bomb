@@ -49,8 +49,8 @@ function getCenterOfDisplay(value) {
 	return getSizeOfDisplay(value) / 2
 }
 
-function getHeightOfDevil() {
-	return (devil.getBoundingClientRect().width);
+function getSizeOfDevil(value) {
+	return devil.getBoundingClientRect()[value];
 }
 
 function getSizeOfBook(value) {
@@ -98,8 +98,8 @@ function showDevil() {
 		book.classList.remove('book_red')
 		book.classList.add('book_hide')
 		devil.classList.add('devil_show')
-		devil.style.left = getCenterOfDisplay('width') - width / 2 + 'px'
-		devil.style.bottom = getCenterOfDisplay('height') - getHeightOfDevil() / 2 + 'px'
+		devil.style.left = getCenterOfDisplay('width') - getSizeOfDevil('width') / 2 + 'px'
+		devil.style.bottom = getCenterOfDisplay('height') - getSizeOfDevil('height') / 2 + 'px'
 		mainThemeSound.play()
 		setInterval(() => {
 			searchedItem.style.left = generateSearchedItemNumLeft() * 2
@@ -145,7 +145,7 @@ function scaleDevil() {
 			width += scaleWidth
 			devil.style.width = width + 'px'
 			devil.style.left = getCenterOfDisplay('width') - width / 2 + 'px'
-			devil.style.bottom = getCenterOfDisplay('height') - getHeightOfDevil() / 2 + 'px'
+			devil.style.bottom = getCenterOfDisplay('height') - getSizeOfDevil('height') / 2 + 'px'
 		}, 200);
 	})
 }
