@@ -86,6 +86,7 @@ body {
 	width: clamp(220px, 35vw, 300px);
 	height: clamp(220px, 35vw, 300px);
 	position: absolute;
+	cursor: auto;
 
 	&_red {
 		animation: shake 1s infinite;
