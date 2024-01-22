@@ -137,6 +137,7 @@ searchedItem.addEventListener('click', function (e) {
 		showResultDisplay('YOU SURVIVED', 'result-display_win', 'result-display__button_win')
 		mainThemeSound.pause()
 		searchedItem.remove()
+		questionsBlock.classList.remove('questions__pento_shake')
 		delay(1000).then(() => {
 			new Audio('win-sound.mp3').play()
 		})
@@ -184,6 +185,7 @@ function loadGame() {
 		if (timer === 57) {
 			showResultDisplay('YOU DIED', 'result-display_loose', 'result-display__button_loose')
 			searchedItem.remove()
+			questionsBlock.classList.remove('questions__pento_shake')
 		}
 	}, 1000)
 	playButton.removeEventListener('click', loadGame);
