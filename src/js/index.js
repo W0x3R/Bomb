@@ -63,11 +63,6 @@ function positioningBook() {
 }
 positioningBook()
 
-function positioningDevil() {
-	devil.style.left = getCenterOfDisplay('width') - width / 2 + 'px'
-	devil.style.bottom = getCenterOfDisplay('height') - getHeightOfDevil() / 2 + 'px'
-}
-
 window.addEventListener('resize', function () {
 	positioningBook()
 })
