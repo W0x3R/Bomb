@@ -120,24 +120,22 @@ searchedItem.addEventListener('click', function (e) {
 		new Audio('finded-sound.mp3').play()
 		pento[count].classList.add('questions__pento_found')
 		++count
-	}
-	if (count === 10) {
+	} if (count === 10) {
 		showResultDisplay('YOU SURVIVED', 'result-display_win', 'result-display__button_win')
 		mainThemeSound.pause()
 		this.remove()
-		questionsBlock.classList.remove('questions__pento_shake')
 		delay(1000).then(() => {
 			new Audio('win-sound.mp3').play()
 		})
-		clearInterval(timerIdEnd)
+		clearInterval(timerCheckEndGame)
 	}
 })
 
-let timerId;
+let timerScaleDevil;
 
 function scaleDevil() {
 	delay(9001).then(() => {
-		timerId = setInterval(() => {
+		timerScaleDevil = setInterval(() => {
 			let scaleWidth = checkWidthIncreaseFactor()
 			startWidthOfDevil += scaleWidth
 			devil.style.width = startWidthOfDevil + 'px'
@@ -150,14 +148,14 @@ function scaleDevil() {
 function showResultDisplay(value, classList, newGameStyle) {
 	resultDisplay.classList.add(classList)
 	resultText.textContent = value
-	clearInterval(timerId)
+	clearInterval(timerScaleDevil)
 	newGameButton.classList.add(newGameStyle)
 	container.remove()
 }
 
 let timer = 0;
 
-let timerIdEnd;
+let timerCheckEndGame;
 
 function loadGame() {
 	startGame()
@@ -166,12 +164,15 @@ function loadGame() {
 
 	scaleDevil()
 
-	timerIdEnd = setInterval(() => {
+	timerCheckEndGame = setInterval(() => {
 		++timer
 		if (timer === 56) {
 			showResultDisplay('YOU DIED', 'result-display_loose', 'result-display__button_loose')
 			searchedItem.remove()
-			questionsBlock.classList.remove('questions__pento_shake')
+			delay(4000).then(() => {
+				new Audio('loose-sound.mp3').play()
+			})
+
 		}
 	}, 1000)
 	startGameButton.removeEventListener('click', loadGame);
