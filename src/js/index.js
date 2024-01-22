@@ -68,7 +68,6 @@ positioningBook()
 window.addEventListener('resize', function () {
 	searchedItemSize = searchedItem.getBoundingClientRect().width
 	positioningBook()
-	console.log(searchedItemSize);
 })
 
 
@@ -81,13 +80,8 @@ function startGame() {
 	new Audio("shake-book.mp3").play()
 }
 
-function generateSearchedItemNumLeft(min) {
-	let max = Math.floor(getSizeOfDisplay('width') - min);
-	return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-function generateSearchedItemNumBottom(min) {
-	let max = Math.floor(getSizeOfDisplay('height') - min);
+function generateSearchedItemNum(min, value) {
+	let max = Math.floor(getSizeOfDisplay([value]) - min);
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
@@ -97,9 +91,8 @@ function showDevil() {
 	delay(8000).then(() => {
 		searchedItem.style.display = 'inline-block';
 		searchedItemSize = searchedItem.getBoundingClientRect().width
-		console.log(searchedItemSize);
-		searchedItem.style.left = generateSearchedItemNumLeft(searchedItemSize)
-		searchedItem.style.bottom = generateSearchedItemNumBottom(searchedItemSize)
+		searchedItem.style.left = generateSearchedItemNum(searchedItemSize, 'width')
+		searchedItem.style.bottom = generateSearchedItemNum(searchedItemSize, 'height')
 		book.classList.remove('book_red')
 		book.classList.add('book_hide')
 		devil.classList.add('devil_show')
@@ -107,9 +100,9 @@ function showDevil() {
 		devil.style.bottom = getCenterOfDisplay('height') - getSizeOfDevil('height') / 2 + 'px'
 		mainThemeSound.play()
 		setInterval(() => {
-			searchedItem.style.left = generateSearchedItemNumLeft(searchedItemSize)
-			searchedItem.style.bottom = generateSearchedItemNumBottom(searchedItemSize)
-		}, 900)
+			searchedItem.style.left = generateSearchedItemNum(searchedItemSize, 'width')
+			searchedItem.style.bottom = generateSearchedItemNum(searchedItemSize, 'height')
+		}, 800)
 	})
 }
 
