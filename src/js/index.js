@@ -8,7 +8,9 @@ const bookStar = document.querySelector('.book__star');
 const bookEllipse = document.querySelector('.book__ellipse');
 const questionsBlock = document.querySelector('.questions');
 const searchedItem = document.querySelector('.pento');
+let searchedItemSize;
 const pento = document.querySelectorAll('.questions__pento');
+
 
 let width = 110;
 
@@ -64,8 +66,11 @@ function positioningBook() {
 positioningBook()
 
 window.addEventListener('resize', function () {
+	searchedItemSize = searchedItem.getBoundingClientRect().width
 	positioningBook()
+	console.log(searchedItemSize);
 })
+
 
 function startGame() {
 	startGameButton.classList.add('play_active');
@@ -76,15 +81,13 @@ function startGame() {
 	new Audio("shake-book.mp3").play()
 }
 
-function generateSearchedItemNumLeft() {
-	let min = 25;
-	let max = Math.floor(getCenterOfDisplay('width') - 25);
+function generateSearchedItemNumLeft(min) {
+	let max = Math.floor(getSizeOfDisplay('width') - min);
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function generateSearchedItemNumBottom() {
-	let min = 25;
-	let max = Math.floor(getCenterOfDisplay('height') - 25);
+function generateSearchedItemNumBottom(min) {
+	let max = Math.floor(getSizeOfDisplay('height') - min);
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
@@ -93,8 +96,10 @@ const mainThemeSound = new Audio("main-sound.mp3")
 function showDevil() {
 	delay(8000).then(() => {
 		searchedItem.style.display = 'inline-block';
-		searchedItem.style.left = generateSearchedItemNumLeft() * 2
-		searchedItem.style.bottom = generateSearchedItemNumBottom() * 2
+		searchedItemSize = searchedItem.getBoundingClientRect().width
+		console.log(searchedItemSize);
+		searchedItem.style.left = generateSearchedItemNumLeft(searchedItemSize)
+		searchedItem.style.bottom = generateSearchedItemNumBottom(searchedItemSize)
 		book.classList.remove('book_red')
 		book.classList.add('book_hide')
 		devil.classList.add('devil_show')
@@ -102,11 +107,10 @@ function showDevil() {
 		devil.style.bottom = getCenterOfDisplay('height') - getSizeOfDevil('height') / 2 + 'px'
 		mainThemeSound.play()
 		setInterval(() => {
-			searchedItem.style.left = generateSearchedItemNumLeft() * 2
-			searchedItem.style.bottom = generateSearchedItemNumBottom() * 2
+			searchedItem.style.left = generateSearchedItemNumLeft(searchedItemSize)
+			searchedItem.style.bottom = generateSearchedItemNumBottom(searchedItemSize)
 		}, 900)
 	})
-
 }
 
 let count = 0;
