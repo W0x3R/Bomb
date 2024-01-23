@@ -79,7 +79,9 @@
 	&__inner {
 		@media screen and (max-width: 1200px) {
 			width: 800px;
+			height: 435px;
 			left: calc(50% - 400px);
+			bottom: calc(50% - 217.5px);
 
 			&-text {
 				font-size: 30px;
@@ -88,7 +90,9 @@
 
 		@media screen and (max-width: 900px) {
 			width: 600px;
+			height: 375px;
 			left: calc(50% - 300px);
+			bottom: calc(50% - 187.5px);
 
 			&-text {
 				font-size: 25px;
@@ -97,10 +101,11 @@
 
 		@media screen and (max-width: 680px) {
 			width: 400px;
+			height: 370px;
 			left: calc(50% - 200px);
-
+			bottom: calc(50% - 185px);
 			&-text {
-				font-size: 20px;
+				font-size: 19px;
 			}
 		}
 
@@ -109,7 +114,7 @@
 			left: calc(50% - 150px);
 
 			&-text {
-				font-size: 17px;
+				font-size: 16px;
 			}
 		}
 	}

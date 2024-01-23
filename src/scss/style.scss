@@ -117,7 +117,7 @@ body {
 
 .play {
 	position: absolute;
-	top: 0;
+	top: 2%;
 	left: calc(50% - 45px);
 	width: 90px;
 	fill: rgb(255 255 255);
@@ -172,15 +172,15 @@ body {
 
 	&__inner {
 		width: 1000px;
-		height: 440px;
+		height: 450px;
 		background-color: #ffffff96;
 		border-radius: 5%;
 		position: absolute;
 		left: calc(50% - 500px);
-		bottom: calc(50% - 220px);
+		bottom: calc(50% - 225px);
 		display: flex;
 		justify-content: center;
-		align-items: center;
+		align-items: flex-end;
 		padding: 10px;
 
 		&_en {
