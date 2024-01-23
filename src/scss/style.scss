@@ -1,14 +1,6 @@
 @import 'normalize';
 @import 'keyframes';
-
-@font-face {
-	font-family: 'Merienda', cursive;
-	src: url('../../fonts/Merienda-VariableFont_wght.ttf');
-}
-@font-face {
-	font-family: 'Caveat', cursive;
-	src: url('../../fonts/Caveat-VariableFont_wght.ttf');
-}
+@import '_fonts';
 
 body {
 	background-image: url('../../images/hell.jpg');
@@ -28,11 +20,6 @@ body {
 	width: 100vw;
 	height: 100vh;
 	background: black;
-	font-family: OptimusPrinceps, sans-serif;
-	letter-spacing: 5px;
-	font-size: clamp(30px, 9vw, 130px);
-	font-weight: 400;
-	font-family: 'Merienda', cursive;
 
 	&_win {
 		display: flex;
@@ -55,6 +42,9 @@ body {
 	&__text {
 		padding: 5px;
 		user-select: none;
+		letter-spacing: 5px;
+		font-size: clamp(30px, 9vw, 130px);
+		font-family: 'Rubik Maze', 'Merienda';
 	}
 
 	&__button {
@@ -210,8 +200,11 @@ body {
 		}
 
 		&-text {
-			font-family: 'Caveat', cursive;
-			font-size: 40px;
+			font-family: 'Caveat', serif;
+			font-optical-sizing: auto;
+			font-weight: normal;
+			font-style: normal;
+			font-size: 22px;
 			letter-spacing: normal;
 			text-align: center;
 			user-select: none;

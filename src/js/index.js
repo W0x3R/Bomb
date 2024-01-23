@@ -24,19 +24,19 @@ let searchedItemSize
 let timerScaleDevil
 
 let rulesTextObject = {
-	en: 'Welcome to hell, traveler. Everyone who was here before you failed to cope with the king of hell. You are the last hope. Your goal is to collect 10 pentagrams in order to put an end to the king of hell once and for all. Good luck',
-	ru: 'Добро пожаловать в ад,путник. Все кто тут был до тебя не справились с королем ада. Ты последняя надежда. Твоя цель собрать 10 пентаграмм для того чтобы раз и навсегда покончить с королем ада. Удачи.'
+	en: 'The world collapsed when the king of&nbsp;hell took over. Everyone who tried to&nbsp;stop him before you is&nbsp;dead. In&nbsp;order to&nbsp;end this once and for all, you need to&nbsp;click on&nbsp;the button above. After you click on&nbsp;it, the spell book will open and the summoning of&nbsp;the king of&nbsp;hell will begin. Remember that once you click, there is&nbsp;no&nbsp;going back. If&nbsp;you still dare to&nbsp;press, then you will need to&nbsp;catch 10&nbsp;pentagrams in&nbsp;order to&nbsp;put an&nbsp;end to&nbsp;this terrible creature once and for all. Be&nbsp;careful and persistent, the king of&nbsp;hell will try in&nbsp;every possible way to&nbsp;interfere with you, moving her to&nbsp;different parts of&nbsp;the screen. Good luck.',
+	ru: 'Мир рухнул, когда его захватил король ада. Все, кто пытался остановить его до&nbsp;тебя, мертвы. Для того чтобы покончить с&nbsp;этим раз и&nbsp;навсегда, нужно нажать на&nbsp;кнопку сверху. После того, как ты&nbsp;нажмешь на&nbsp;неё, откроется книга заклинаний, и&nbsp;начнется призыв короля ада. Помни, что после нажатия пути назад уже не&nbsp;будет. Если всё-таки осмелишься нажать, то&nbsp;тебе нужно будет словить 10&nbsp;пентаграмм, чтобы раз и&nbsp;навсегда покончить с&nbsp;этим ужасным существом. Будь внимателен и&nbsp;настойчив, король ада будет всячески пытаться помешать тебе, перемещая её&nbsp;в&nbsp;разные части экрана. Удачи.'
 }
 rulesBlock.addEventListener('click', function (e) {
 	if (e.target.dataset.language === 'en') {
 		englishLanguageIcon.style.display = 'none'
 		russianLanguageIcon.style.display = 'block'
-		rulesText.textContent = rulesTextObject.ru
+		rulesText.innerHTML = rulesTextObject.ru
 	}
 	if (e.target.dataset.language === 'ru') {
 		russianLanguageIcon.style.display = 'none'
 		englishLanguageIcon.style.display = 'block'
-		rulesText.textContent = rulesTextObject.en
+		rulesText.innerHTML = rulesTextObject.en
 	}
 })
 
