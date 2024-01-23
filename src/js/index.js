@@ -71,7 +71,7 @@ function setSpeedOfSearchItem() {
 	} else if (width < 1000 && width >= 850) {
 		return 750
 	} else if (width < 850) {
-		return 740
+		return 710
 	}
 }
 
