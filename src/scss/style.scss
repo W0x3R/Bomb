@@ -170,13 +170,13 @@ body {
 	z-index: 10000;
 
 	&__inner {
-		width: 500px;
-		height: 400px;
+		width: 800px;
+		height: 440px;
 		background-color: #ffffff96;
 		border-radius: 5%;
 		position: absolute;
-		left: calc(50% - 250px);
-		bottom: calc(50% - 200px);
+		left: calc(50% - 400px);
+		bottom: calc(50% - 220px);
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -201,11 +201,7 @@ body {
 
 		&-text {
 			font-family: 'Caveat', serif;
-			font-optical-sizing: auto;
-			font-weight: normal;
-			font-style: normal;
-			font-size: 22px;
-			letter-spacing: normal;
+			font-size: 30px;
 			text-align: center;
 			user-select: none;
 		}
