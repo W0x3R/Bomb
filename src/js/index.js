@@ -1,22 +1,22 @@
 const container = document.querySelector('.container')
-const devil = document.querySelector('.devil');
-let startWidthOfDevil;
-const startGameButton = document.querySelector('.play');
-const resultDisplay = document.querySelector('.result-display');
+const devil = document.querySelector('.devil')
+let startWidthOfDevil
+const startGameButton = document.querySelector('.play')
+const resultDisplay = document.querySelector('.result-display')
 const resultText = document.querySelector('.result-display__text')
-const newGameButton = document.querySelector('.result-display__button');
-const book = document.querySelector('.book');
-const bookStar = document.querySelector('.book__star');
-const bookEllipse = document.querySelector('.book__ellipse');
-const questionsBlock = document.querySelector('.questions');
-const searchedItem = document.querySelector('.pento');
-const pento = document.querySelectorAll('.questions__pento');
+const newGameButton = document.querySelector('.result-display__button')
+const book = document.querySelector('.book')
+const bookStar = document.querySelector('.book__star')
+const bookEllipse = document.querySelector('.book__ellipse')
+const questionsBlock = document.querySelector('.questions')
+const searchedItem = document.querySelector('.pento')
+const pento = document.querySelectorAll('.questions__pento')
 const mainThemeSound = new Audio("main-sound.mp3")
-let count = 0;
-let timer = 0;
-let timerCheckEndGame;
-let searchedItemSize;
-let timerScaleDevil;
+let count = 0
+let timer = 0
+let timerCheckEndGame
+let searchedItemSize
+let timerScaleDevil
 
 function initGame() {
 	positioningBook()
@@ -127,7 +127,7 @@ searchedItem.addEventListener('click', function (e) {
 			questionsBlock.classList.add('questions__pento_shake')
 		}
 
-		new Audio('finded-sound.mp3').play()
+		new Audio('found-sound.mp3').play()
 		pento[count].classList.add('questions__pento_found')
 		++count
 
@@ -177,7 +177,10 @@ function checkEndOfGame() {
 		showResultDisplay('YOU DIED', 'result-display_loose', 'result-display__button_loose')
 		searchedItem.remove()
 		delay(8000).then(() => {
-			new Audio('loose-sound.mp3').play()
+			new Audio('losing-sound.mp3').play()
+		})
+		delay(26000).then(() => {
+			new Audio('losing-sound.mp3').play()
 		})
 		clearInterval(timerCheckEndGame);
 	}

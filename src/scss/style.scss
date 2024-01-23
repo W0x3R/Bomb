@@ -14,21 +14,21 @@ body {
 }
 
 .result-display {
-	background: black;
+	position: absolute;
 	display: none;
 	width: 100vw;
 	height: 100vh;
+	background: black;
 	font-family: OptimusPrinceps, sans-serif;
 	letter-spacing: 5px;
 	font-size: clamp(30px, 9vw, 130px);
 	font-weight: 400;
-	position: absolute;
 
 	&_win {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		animation: display-win 5s linear;
+		animation: display-win 8s linear;
 		z-index: 10;
 		color: #00ff04;
 	}
@@ -37,23 +37,23 @@ body {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		animation: display-loose 5s linear;
+		animation: display-loose 8s linear;
 		z-index: 10;
 		color: #ff0000;
 	}
 
 	&__text {
-		user-select: none;
 		padding: 5px;
+		user-select: none;
 	}
 
 	&__button {
-		width: 54px;
-		z-index: 25;
-		height: 46px;
 		position: absolute;
-		fill: white;
 		bottom: 5%;
+		width: 54px;
+		height: 46px;
+		z-index: 25;
+		fill: white;
 
 		&_win {
 			animation:
@@ -70,10 +70,10 @@ body {
 }
 
 .pento {
+	position: absolute;
 	display: none;
 	width: 33px;
 	height: 33px;
-	position: absolute;
 	opacity: 0.2;
 	cursor: auto;
 	z-index: 100;
@@ -104,9 +104,9 @@ body {
 }
 
 .devil {
+	position: absolute;
 	display: none;
 	width: 110px;
-	position: absolute;
 	z-index: 1;
 
 	&_show {
@@ -115,10 +115,10 @@ body {
 }
 
 .play {
-	width: 100px;
 	position: absolute;
 	top: 0;
 	left: calc(50% - 50px);
+	width: 100px;
 	fill: rgb(0, 0, 0);
 
 	&_active {
@@ -128,12 +128,12 @@ body {
 }
 
 .questions {
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	position: absolute;
 	bottom: 5%;
 	left: calc(50% - 440px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 880px;
 	height: 72px;
 	padding: 5px;
