@@ -170,12 +170,12 @@ body {
 	z-index: 10000;
 
 	&__inner {
-		width: 800px;
+		width: 1000px;
 		height: 440px;
 		background-color: #ffffff96;
 		border-radius: 5%;
 		position: absolute;
-		left: calc(50% - 400px);
+		left: calc(50% - 500px);
 		bottom: calc(50% - 220px);
 		display: flex;
 		justify-content: center;
@@ -201,8 +201,9 @@ body {
 
 		&-text {
 			font-family: 'Caveat', serif;
-			font-size: 30px;
+			font-size: 34px;
 			text-align: center;
+			letter-spacing: 1.2px;
 			user-select: none;
 		}
 	}
