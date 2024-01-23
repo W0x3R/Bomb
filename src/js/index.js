@@ -13,15 +13,32 @@ const searchedItem = document.querySelector('.pento')
 const pento = document.querySelectorAll('.questions__pento')
 const getSpeedOfSearchItem = setSpeedOfSearchItem()
 const mainThemeSound = new Audio("main-sound.mp3")
+const rulesBlock = document.querySelector('.rules__inner')
+const rulesText = document.querySelector('.rules__inner-text')
+const englishLanguageIcon = document.querySelector('.rules__inner_en')
+const russianLanguageIcon = document.querySelector('.rules__inner_ru')
 let count = 0
 let timer = 0
 let timerCheckEndGame
 let searchedItemSize
 let timerScaleDevil
-let rulesText = {
+
+let rulesTextObject = {
 	en: 'Welcome to hell, traveler. Everyone who was here before you failed to cope with the king of hell. You are the last hope. Your goal is to collect 10 pentagrams in order to put an end to the king of hell once and for all. Good luck',
 	ru: 'Добро пожаловать в ад,путник. Все кто тут был до тебя не справились с королем ада. Ты последняя надежда. Твоя цель собрать 10 пентаграмм для того чтобы раз и навсегда покончить с королем ада. Удачи.'
 }
+rulesBlock.addEventListener('click', function (e) {
+	if (e.target.dataset.language === 'en') {
+		englishLanguageIcon.style.display = 'none'
+		russianLanguageIcon.style.display = 'block'
+		rulesText.textContent = rulesTextObject.ru
+	}
+	if (e.target.dataset.language === 'ru') {
+		russianLanguageIcon.style.display = 'none'
+		englishLanguageIcon.style.display = 'block'
+		rulesText.textContent = rulesTextObject.en
+	}
+})
 
 function initGame() {
 	positioningBook()
