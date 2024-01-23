@@ -70,3 +70,9 @@
 		left: calc(50% - 35px);
 	}
 }
+
+.rules {
+	@media screen and (max-width: 700px) {
+		background-image: url('../../images/rules-background (2).jpg');
+	}
+}
