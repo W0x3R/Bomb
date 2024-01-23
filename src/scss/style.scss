@@ -28,7 +28,7 @@ body {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		animation: display-win 8s linear;
+		animation: display-win 5s infinite;
 		z-index: 10;
 		color: #00ff04;
 	}
@@ -37,7 +37,7 @@ body {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		animation: display-loose 8s linear;
+		animation: display-loose 5s infinite;
 		z-index: 10;
 		color: #ff0000;
 	}
