@@ -213,7 +213,7 @@ function loadGame() {
 
 function checkEndOfGame() {
 	++timer
-	if (timer === 56) {
+	if (timer === 1) {
 		showResultDisplay('YOU DIED', 'result-display_loose', 'result-display__button_loose')
 		searchedItem.remove()
 		delay(8000).then(() => {

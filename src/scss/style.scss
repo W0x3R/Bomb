@@ -1,6 +1,15 @@
 @import 'normalize';
 @import 'keyframes';
 
+@font-face {
+	font-family: 'Merienda', cursive;
+	src: url('../../fonts/Merienda-VariableFont_wght.ttf');
+}
+@font-face {
+	font-family: 'Caveat', cursive;
+	src: url('../../fonts/Caveat-VariableFont_wght.ttf');
+}
+
 body {
 	background-image: url('../../images/hell.jpg');
 	background-size: cover;
@@ -23,6 +32,7 @@ body {
 	letter-spacing: 5px;
 	font-size: clamp(30px, 9vw, 130px);
 	font-weight: 400;
+	font-family: 'Merienda', cursive;
 
 	&_win {
 		display: flex;
@@ -168,7 +178,6 @@ body {
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 10000;
-	display: none;
 
 	&__inner {
 		width: 500px;
@@ -201,8 +210,11 @@ body {
 		}
 
 		&-text {
-			font-size: 32px;
+			font-family: 'Caveat', cursive;
+			font-size: 40px;
+			letter-spacing: normal;
 			text-align: center;
+			user-select: none;
 		}
 	}
 }
