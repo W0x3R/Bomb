@@ -29,21 +29,41 @@ let rulesTextObject = {
 	ru: 'Мир рухнул, когда его захватил король ада. Все, кто пытался остановить его до&nbsp;тебя, мертвы. Для того чтобы покончить с&nbsp;этим раз и&nbsp;навсегда, нужно нажать на&nbsp;кнопку сверху. После того, как ты&nbsp;нажмешь на&nbsp;неё, откроется книга заклинаний, и&nbsp;начнется призыв короля ада. Помни, что после нажатия пути назад уже не&nbsp;будет. Если всё-таки осмелишься нажать, то&nbsp;тебе нужно будет словить 10&nbsp;пентаграмм, чтобы раз и&nbsp;навсегда покончить с&nbsp;этим ужасным существом. Будь внимателен и&nbsp;настойчив, король ада будет всячески пытаться помешать тебе, перемещая пентаграмму в&nbsp;разные части экрана. Удачи.'
 }
 
+function showRussianLanguageIcon() {
+	englishLanguageIcon.style.display = 'none'
+	russianLanguageIcon.style.display = 'block'
+	rulesText.innerHTML = rulesTextObject.ru
+	localStorage.setItem('language', 'ru')
+}
+
+function showEnglishLanguageIcon() {
+	russianLanguageIcon.style.display = 'none'
+	englishLanguageIcon.style.display = 'block'
+	rulesText.innerHTML = rulesTextObject.en
+	localStorage.setItem('language', 'en')
+}
 
 rulesBlock.addEventListener('click', function (e) {
 	if (e.target.dataset.language === 'en') {
-		englishLanguageIcon.style.display = 'none'
-		russianLanguageIcon.style.display = 'block'
-		rulesText.innerHTML = rulesTextObject.ru
+		showRussianLanguageIcon()
 	}
 	if (e.target.dataset.language === 'ru') {
-		russianLanguageIcon.style.display = 'none'
-		englishLanguageIcon.style.display = 'block'
-		rulesText.innerHTML = rulesTextObject.en
+		showEnglishLanguageIcon()
 	}
 })
 
 function initGame() {
+	if (localStorage.getItem('language') === 'en') {
+		russianLanguageIcon.style.display = 'none'
+		englishLanguageIcon.style.display = 'block'
+		rulesText.innerHTML = rulesTextObject.en
+	}
+	else if (localStorage.getItem('language') === 'ru') {
+		englishLanguageIcon.style.display = 'none'
+		russianLanguageIcon.style.display = 'block'
+		rulesText.innerHTML = rulesTextObject.ru
+	}
+
 	positioningBook()
 	window.addEventListener('resize', function () {
 		searchedItemSize = searchedItem.getBoundingClientRect().width
@@ -54,6 +74,8 @@ function initGame() {
 	newGameButton.addEventListener('click', function () {
 		location.reload()
 	})
+
+
 }
 
 function checkWidthIncreaseFactor() {
