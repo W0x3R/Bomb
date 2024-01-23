@@ -19,7 +19,7 @@
 		}
 	}
 
-	@media screen and (max-width: 620px) {
+	@media screen and (max-width: 650px) {
 		left: calc(50% - 230px);
 		width: 460px;
 		height: 48px;
@@ -59,13 +59,13 @@
 
 .pento {
 	@media screen and (max-width: 600px) {
-		width: 25px;
-		height: 25px;
+		width: 26px;
+		height: 26px;
 	}
 }
 
 .play {
-	@media screen and (max-width: 620px) {
+	@media screen and (max-width: 650px) {
 		width: 80px;
 		left: calc(50% - 40px);
 	}

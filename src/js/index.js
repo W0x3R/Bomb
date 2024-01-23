@@ -11,12 +11,14 @@ const bookEllipse = document.querySelector('.book__ellipse')
 const questionsBlock = document.querySelector('.questions')
 const searchedItem = document.querySelector('.pento')
 const pento = document.querySelectorAll('.questions__pento')
+const getSpeedOfSearchItem = setSpeedOfSearchItem()
 const mainThemeSound = new Audio("main-sound.mp3")
 let count = 0
 let timer = 0
 let timerCheckEndGame
 let searchedItemSize
 let timerScaleDevil
+console.log(getSpeedOfSearchItem);
 
 function initGame() {
 	positioningBook()
@@ -36,7 +38,7 @@ function checkWidthIncreaseFactor() {
 	const width = getSizeOfDisplay('width');
 
 	if (width <= 560) {
-		return 1.8
+		return 1.3
 	} if (height >= 1000) {
 		return 3.3
 	} else if (height < 1000 && height >= 850) {
@@ -53,6 +55,23 @@ function checkWidthIncreaseFactor() {
 		return 1.3
 	} else if (height < 450) {
 		return 0.9
+	}
+}
+
+function setSpeedOfSearchItem() {
+	const width = getSizeOfDisplay('width');
+	if (width >= 1400) {
+		return 840
+	} else if (width < 1400 && width >= 1200) {
+		return 820
+	} else if (width < 1200 && width >= 1100) {
+		return 800
+	} else if (width < 1100 && width >= 1000) {
+		return 770
+	} else if (width < 1000 && width >= 850) {
+		return 750
+	} else if (width < 850) {
+		return 740
 	}
 }
 
@@ -116,7 +135,7 @@ function showDevil() {
 		setInterval(() => {
 			searchedItem.style.left = generateSearchedItemNum(searchedItemSize, 'width')
 			searchedItem.style.bottom = generateSearchedItemNum(searchedItemSize, 'height')
-		}, 900)
+		}, getSpeedOfSearchItem)
 	})
 }
 
@@ -146,6 +165,7 @@ function scaleDevil() {
 	delay(9001).then(() => {
 		timerScaleDevil = setInterval(() => {
 			let scaleWidth = checkWidthIncreaseFactor()
+			console.log(scaleWidth);
 			startWidthOfDevil += scaleWidth
 			devil.style.width = startWidthOfDevil + 'px'
 			devil.style.left = getCenterOfDisplay('width') - startWidthOfDevil / 2 + 'px'
