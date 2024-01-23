@@ -118,9 +118,10 @@ body {
 .play {
 	position: absolute;
 	top: 0;
-	left: calc(50% - 50px);
-	width: 100px;
-	fill: rgb(0, 0, 0);
+	left: calc(50% - 45px);
+	width: 90px;
+	fill: rgb(255 255 255);
+	z-index: 100000;
 
 	&_active {
 		animation: changeColor 1s infinite;
@@ -205,6 +206,7 @@ body {
 			text-align: center;
 			letter-spacing: 1.2px;
 			user-select: none;
+			color: black;
 		}
 	}
 }
