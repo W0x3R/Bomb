@@ -21,11 +21,13 @@ let searchedItemSize
 let timerScaleDevil
 
 rulesTextModule.rulesBlock.addEventListener('click', function (e) {
-	new Audio('change-language-sound.mp3').play()
+
 	if (e.target.dataset.language === 'en') {
+		new Audio('change-language-sound.mp3').play()
 		rulesTextModule.showRussianLanguageIcon()
 	}
 	if (e.target.dataset.language === 'ru') {
+		new Audio('change-language-sound.mp3').play()
 		rulesTextModule.showEnglishLanguageIcon()
 	}
 })
