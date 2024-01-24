@@ -1,3 +1,4 @@
+import * as rulesTextModule from './rules.js';
 const container = document.querySelector('.container')
 const devil = document.querySelector('.devil')
 let startWidthOfDevil
@@ -9,68 +10,45 @@ const book = document.querySelector('.book')
 const bookStar = document.querySelector('.book__star')
 const bookEllipse = document.querySelector('.book__ellipse')
 const questionsBlock = document.querySelector('.questions')
-const searchedItem = document.querySelector('.pento')
+const searchedItem = document.querySelector('.searched-item')
 const pento = document.querySelectorAll('.questions__pento')
 const getSpeedOfSearchItem = setSpeedOfSearchItem()
 const mainThemeSound = new Audio("main-sound.mp3")
-const rules = document.querySelector('.rules')
-const rulesBlock = document.querySelector('.rules__inner')
-const rulesText = document.querySelector('.rules__inner-text')
-const englishLanguageIcon = document.querySelector('.rules__inner_en')
-const russianLanguageIcon = document.querySelector('.rules__inner_ru')
 let count = 0
 let timer = 0
 let timerCheckEndGame
 let searchedItemSize
 let timerScaleDevil
 
-let rulesTextObject = {
-	en: 'The world collapsed when the king of&nbsp;hell took over. Everyone who tried to&nbsp;stop him before you is&nbsp;dead. In&nbsp;order to&nbsp;end this once and for all, you need to&nbsp;click on&nbsp;the button above. After you click on&nbsp;it, the spell book will open and the summoning of&nbsp;the king of&nbsp;hell will begin. Remember that once you click, there is&nbsp;no&nbsp;going back. If&nbsp;you still dare to&nbsp;press, then you will need to&nbsp;catch 10&nbsp;pentagrams in&nbsp;order to&nbsp;put an&nbsp;end to&nbsp;this terrible creature once and for all. Be&nbsp;careful and persistent, the king of&nbsp;hell will try in&nbsp;every possible way to&nbsp;interfere with you, moving the pentagram to&nbsp;different parts of&nbsp;the screen.<br> Good luck.',
-
-	ru: 'Мир рухнул, когда его захватил король ада. Все, кто пытался остановить его до&nbsp;тебя, мертвы. Для того чтобы покончить с&nbsp;этим раз и&nbsp;навсегда, нужно нажать на&nbsp;кнопку сверху. После того, как ты&nbsp;нажмешь на&nbsp;неё, откроется книга заклинаний, и&nbsp;начнется призыв короля ада. Помни, что после нажатия пути назад уже не&nbsp;будет. Если всё-таки осмелишься нажать, то&nbsp;тебе нужно будет словить 10&nbsp;пентаграмм, чтобы раз и&nbsp;навсегда покончить с&nbsp;этим ужасным существом. Будь внимателен и&nbsp;настойчив, король ада будет всячески пытаться помешать тебе, перемещая пентаграмму в&nbsp;разные части экрана. <br>Удачи.'
-}
-
-function showRussianLanguageIcon() {
-	englishLanguageIcon.style.display = 'none'
-	russianLanguageIcon.style.display = 'block'
-	rulesText.innerHTML = rulesTextObject.ru
-	localStorage.setItem('language', 'ru')
-}
-
-function showEnglishLanguageIcon() {
-	russianLanguageIcon.style.display = 'none'
-	englishLanguageIcon.style.display = 'block'
-	rulesText.innerHTML = rulesTextObject.en
-	localStorage.setItem('language', 'en')
-}
-
-rulesBlock.addEventListener('click', function (e) {
+rulesTextModule.rulesBlock.addEventListener('click', function (e) {
 	new Audio('change-language-sound.mp3').play()
 	if (e.target.dataset.language === 'en') {
-		showRussianLanguageIcon()
+		rulesTextModule.showRussianLanguageIcon()
 	}
 	if (e.target.dataset.language === 'ru') {
-		showEnglishLanguageIcon()
+		rulesTextModule.showEnglishLanguageIcon()
 	}
 })
 
 function initGame() {
 	if (localStorage.getItem('language') === 'en') {
-		russianLanguageIcon.style.display = 'none'
-		englishLanguageIcon.style.display = 'block'
-		rulesText.innerHTML = rulesTextObject.en
+		rulesTextModule.russianLanguageIcon.style.display = 'none'
+		rulesTextModule.englishLanguageIcon.style.display = 'block'
+		rulesTextModule.rulesText.innerHTML = rulesTextModule.rulesTextObject.en
 	}
 	else if (localStorage.getItem('language') === 'ru') {
-		englishLanguageIcon.style.display = 'none'
-		russianLanguageIcon.style.display = 'block'
-		rulesText.innerHTML = rulesTextObject.ru
+		rulesTextModule.englishLanguageIcon.style.display = 'none'
+		rulesTextModule.russianLanguageIcon.style.display = 'block'
+		rulesTextModule.rulesText.innerHTML = rulesTextModule.rulesTextObject.ru
 	}
 
 	positioningBook()
+
 	window.addEventListener('resize', function () {
 		searchedItemSize = searchedItem.getBoundingClientRect().width
 		positioningBook()
 	})
+
 	startGameButton.addEventListener('click', loadGame)
 
 	newGameButton.addEventListener('click', function () {
@@ -120,8 +98,6 @@ function setSpeedOfSearchItem() {
 	}
 }
 
-console.log(getSpeedOfSearchItem);
-
 function delay(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -157,7 +133,7 @@ function startGame() {
 	book.classList.add('book_red')
 	bookStar.classList.add('book__star_red');
 	bookEllipse.classList.add('book__ellipse_red')
-	rules.remove()
+	rulesTextModule.rules.remove()
 	playStartGameSounds()
 }
 
@@ -242,7 +218,7 @@ function loadGame() {
 function checkEndOfGame() {
 	++timer
 	if (timer === 56) {
-		showResultDisplay('YOU DIED', 'result-display_loose', 'result-display__button_loose')
+		showResultDisplay('YOU DIED', 'result-display_defeat', 'result-display__button_defeat')
 		searchedItem.remove()
 		delay(8000).then(() => {
 			new Audio('losing-sound.mp3').play()

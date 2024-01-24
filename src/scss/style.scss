@@ -30,11 +30,11 @@ body {
 		color: #00ff04;
 	}
 
-	&_loose {
+	&_defeat {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		animation: display-loose 5s infinite;
+		animation: display-defeat 5s infinite;
 		z-index: 10;
 		color: #ff0000;
 	}
@@ -61,15 +61,15 @@ body {
 				changeColorWin 1s infinite;
 		}
 
-		&_loose {
+		&_defeat {
 			animation:
 				shake 1s infinite,
-				changeColorLoose 1s infinite;
+				changeColorDefeat 1s infinite;
 		}
 	}
 }
 
-.pento {
+.searched-item {
 	position: absolute;
 	display: none;
 	width: 34px;
@@ -169,7 +169,6 @@ body {
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 10000;
-	display: none;
 
 	&__inner {
 		width: 1000px;
