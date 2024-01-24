@@ -3,7 +3,7 @@
 @import '_fonts';
 
 body {
-	background-image: url('../../images/hell.jpg');
+	background-image: url('../../images/main-background.jpg');
 	background-size: cover;
 	overflow: hidden;
 }
@@ -170,6 +170,7 @@ body {
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 10000;
+	display: none;
 
 	&__inner {
 		width: 1000px;
