@@ -74,11 +74,10 @@ body {
 	display: none;
 	width: 33px;
 	height: 33px;
-	opacity: 0.2;
-	cursor: auto;
-	z-index: 100;
-	fill: rgb(255, 0, 0);
-	animation: changeColorPento 4s infinite;
+	opacity: 0.1;
+	cursor: pointer;
+	z-index: 1000000000;
+	fill: rgb(255, 255, 255);
 }
 
 .book {

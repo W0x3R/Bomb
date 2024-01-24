@@ -452,18 +452,3 @@
 		fill: rgb(0, 255, 30);
 	}
 }
-
-@keyframes changeColorPento {
-	0% {
-		fill: rgb(255, 255, 255);
-	}
-	33% {
-		fill: rgb(0, 255, 30);
-	}
-	66% {
-		fill: rgb(255, 0, 0);
-	}
-	100% {
-		fill: rgb(255, 255, 255);
-	}
-}
