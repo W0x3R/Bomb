@@ -45,6 +45,7 @@ function showEnglishLanguageIcon() {
 }
 
 rulesBlock.addEventListener('click', function (e) {
+	new Audio('change-language-sound.mp3').play()
 	if (e.target.dataset.language === 'en') {
 		showRussianLanguageIcon()
 	}
@@ -75,8 +76,6 @@ function initGame() {
 	newGameButton.addEventListener('click', function () {
 		location.reload()
 	})
-
-
 }
 
 function checkWidthIncreaseFactor() {

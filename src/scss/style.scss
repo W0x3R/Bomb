@@ -109,6 +109,7 @@ body {
 	display: none;
 	width: 110px;
 	z-index: 1;
+	user-select: none;
 
 	&_show {
 		display: block;
@@ -118,8 +119,8 @@ body {
 .play {
 	position: absolute;
 	top: 2%;
-	left: calc(50% - 45px);
-	width: 90px;
+	left: calc(50% - 40px);
+	width: 80px;
 	fill: rgb(255 255 255);
 	z-index: 100000;
 
@@ -164,7 +165,7 @@ body {
 .rules {
 	width: 100vw;
 	height: 100vh;
-	background-image: url('../../images/rules-background.jpg');
+	background-image: url('../../images/rules-background-big.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	position: absolute;
@@ -174,7 +175,7 @@ body {
 		width: 1000px;
 		height: 450px;
 		background-color: #ffffff96;
-		border-radius: 5%;
+		border-radius: 3%;
 		position: absolute;
 		left: calc(50% - 500px);
 		bottom: calc(50% - 225px);
