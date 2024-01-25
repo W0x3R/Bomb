@@ -6,6 +6,8 @@ body {
 	background-image: url('../images/main-background.jpg');
 	background-size: cover;
 	overflow: hidden;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
 }
 
 .container {
@@ -49,7 +51,7 @@ body {
 
 	&__button {
 		position: absolute;
-		bottom: 5%;
+		top: 5%;
 		width: 54px;
 		height: 46px;
 		z-index: 25;
@@ -129,7 +131,7 @@ body {
 	}
 }
 
-.questions {
+.found-items {
 	position: absolute;
 	bottom: 5%;
 	left: calc(50% - 440px);
@@ -146,6 +148,7 @@ body {
 	&__pento {
 		height: 60px;
 		cursor: auto;
+		fill: black;
 
 		&_found {
 			fill: #a00000;

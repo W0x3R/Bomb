@@ -9,9 +9,9 @@ const newGameButton = document.querySelector('.result-display__button')
 const book = document.querySelector('.book')
 const bookStar = document.querySelector('.book__star')
 const bookEllipse = document.querySelector('.book__ellipse')
-const questionsBlock = document.querySelector('.questions')
+const foundItemsBlock = document.querySelector('.found-items')
 const searchedItem = document.querySelector('.searched-item')
-const pento = document.querySelectorAll('.questions__pento')
+const pento = document.querySelectorAll('.found-items__pento')
 const getSpeedOfSearchItem = setSpeedOfSearchItem()
 const mainThemeSound = new Audio("main-sound.mp3")
 let count = 0
@@ -86,15 +86,15 @@ function checkWidthIncreaseFactor() {
 function setSpeedOfSearchItem() {
 	const width = getSizeOfDisplay('width');
 	if (width >= 1400) {
-		return 780
+		return 790
 	} else if (width < 1400 && width >= 1200) {
-		return 800
+		return 810
 	} else if (width < 1200 && width >= 1100) {
-		return 780
+		return 790
 	} else if (width < 1100 && width >= 1000) {
-		return 760
+		return 770
 	} else if (width < 1000 && width >= 850) {
-		return 750
+		return 760
 	} else if (width < 850) {
 		return 650
 	}
@@ -165,33 +165,32 @@ function showDevil() {
 	})
 }
 
-searchedItem.addEventListener('click', function (e) {
+searchedItem.addEventListener('click', function () {
 	if (count < 10) {
 
 		if (count === 4) {
-			questionsBlock.classList.add('questions__pento_shake')
+			foundItemsBlock.classList.add('found-items__pento_shake')
 		}
 
 		new Audio('found-sound.mp3').play()
-		pento[count].classList.add('questions__pento_found')
+		pento[count].classList.add('found-items__pento_found')
 		++count
 
 	} if (count === 10) {
-		showResultDisplay('YOU SURVIVED', 'result-display_win', 'result-display__button_win')
 		mainThemeSound.pause()
-		this.remove()
 		delay(1000).then(() => {
+			this.remove()
+			showResultDisplay('YOU SURVIVED', 'result-display_win', 'result-display__button_win')
 			new Audio('win-sound.mp3').play()
 		})
 		clearInterval(timerCheckEndGame)
 	}
 })
-
+console.log(getSpeedOfSearchItem);
 function scaleDevil() {
 	delay(9001).then(() => {
 		timerScaleDevil = setInterval(() => {
 			let scaleWidth = checkWidthIncreaseFactor()
-			console.log(scaleWidth);
 			startWidthOfDevil += scaleWidth
 			devil.style.width = startWidthOfDevil + 'px'
 			devil.style.left = getCenterOfDisplay('width') - startWidthOfDevil / 2 + 'px'
