@@ -9,9 +9,9 @@ const newGameButton = document.querySelector('.result-display__button')
 const book = document.querySelector('.book')
 const bookStar = document.querySelector('.book__star')
 const bookEllipse = document.querySelector('.book__ellipse')
-const questionsBlock = document.querySelector('.questions')
+const foundItemsBlock = document.querySelector('.found-items')
 const searchedItem = document.querySelector('.searched-item')
-const pento = document.querySelectorAll('.questions__pento')
+const pento = document.querySelectorAll('.found-items__pento')
 const getSpeedOfSearchItem = setSpeedOfSearchItem()
 const mainThemeSound = new Audio("main-sound.mp3")
 let count = 0
@@ -169,14 +169,14 @@ searchedItem.addEventListener('click', function () {
 	if (count < 10) {
 
 		if (count === 4) {
-			questionsBlock.classList.add('questions__pento_shake')
+			foundItemsBlock.classList.add('found-items__pento_shake')
 		}
 
 		new Audio('found-sound.mp3').play()
-		pento[count].classList.add('questions__pento_found')
+		pento[count].classList.add('found-items__pento_found')
 		++count
 
-	} if (count === 2) {
+	} if (count === 10) {
 		mainThemeSound.pause()
 		delay(1000).then(() => {
 			this.remove()
