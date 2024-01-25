@@ -86,15 +86,15 @@ function checkWidthIncreaseFactor() {
 function setSpeedOfSearchItem() {
 	const width = getSizeOfDisplay('width');
 	if (width >= 1400) {
-		return 780
+		return 790
 	} else if (width < 1400 && width >= 1200) {
-		return 800
+		return 810
 	} else if (width < 1200 && width >= 1100) {
-		return 780
+		return 790
 	} else if (width < 1100 && width >= 1000) {
-		return 760
+		return 770
 	} else if (width < 1000 && width >= 850) {
-		return 750
+		return 760
 	} else if (width < 850) {
 		return 650
 	}
