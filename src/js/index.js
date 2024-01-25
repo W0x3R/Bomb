@@ -165,7 +165,7 @@ function showDevil() {
 	})
 }
 
-searchedItem.addEventListener('click', function (e) {
+searchedItem.addEventListener('click', function () {
 	if (count < 10) {
 
 		if (count === 4) {
@@ -176,22 +176,21 @@ searchedItem.addEventListener('click', function (e) {
 		pento[count].classList.add('questions__pento_found')
 		++count
 
-	} if (count === 10) {
-		showResultDisplay('YOU SURVIVED', 'result-display_win', 'result-display__button_win')
+	} if (count === 2) {
 		mainThemeSound.pause()
-		this.remove()
 		delay(1000).then(() => {
+			this.remove()
+			showResultDisplay('YOU SURVIVED', 'result-display_win', 'result-display__button_win')
 			new Audio('win-sound.mp3').play()
 		})
 		clearInterval(timerCheckEndGame)
 	}
 })
-
+console.log(getSpeedOfSearchItem);
 function scaleDevil() {
 	delay(9001).then(() => {
 		timerScaleDevil = setInterval(() => {
 			let scaleWidth = checkWidthIncreaseFactor()
-			console.log(scaleWidth);
 			startWidthOfDevil += scaleWidth
 			devil.style.width = startWidthOfDevil + 'px'
 			devil.style.left = getCenterOfDisplay('width') - startWidthOfDevil / 2 + 'px'
