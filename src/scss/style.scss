@@ -83,8 +83,8 @@ body {
 }
 
 .book {
-	width: clamp(220px, 35vw, 300px);
-	height: clamp(220px, 35vw, 300px);
+	width: clamp(235px, 35vw, 300px);
+	height: clamp(235px, 35vw, 300px);
 	position: absolute;
 	cursor: auto;
 
@@ -168,7 +168,6 @@ body {
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 10000;
-	display: none;
 
 	&__inner {
 		width: 1000px;
@@ -180,15 +179,15 @@ body {
 		bottom: calc(50% - 225px);
 		display: flex;
 		justify-content: center;
-		align-items: flex-end;
+		align-items: flex-start;
 		padding: 10px;
 
 		&_en {
 			width: 40px;
 			height: 40px;
 			position: absolute;
-			top: 10px;
-			right: 10px;
+			bottom: 6px;
+			right: 6px;
 		}
 
 		&_ru {
@@ -196,13 +195,13 @@ body {
 			width: 40px;
 			height: 40px;
 			position: absolute;
-			top: 10px;
-			right: 10px;
+			bottom: 6px;
+			right: 6px;
 		}
 
 		&-text {
 			font-family: 'Caveat', serif;
-			font-size: 34px;
+			font-size: 35px;
 			text-align: center;
 			letter-spacing: 1.2px;
 			user-select: none;
