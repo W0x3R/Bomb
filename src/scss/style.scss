@@ -137,7 +137,7 @@ body {
 	left: calc(50% - 440px);
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-evenly;
 	width: 880px;
 	height: 72px;
 	padding: 5px;
@@ -156,10 +156,6 @@ body {
 
 		&_shake {
 			animation: questions-shake 1s infinite;
-		}
-
-		&:not(:last-child) {
-			margin-right: 10px;
 		}
 	}
 }
