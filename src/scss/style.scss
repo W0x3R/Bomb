@@ -172,6 +172,7 @@ body {
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 10000;
+	display: none;
 
 	&__inner {
 		width: 1000px;
