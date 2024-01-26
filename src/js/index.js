@@ -12,8 +12,9 @@ const bookEllipse = document.querySelector('.book__ellipse')
 const foundItemsBlock = document.querySelector('.found-items')
 const searchedItem = document.querySelector('.searched-item')
 const pento = document.querySelectorAll('.found-items__pento')
+const mainTheme = document.querySelector('.main-theme')
+
 const getSpeedOfSearchItem = setSpeedOfSearchItem()
-const mainThemeSound = new Audio("main-sound.mp3")
 let count = 0
 let timer = 0
 let timerCheckEndGame
@@ -130,6 +131,7 @@ function playStartGameSounds() {
 	new Audio("shake-book.mp3").play()
 }
 
+
 function startGame() {
 	startGameButton.classList.add('play_active');
 	book.classList.add('book_red')
@@ -156,8 +158,7 @@ function showDevil() {
 		startWidthOfDevil = getSizeOfDevil('width')
 		devil.style.left = getCenterOfDisplay('width') - getSizeOfDevil('width') / 2 + 'px'
 		devil.style.bottom = getCenterOfDisplay('height') - getSizeOfDevil('height') / 2 + 'px'
-		mainThemeSound.play()
-
+		mainTheme.play()
 		setInterval(() => {
 			searchedItem.style.left = generateSearchedItemNum(searchedItemSize, 'width') + 'px'
 			searchedItem.style.bottom = generateSearchedItemNum(searchedItemSize, 'height') + 'px'
@@ -177,7 +178,7 @@ searchedItem.addEventListener('click', function () {
 		++count
 
 	} if (count === 10) {
-		mainThemeSound.pause()
+		mainTheme.pause()
 		this.remove()
 		delay(1000).then(() => {
 			showResultDisplay('YOU SURVIVED', 'result-display_win', 'result-display__button_win')
