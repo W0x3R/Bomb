@@ -178,8 +178,8 @@ searchedItem.addEventListener('click', function () {
 
 	} if (count === 10) {
 		mainThemeSound.pause()
+		this.remove()
 		delay(1000).then(() => {
-			this.remove()
 			showResultDisplay('YOU SURVIVED', 'result-display_win', 'result-display__button_win')
 			new Audio('win-sound.mp3').play()
 		})
