@@ -148,8 +148,8 @@ function showDevil() {
 	delay(8000).then(() => {
 		searchedItem.style.display = 'inline-block';
 		searchedItemSize = searchedItem.getBoundingClientRect().width
-		searchedItem.style.left = generateSearchedItemNum(searchedItemSize, 'width')
-		searchedItem.style.bottom = generateSearchedItemNum(searchedItemSize, 'height')
+		searchedItem.style.left = generateSearchedItemNum(searchedItemSize, 'width') + 'px'
+		searchedItem.style.bottom = generateSearchedItemNum(searchedItemSize, 'height') + 'px'
 		book.classList.remove('book_red')
 		book.classList.add('book_hide')
 		devil.classList.add('devil_show')
@@ -159,8 +159,8 @@ function showDevil() {
 		mainThemeSound.play()
 
 		setInterval(() => {
-			searchedItem.style.left = generateSearchedItemNum(searchedItemSize, 'width')
-			searchedItem.style.bottom = generateSearchedItemNum(searchedItemSize, 'height')
+			searchedItem.style.left = generateSearchedItemNum(searchedItemSize, 'width') + 'px'
+			searchedItem.style.bottom = generateSearchedItemNum(searchedItemSize, 'height') + 'px'
 		}, getSpeedOfSearchItem)
 	})
 }
@@ -178,15 +178,14 @@ searchedItem.addEventListener('click', function () {
 
 	} if (count === 10) {
 		mainThemeSound.pause()
+		this.remove()
 		delay(1000).then(() => {
-			this.remove()
 			showResultDisplay('YOU SURVIVED', 'result-display_win', 'result-display__button_win')
 			new Audio('win-sound.mp3').play()
 		})
 		clearInterval(timerCheckEndGame)
 	}
 })
-console.log(getSpeedOfSearchItem);
 function scaleDevil() {
 	delay(9001).then(() => {
 		timerScaleDevil = setInterval(() => {
