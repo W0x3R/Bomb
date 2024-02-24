@@ -72,15 +72,15 @@ function checkWidthIncreaseFactor() {
 	} else if (height < 850 && height >= 780) {
 		return 2.5
 	} else if (height < 780 && height >= 702) {
-		return 2.2
+		return 2.25
 	} else if (height < 702 && height >= 590) {
-		return 1.9
+		return 1.95
 	} else if (height < 590 && height >= 525) {
-		return 1.6
+		return 1.65
 	} else if (height < 525 && height >= 450) {
-		return 1.3
+		return 1.35
 	} else if (height < 450) {
-		return 0.9
+		return 1
 	}
 }
 
