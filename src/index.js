@@ -1,17 +1,16 @@
 import './style.scss'
 import { sounds } from './js/sounds.js';
-console.log(sounds)
+import { startGameButton } from './js/addStartingStyles.js';
+import { addStartingStyles } from './js/addStartingStyles.js';
 import * as rulesTextModule from './js/rules.js';
-const container = document.querySelector('.container')
 const devil = document.querySelector('.devil')
 let startWidthOfDevil
-const startGameButton = document.querySelector('.play')
+
 const resultDisplay = document.querySelector('.result-display')
 const resultText = document.querySelector('.result-display__text')
 const newGameButton = document.querySelector('.result-display__button')
-const book = document.querySelector('.book')
-const bookStar = document.querySelector('.book__star')
-const bookEllipse = document.querySelector('.book__ellipse')
+export const book = document.querySelector('.book')
+
 const foundItemsBlock = document.querySelector('.found-items')
 const searchedItem = document.querySelector('.searched-item')
 const pento = document.querySelectorAll('.found-items__pento')
@@ -128,19 +127,9 @@ function positioningBook() {
 	book.style.bottom = getCenterOfDisplay('height') - getSizeOfBook('height') / 2 + 'px'
 }
 
-function playStartGameSounds() {
+export function playStartGameSounds() {
 	sounds.callDevil.play()
 	sounds.shakeBook.play()
-}
-
-
-function startGame() {
-	startGameButton.classList.add('play_active');
-	book.classList.add('book_shake')
-	bookStar.classList.add('book__star_active');
-	bookEllipse.classList.add('book__ellipse_active')
-	rulesTextModule.rules.remove()
-	playStartGameSounds()
 }
 
 function generateSearchedItemNum(min, value) {
@@ -209,7 +198,7 @@ function showResultDisplay(value, classList, newGameStyle) {
 }
 
 function loadGame() {
-	startGame()
+	addStartingStyles()
 	showDevil()
 	scaleDevil()
 

@@ -1,4 +1,4 @@
-const rules = document.querySelector('.rules')
+export const rules = document.querySelector('.rules')
 const englishLanguageIcon = document.querySelector('.rules__inner_en')
 const russianLanguageIcon = document.querySelector('.rules__inner_ru')
 const rulesBlock = document.querySelector('.rules__inner')
@@ -24,4 +24,4 @@ function showEnglishLanguageIcon() {
 	localStorage.setItem('language', 'en')
 }
 
-export { rules, englishLanguageIcon, russianLanguageIcon, rulesBlock, rulesText, rulesTextObject, showRussianLanguageIcon, showEnglishLanguageIcon } 
+export { englishLanguageIcon, russianLanguageIcon, rulesBlock, rulesText, rulesTextObject, showRussianLanguageIcon, showEnglishLanguageIcon } 
