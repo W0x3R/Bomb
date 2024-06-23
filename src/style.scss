@@ -88,7 +88,7 @@ body {
 	position: absolute;
 	cursor: auto;
 
-	&_red {
+	&_shake {
 		animation: shake 1s infinite;
 	}
 
@@ -96,11 +96,11 @@ body {
 		display: none;
 	}
 
-	&__star_red {
+	&__star_active {
 		animation: changeColor 1s infinite;
 	}
 
-	&__ellipse_red {
+	&__ellipse_active {
 		animation: changeColor 1s infinite;
 	}
 }

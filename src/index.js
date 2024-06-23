@@ -136,9 +136,9 @@ function playStartGameSounds() {
 
 function startGame() {
 	startGameButton.classList.add('play_active');
-	book.classList.add('book_red')
-	bookStar.classList.add('book__star_red');
-	bookEllipse.classList.add('book__ellipse_red')
+	book.classList.add('book_shake')
+	bookStar.classList.add('book__star_active');
+	bookEllipse.classList.add('book__ellipse_active')
 	rulesTextModule.rules.remove()
 	playStartGameSounds()
 }
@@ -154,7 +154,7 @@ function showDevil() {
 		searchedItemSize = searchedItem.getBoundingClientRect().width
 		searchedItem.style.left = generateSearchedItemNum(searchedItemSize, 'width') + 'px'
 		searchedItem.style.bottom = generateSearchedItemNum(searchedItemSize, 'height') + 'px'
-		book.classList.remove('book_red')
+		book.classList.remove('book_shake')
 		book.classList.add('book_hide')
 		devil.classList.add('devil_show')
 		startWidthOfDevil = getSizeOfDevil('width')
