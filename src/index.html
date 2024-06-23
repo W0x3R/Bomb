@@ -2,34 +2,18 @@
 <html lang="en">
 
 <head>
-	<!-- Set the document character encoding to UTF-8 -->
 	<meta charset="UTF-8">
-
-	<!-- Define the viewport settings for responsive design -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<!-- Specify compatibility with Internet Explorer -->
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-	<!-- Set the title of the page -->
 	<title>The devil will wind you</title>
-
-	<!-- Add icons for various devices -->
-	<link rel="apple-touch-icon" sizes="180x180" href="./images/fav-icons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="./images/fav-icons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="./images/fav-icons/favicon-16x16.png">
-	<link rel="manifest" href="./images/fav-icons/site.webmanifest">
-	<link rel="shortcut icon" href="./images/fav-icons/favicon.ico">
-
-	<!-- Microsoft Tile settings -->
+	<link rel="apple-touch-icon" sizes="180x180" href="./assets/images/fav-icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/fav-icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./assets/images/fav-icons/favicon-16x16.png">
+	<link rel="manifest" href="./site.webmanifest">
+	<link rel="shortcut icon" href="./assets/images/fav-icons/favicon.ico">
 	<meta name="msapplication-TileColor" content="#000000">
-	<meta name="msapplication-config" content="./images/fav-icons/browserconfig.xml">
-
-	<!-- Set the browser theme color -->
+	<meta name="msapplication-config" content="./browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
-
-	<!-- Link the stylesheet for page styling -->
-	<link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -37,7 +21,7 @@
 		<p class=" result-display__text">
 		</p>
 		<svg class="result-display__button" viewBox="0 0 511.81 511.95">
-			<use href="images/svg/restart-game.svg#restart-game"></use>
+			<use href="./images/svg/restart-game.svg#restart-game"></use>
 		</svg>
 	</div>
 	<div class="rules">
@@ -80,9 +64,17 @@
 		</div>
 	</div>
 	<div class="container">
-		<audio class="main-theme" src="main-sound.mp3"></audio>
+		<div class="auido">
+			<audio class="auido__main" src="./sounds/mainSound.mp3"></audio>
+			<audio class="auido__call-devil" src="./sounds/callDevil.mp3"></audio>
+			<audio class="audio__change-language" src="./sounds/changeLanguageSound.mp3"></audio>
+			<audio class="audio__searched-item" src="./sounds/foundSearchedItem.mp3"></audio>
+			<audio class="audio__shake-book" src="./sounds/shakeBook.mp3"></audio>
+			<audio class="audio__win" src="./sounds/winSound.mp3"></audio>
+			<audio class="audio__defeat" src="./sounds/defeatSound.mp3"></audio>
+		</div>
 		<svg class="searched-item" viewBox="0 0 512 512">
-			<use href="images/svg/found-item.svg#pentagram"></use>
+			<use href="./images/svg/found-item.svg#pentagram"></use>
 		</svg>
 		<svg class="book" viewBox="0 0 512 512">
 			<path
@@ -181,7 +173,6 @@
 			</svg>
 		</div>
 	</div>
-	<script src="./js/index.js"></script>
 </body>
 
 </html>

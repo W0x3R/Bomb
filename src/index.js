@@ -1,4 +1,7 @@
-import * as rulesTextModule from './rules.js';
+import './style.scss'
+import { sounds } from './js/sounds.js';
+console.log(sounds)
+import * as rulesTextModule from './js/rules.js';
 const container = document.querySelector('.container')
 const devil = document.querySelector('.devil')
 let startWidthOfDevil
@@ -12,7 +15,6 @@ const bookEllipse = document.querySelector('.book__ellipse')
 const foundItemsBlock = document.querySelector('.found-items')
 const searchedItem = document.querySelector('.searched-item')
 const pento = document.querySelectorAll('.found-items__pento')
-const mainTheme = document.querySelector('.main-theme')
 
 const getSpeedOfSearchItem = setSpeedOfSearchItem()
 let count = 0
@@ -24,11 +26,11 @@ let timerScaleDevil
 rulesTextModule.rulesBlock.addEventListener('click', function (e) {
 
 	if (e.target.dataset.language === 'en') {
-		new Audio('change-language-sound.mp3').play()
+		sounds.changeLanguage.play()
 		rulesTextModule.showRussianLanguageIcon()
 	}
 	if (e.target.dataset.language === 'ru') {
-		new Audio('change-language-sound.mp3').play()
+		sounds.changeLanguage.play()
 		rulesTextModule.showEnglishLanguageIcon()
 	}
 })
@@ -127,8 +129,8 @@ function positioningBook() {
 }
 
 function playStartGameSounds() {
-	new Audio("call-devil.mp3").play()
-	new Audio("shake-book.mp3").play()
+	sounds.callDevil.play()
+	sounds.shakeBook.play()
 }
 
 
@@ -158,7 +160,7 @@ function showDevil() {
 		startWidthOfDevil = getSizeOfDevil('width')
 		devil.style.left = getCenterOfDisplay('width') - getSizeOfDevil('width') / 2 + 'px'
 		devil.style.bottom = getCenterOfDisplay('height') - getSizeOfDevil('height') / 2 + 'px'
-		mainTheme.play()
+		sounds.mainSound.play()
 		setInterval(() => {
 			searchedItem.style.left = generateSearchedItemNum(searchedItemSize, 'width') + 'px'
 			searchedItem.style.bottom = generateSearchedItemNum(searchedItemSize, 'height') + 'px'
@@ -173,16 +175,16 @@ searchedItem.addEventListener('click', function () {
 			foundItemsBlock.classList.add('found-items__pento_shake')
 		}
 
-		new Audio('found-sound.mp3').play()
+		sounds.searchedItem.play()
 		pento[count].classList.add('found-items__pento_found')
 		++count
 
 	} if (count === 10) {
-		mainTheme.pause()
+		sounds.mainSound.pause()
 		this.remove()
 		delay(1000).then(() => {
 			showResultDisplay('YOU SURVIVED', 'result-display_win', 'result-display__button_win')
-			new Audio('win-sound.mp3').play()
+			sounds.win.play()
 		})
 		clearInterval(timerCheckEndGame)
 	}
@@ -204,7 +206,6 @@ function showResultDisplay(value, classList, newGameStyle) {
 	resultText.textContent = value
 	clearInterval(timerScaleDevil)
 	newGameButton.classList.add(newGameStyle)
-	container.remove()
 }
 
 function loadGame() {
@@ -222,10 +223,10 @@ function checkEndOfGame() {
 		showResultDisplay('YOU DIED', 'result-display_defeat', 'result-display__button_defeat')
 		searchedItem.remove()
 		delay(8000).then(() => {
-			new Audio('losing-sound.mp3').play()
+			sounds.defeat.play()
 		})
 		delay(26000).then(() => {
-			new Audio('losing-sound.mp3').play()
+			sounds.defeat.play()
 		})
 		clearInterval(timerCheckEndGame);
 	}
