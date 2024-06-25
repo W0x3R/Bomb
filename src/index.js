@@ -1,10 +1,11 @@
 import './style.scss'
 import { startGameButton, addStartingStyles } from './js/addStartingStyles.js';
 import { controlGameSounds } from './js/controlGameSounds.js';
-import { searchedItem, devil, showDevil } from './js/showDevil.js';
+import { searchedItem, showDevil } from './js/showDevil.js';
 import * as rulesTextModule from './js/rules.js';
 import { setSearchedItemSize } from './js/setSearchedItemSize.js';
 import { setStartWidthOfDevil, startWidthOfDevil } from './js/setStartWidthOfDevil.js';
+import { devil } from './js/centeringStartDevil.js';
 
 const resultDisplay = document.querySelector('.result-display')
 const resultText = document.querySelector('.result-display__text')
