@@ -1,5 +1,4 @@
 import { getCenterOfDisplay, getSizeOfDevil } from ".."
-import { devil } from "./showDevil"
 
 export const devil = document.querySelector('.devil')
 

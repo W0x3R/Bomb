@@ -1,5 +1,6 @@
 import { book } from "..";
-import { devil, searchedItem } from "./showDevil";
+import { devil } from "./centeringStartDevil";
+import { searchedItem } from "./showDevil";
 
 export const addShowDevilStyles = () => {
 	searchedItem.style.display = 'inline-block';
