@@ -1,10 +1,10 @@
 import './style.scss'
-import { startGameButton } from './js/addStartingStyles.js';
-import { addStartingStyles } from './js/addStartingStyles.js';
+import { startGameButton, addStartingStyles } from './js/addStartingStyles.js';
 import { controlGameSounds } from './js/controlGameSounds.js';
+import { searchedItem, devil, showDevil } from './js/showDevil.js';
 import * as rulesTextModule from './js/rules.js';
-const devil = document.querySelector('.devil')
-let startWidthOfDevil
+import { setSearchedItemSize } from './js/setSearchedItemSize.js';
+import { setStartWidthOfDevil, startWidthOfDevil } from './js/setStartWidthOfDevil.js';
 
 const resultDisplay = document.querySelector('.result-display')
 const resultText = document.querySelector('.result-display__text')
@@ -12,14 +12,14 @@ const newGameButton = document.querySelector('.result-display__button')
 export const book = document.querySelector('.book')
 
 const foundItemsBlock = document.querySelector('.found-items')
-const searchedItem = document.querySelector('.searched-item')
+
 const pento = document.querySelectorAll('.found-items__pento')
 
-const getSpeedOfSearchItem = setSpeedOfSearchItem()
+export const getSpeedOfSearchItem = setSpeedOfSearchItem()
 let count = 0
 let timer = 0
 let timerCheckEndGame
-let searchedItemSize
+
 let timerScaleDevil
 
 rulesTextModule.rulesBlock.addEventListener('click', function (e) {
@@ -29,7 +29,7 @@ rulesTextModule.rulesBlock.addEventListener('click', function (e) {
 	if (e.target.dataset.language === 'ru') {
 		rulesTextModule.showEnglishLanguageIcon()
 	}
-	controlGameSounds('changeLanguage','play')
+	controlGameSounds('changeLanguage', 'play')
 })
 
 function initGame() {
@@ -47,7 +47,7 @@ function initGame() {
 	positioningBook()
 
 	window.addEventListener('resize', function () {
-		searchedItemSize = searchedItem.getBoundingClientRect().width
+		setSearchedItemSize()
 		positioningBook()
 	})
 
@@ -100,7 +100,7 @@ function setSpeedOfSearchItem() {
 	}
 }
 
-function delay(ms) {
+export function delay(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
 }
 
@@ -108,11 +108,11 @@ function getSizeOfDisplay(value) {
 	return (document.documentElement.getBoundingClientRect()[value]);
 }
 
-function getCenterOfDisplay(value) {
+export function getCenterOfDisplay(value) {
 	return getSizeOfDisplay(value) / 2
 }
 
-function getSizeOfDevil(value) {
+export function getSizeOfDevil(value) {
 	return devil.getBoundingClientRect()[value];
 }
 
@@ -125,29 +125,9 @@ function positioningBook() {
 	book.style.bottom = getCenterOfDisplay('height') - getSizeOfBook('height') / 2 + 'px'
 }
 
-function generateSearchedItemNum(min, value) {
+export function generateSearchedItemNum(min, value) {
 	let max = Math.floor(getSizeOfDisplay([value]) - min);
 	return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-function showDevil() {
-	delay(8000).then(() => {
-		searchedItem.style.display = 'inline-block';
-		searchedItemSize = searchedItem.getBoundingClientRect().width
-		searchedItem.style.left = generateSearchedItemNum(searchedItemSize, 'width') + 'px'
-		searchedItem.style.bottom = generateSearchedItemNum(searchedItemSize, 'height') + 'px'
-		book.classList.remove('book_shake')
-		book.classList.add('book_hide')
-		devil.classList.add('devil_show')
-		startWidthOfDevil = getSizeOfDevil('width')
-		devil.style.left = getCenterOfDisplay('width') - getSizeOfDevil('width') / 2 + 'px'
-		devil.style.bottom = getCenterOfDisplay('height') - getSizeOfDevil('height') / 2 + 'px'
-		controlGameSounds('mainSound','play')
-		setInterval(() => {
-			searchedItem.style.left = generateSearchedItemNum(searchedItemSize, 'width') + 'px'
-			searchedItem.style.bottom = generateSearchedItemNum(searchedItemSize, 'height') + 'px'
-		}, getSpeedOfSearchItem)
-	})
 }
 
 searchedItem.addEventListener('click', function () {
@@ -156,16 +136,16 @@ searchedItem.addEventListener('click', function () {
 		if (count === 4) {
 			foundItemsBlock.classList.add('found-items__pento_shake')
 		}
-		controlGameSounds('searchedItem','play')
+		controlGameSounds('searchedItem', 'play')
 		pento[count].classList.add('found-items__pento_found')
 		++count
 
 	} if (count === 10) {
-		controlGameSounds('mainSound','pause')
+		controlGameSounds('mainSound', 'pause')
 		this.remove()
 		delay(1000).then(() => {
 			showResultDisplay('YOU SURVIVED', 'result-display_win', 'result-display__button_win')
-			controlGameSounds('win','play')
+			controlGameSounds('win', 'play')
 		})
 		clearInterval(timerCheckEndGame)
 	}
@@ -174,7 +154,7 @@ function scaleDevil() {
 	delay(9001).then(() => {
 		timerScaleDevil = setInterval(() => {
 			let scaleWidth = checkWidthIncreaseFactor()
-			startWidthOfDevil += scaleWidth
+			setStartWidthOfDevil(startWidthOfDevil + scaleWidth)
 			devil.style.width = startWidthOfDevil + 'px'
 			devil.style.left = getCenterOfDisplay('width') - startWidthOfDevil / 2 + 'px'
 			devil.style.bottom = getCenterOfDisplay('height') - getSizeOfDevil('height') / 2 + 'px'
@@ -204,10 +184,10 @@ function checkEndOfGame() {
 		showResultDisplay('YOU DIED', 'result-display_defeat', 'result-display__button_defeat')
 		searchedItem.remove()
 		delay(8000).then(() => {
-			controlGameSounds('defeat','play')
+			controlGameSounds('defeat', 'play')
 		})
 		delay(26000).then(() => {
-			controlGameSounds('defeat','play')
+			controlGameSounds('defeatSecond', 'play')
 		})
 		clearInterval(timerCheckEndGame);
 	}
