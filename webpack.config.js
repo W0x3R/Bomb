@@ -8,14 +8,19 @@ if (process.env.NODE_ENV === 'production') {
 	mode = 'production'
 }
 module.exports = {
+	entry: './src/index.js',
 	mode: mode,
 	output: {
 		filename: '[name].[contenthash].js',
 		assetModuleFilename: "assets/[name][ext][query]",
 		clean: true,
+		publicPath: '/'
 	},
 	devServer: {
-		open: true
+		static: './dist',
+		open: true,
+		hot: true,
+		watchFiles: ['src/**/*'],
 	},
 	performance: {
 		hints: false, // отключить предупреждения о производительности
