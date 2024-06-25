@@ -1,4 +1,5 @@
-import { book, playStartGameSounds } from "../index.js";
+import { book } from "../index.js";
+import { playStartGameSounds } from "./playStartGameSounds.js";
 import { rules } from "./rules.js";
 
 export const startGameButton = document.querySelector('.play')
