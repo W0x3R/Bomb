@@ -9,9 +9,9 @@ export const searchedItem = document.querySelector('.searched-item')
 
 export function showDevil() {
 	delay(8000).then(() => {
-		const widthOfDevil = getSizeOfDevil('width')
 		addShowDevilStyles()
 		setSearchedItemSize()
+		const widthOfDevil = getSizeOfDevil('width')
 		setStartWidthOfDevil(widthOfDevil)
 		centeringStartDevil()
 		controlGameSounds('mainSound', 'play')
