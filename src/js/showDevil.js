@@ -1,6 +1,6 @@
 import { delay, getSizeOfDevil, generateSearchedItemNum, getSpeedOfSearchItem } from "..";
 import { addShowDevilStyles } from "./addShowDevilStyles";
-import { centeringStartDevil } from "./centeringStartDevil";
+import { centeringItems, devil } from "./centeringItems";
 import { controlGameSounds } from "./controlGameSounds";
 import { searchedItemSize, setSearchedItemSize } from "./setSearchedItemSize";
 import { setStartWidthOfDevil } from "./setStartWidthOfDevil";
@@ -13,7 +13,7 @@ export function showDevil() {
 		setSearchedItemSize()
 		const widthOfDevil = getSizeOfDevil('width')
 		setStartWidthOfDevil(widthOfDevil)
-		centeringStartDevil()
+		centeringItems(devil, getSizeOfDevil)
 		controlGameSounds('mainSound', 'play')
 		setInterval(() => {
 			searchedItem.style.left = generateSearchedItemNum(searchedItemSize, 'width') + 'px'
