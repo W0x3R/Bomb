@@ -106,17 +106,12 @@ export function delay(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function getSizeOfDisplay(value) {
+export function getSizeOfDisplay(value) {
 	return (document.documentElement.getBoundingClientRect()[value]);
 }
 
 export function getCenterOfDisplay(value) {
 	return getSizeOfDisplay(value) / 2
-}
-
-export function generateSearchedItemNum(min, value) {
-	let max = Math.floor(getSizeOfDisplay([value]) - min);
-	return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 searchedItem.addEventListener('click', function () {
