@@ -6,6 +6,7 @@ import * as rulesTextModule from './js/rules.js';
 import { setSearchedItemSize } from './js/setSearchedItemSize.js';
 import { setStartWidthOfDevil, startWidthOfDevil } from './js/setStartWidthOfDevil.js';
 import { centeringItems, devil } from './js/centeringItems.js';
+import { getSizeOfItem } from './js/getSizeOfItem.js';
 
 const resultDisplay = document.querySelector('.result-display')
 const resultText = document.querySelector('.result-display__text')
@@ -45,11 +46,11 @@ function initGame() {
 		rulesTextModule.rulesText.innerHTML = rulesTextModule.rulesTextObject.ru
 	}
 
-	centeringItems(book, getSizeOfBook)
+	centeringItems(book)
 
 	window.addEventListener('resize', function () {
 		setSearchedItemSize()
-		centeringItems(book, getSizeOfBook)
+		centeringItems(book)
 	})
 
 	startGameButton.addEventListener('click', loadGame)
@@ -113,14 +114,6 @@ export function getCenterOfDisplay(value) {
 	return getSizeOfDisplay(value) / 2
 }
 
-export function getSizeOfDevil(value) {
-	return devil.getBoundingClientRect()[value];
-}
-
-function getSizeOfBook(value) {
-	return book.getBoundingClientRect()[value];
-}
-
 export function generateSearchedItemNum(min, value) {
 	let max = Math.floor(getSizeOfDisplay([value]) - min);
 	return Math.floor(Math.random() * (max - min + 1) + min);
@@ -153,7 +146,7 @@ function scaleDevil() {
 			setStartWidthOfDevil(startWidthOfDevil + scaleWidth)
 			devil.style.width = startWidthOfDevil + 'px'
 			devil.style.left = getCenterOfDisplay('width') - startWidthOfDevil / 2 + 'px'
-			devil.style.bottom = getCenterOfDisplay('height') - getSizeOfDevil('height') / 2 + 'px'
+			devil.style.bottom = getCenterOfDisplay('height') - getSizeOfItem(devil, 'height') / 2 + 'px'
 		}, 200);
 	})
 }
