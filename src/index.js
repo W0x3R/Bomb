@@ -61,8 +61,9 @@ function initGame() {
 }
 
 function checkWidthIncreaseFactor() {
-	const height = getSizeOfDisplay('height');
-	const width = getSizeOfDisplay('width');
+
+	const height = getSizeOfItem(document.documentElement, 'height')
+	const width = getSizeOfItem(document.documentElement, 'width')
 
 	if (width <= 560) {
 		return 1.3
@@ -86,7 +87,7 @@ function checkWidthIncreaseFactor() {
 }
 
 function setSpeedOfSearchItem() {
-	const width = getSizeOfDisplay('width');
+	const width = getSizeOfItem(document.documentElement, 'width')
 	if (width >= 1400) {
 		return 790
 	} else if (width < 1400 && width >= 1200) {
@@ -106,12 +107,8 @@ export function delay(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export function getSizeOfDisplay(value) {
-	return (document.documentElement.getBoundingClientRect()[value]);
-}
-
 export function getCenterOfDisplay(value) {
-	return getSizeOfDisplay(value) / 2
+	return getSizeOfItem(document.documentElement, value) / 2
 }
 
 searchedItem.addEventListener('click', function () {
