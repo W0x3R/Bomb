@@ -17,11 +17,9 @@ const foundItemsBlock = document.querySelector('.found-items')
 
 const pento = document.querySelectorAll('.found-items__pento')
 
-export const getSpeedOfSearchItem = setSpeedOfSearchItem()
 let count = 0
 let timer = 0
 let timerCheckEndGame
-
 let timerScaleDevil
 
 rulesTextModule.rulesBlock.addEventListener('click', function (e) {
@@ -83,23 +81,6 @@ function checkWidthIncreaseFactor() {
 		return 1.35
 	} else if (height < 450) {
 		return 1
-	}
-}
-
-function setSpeedOfSearchItem() {
-	const width = getSizeOfItem(document.documentElement, 'width')
-	if (width >= 1400) {
-		return 790
-	} else if (width < 1400 && width >= 1200) {
-		return 810
-	} else if (width < 1200 && width >= 1100) {
-		return 790
-	} else if (width < 1100 && width >= 1000) {
-		return 770
-	} else if (width < 1000 && width >= 850) {
-		return 760
-	} else if (width < 850) {
-		return 650
 	}
 }
 
