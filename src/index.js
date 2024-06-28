@@ -8,6 +8,8 @@ import { centeringItems, devil } from './js/centeringItems.js';
 import { getSizeOfItem } from './js/getSizeOfItem.js';
 import { controlGameSounds } from './js/sounds/controlGameSounds.js';
 import { getScaleCoefficientOfDevil } from './js/getScaleCoefficientOfDevil.js';
+import { clickEvents } from './js/eventHandlers/clickEvents.js';
+import { callEvents } from './js/eventHandlers/callEvents.js';
 
 const resultDisplay = document.querySelector('.result-display')
 const resultText = document.querySelector('.result-display__text')
@@ -23,15 +25,8 @@ let timer = 0
 let timerCheckEndGame
 let timerScaleDevil
 
-rulesTextModule.rulesBlock.addEventListener('click', function (e) {
-	if (e.target.dataset.language === 'en') {
-		rulesTextModule.showRussianLanguageIcon()
-	}
-	if (e.target.dataset.language === 'ru') {
-		rulesTextModule.showEnglishLanguageIcon()
-	}
-	controlGameSounds('changeLanguage', 'play')
-})
+window.addEventListener('click', (e) => callEvents(e, clickEvents))
+
 
 function initGame() {
 	if (localStorage.getItem('language') === 'en') {
@@ -50,12 +45,6 @@ function initGame() {
 	window.addEventListener('resize', function () {
 		setSearchedItemSize()
 		centeringItems(book)
-	})
-
-	startGameButton.addEventListener('click', loadGame)
-
-	newGameButton.addEventListener('click', function () {
-		location.reload()
 	})
 }
 
@@ -106,13 +95,13 @@ function showResultDisplay(value, classList, newGameStyle) {
 	newGameButton.classList.add(newGameStyle)
 }
 
-function loadGame() {
+export function loadGame() {
 	addStartingStyles()
 	showDevil()
 	scaleDevil()
 
 	timerCheckEndGame = setInterval(checkEndOfGame, 1000)
-	startGameButton.removeEventListener('click', loadGame);
+	startGameButton.setAttribute('disabled', true)
 }
 
 function checkEndOfGame() {
