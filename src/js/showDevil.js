@@ -1,11 +1,11 @@
 import { delay } from "..";
 import { addShowDevilStyles } from "./addShowDevilStyles";
 import { centeringItems, devil } from "./centeringItems";
-import { controlGameSounds } from "./controlGameSounds";
 import { getSizeOfItem } from "./getSizeOfItem";
 import { movingSearchedItem } from "./movingSearchedItem";
 import { setSearchedItemSize } from "./setSearchedItemSize";
 import { setStartWidthOfDevil } from "./setStartWidthOfDevil";
+import { controlGameSounds } from "./sounds/controlGameSounds";
 
 export const searchedItem = document.querySelector('.searched-item')
 

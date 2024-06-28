@@ -1,4 +1,4 @@
-export const sounds = {
+export const appSounds = {
 	mainSound: document.querySelector('.auido__main'),
 	callDevil: document.querySelector('.auido__call-devil'),
 	changeLanguage: document.querySelector('.audio__change-language'),
