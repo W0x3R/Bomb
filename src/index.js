@@ -10,6 +10,7 @@ import { controlGameSounds } from './js/sounds/controlGameSounds.js';
 import { getScaleCoefficientOfDevil } from './js/getScaleCoefficientOfDevil.js';
 import { clickEvents } from './js/eventHandlers/clickEvents.js';
 import { callEvents } from './js/eventHandlers/callEvents.js';
+import { getStorageLanguage } from './js/languageStorage.js';
 
 const resultDisplay = document.querySelector('.result-display')
 const resultText = document.querySelector('.result-display__text')
@@ -29,12 +30,13 @@ window.addEventListener('click', (e) => callEvents(e, clickEvents))
 
 
 function initGame() {
-	if (localStorage.getItem('language') === 'en') {
+	const currentLanguage = getStorageLanguage()
+	if (currentLanguage === 'en') {
 		rulesTextModule.russianLanguageIcon.style.display = 'none'
 		rulesTextModule.englishLanguageIcon.style.display = 'block'
 		rulesTextModule.rulesText.innerHTML = rulesTextModule.rulesTextObject.en
 	}
-	else if (localStorage.getItem('language') === 'ru') {
+	else if (currentLanguage === 'ru') {
 		rulesTextModule.englishLanguageIcon.style.display = 'none'
 		rulesTextModule.russianLanguageIcon.style.display = 'block'
 		rulesTextModule.rulesText.innerHTML = rulesTextModule.rulesTextObject.ru

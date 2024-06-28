@@ -1,3 +1,5 @@
+import { setStorageLanguage } from "./languageStorage"
+
 export const rules = document.querySelector('.rules')
 const englishLanguageIcon = document.querySelector('.rules__inner_en')
 const russianLanguageIcon = document.querySelector('.rules__inner_ru')
@@ -14,7 +16,7 @@ export const changeRulesLanguage = (enDisplay, ruDisplay, language) => {
 	englishLanguageIcon.style.display = enDisplay
 	russianLanguageIcon.style.display = ruDisplay
 	rulesText.innerHTML = rulesTextObject[language]
-	localStorage.setItem('language', language)
+	setStorageLanguage(language)
 }
 
 export { englishLanguageIcon, russianLanguageIcon, rulesBlock, rulesText, rulesTextObject } 
