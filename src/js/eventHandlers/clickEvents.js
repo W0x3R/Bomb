@@ -1,15 +1,16 @@
 import { loadGame } from "../.."
-import { showRussianLanguageIcon, showEnglishLanguageIcon } from "../rules"
+import { changeRulesLanguage } from "../rules"
 import { controlGameSounds } from "../sounds/controlGameSounds"
+changeRulesLanguage
 
 export const clickEvents = {
 	'.rules__inner_en': () => {
 		controlGameSounds('changeLanguage', 'play')
-		showRussianLanguageIcon()
+		changeRulesLanguage('none', 'block', 'ru')
 	},
 	'.rules__inner_ru': () => {
 		controlGameSounds('changeLanguage', 'play')
-		showEnglishLanguageIcon()
+		changeRulesLanguage('block', 'none', 'en')
 	},
 	'.play': loadGame,
 	'.result-display__button': () => {
