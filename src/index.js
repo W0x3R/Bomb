@@ -7,6 +7,7 @@ import { setStartWidthOfDevil, startWidthOfDevil } from './js/setStartWidthOfDev
 import { centeringItems, devil } from './js/centeringItems.js';
 import { getSizeOfItem } from './js/getSizeOfItem.js';
 import { controlGameSounds } from './js/sounds/controlGameSounds.js';
+import { getScaleCoefficientOfDevil } from './js/getScaleCoefficientOfDevil.js';
 
 const resultDisplay = document.querySelector('.result-display')
 const resultText = document.querySelector('.result-display__text')
@@ -58,32 +59,6 @@ function initGame() {
 	})
 }
 
-function checkWidthIncreaseFactor() {
-
-	const height = getSizeOfItem(document.documentElement, 'height')
-	const width = getSizeOfItem(document.documentElement, 'width')
-
-	if (width <= 560) {
-		return 1.3
-	} if (height >= 1000) {
-		return 3.3
-	} else if (height < 1000 && height >= 850) {
-		return 2.8
-	} else if (height < 850 && height >= 780) {
-		return 2.5
-	} else if (height < 780 && height >= 702) {
-		return 2.25
-	} else if (height < 702 && height >= 590) {
-		return 1.95
-	} else if (height < 590 && height >= 525) {
-		return 1.65
-	} else if (height < 525 && height >= 450) {
-		return 1.35
-	} else if (height < 450) {
-		return 1
-	}
-}
-
 export function delay(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -115,7 +90,7 @@ searchedItem.addEventListener('click', function () {
 function scaleDevil() {
 	delay(9001).then(() => {
 		timerScaleDevil = setInterval(() => {
-			let scaleWidth = checkWidthIncreaseFactor()
+			let scaleWidth = getScaleCoefficientOfDevil()
 			setStartWidthOfDevil(startWidthOfDevil + scaleWidth)
 			devil.style.width = startWidthOfDevil + 'px'
 			devil.style.left = getCenterOfDisplay('width') - startWidthOfDevil / 2 + 'px'
