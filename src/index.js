@@ -1,7 +1,6 @@
 import './style.scss'
 import { startGameButton, addStartingStyles } from './js/addStartingStyles.js';
 import { searchedItem, showDevil } from './js/showDevil.js';
-import * as rulesTextModule from './js/rules.js';
 import { setSearchedItemSize } from './js/setSearchedItemSize.js';
 import { setStartWidthOfDevil, startWidthOfDevil } from './js/setStartWidthOfDevil.js';
 import { centeringItems, devil } from './js/centeringItems.js';
@@ -11,6 +10,7 @@ import { getScaleCoefficientOfDevil } from './js/getScaleCoefficientOfDevil.js';
 import { clickEvents } from './js/eventHandlers/clickEvents.js';
 import { callEvents } from './js/eventHandlers/callEvents.js';
 import { getStorageLanguage } from './js/languageStorage.js';
+import { changeRulesLanguage } from './js/rules.js';
 
 const resultDisplay = document.querySelector('.result-display')
 const resultText = document.querySelector('.result-display__text')
@@ -28,26 +28,16 @@ let timerScaleDevil
 
 window.addEventListener('click', (e) => callEvents(e, clickEvents))
 
+window.addEventListener('resize', () => {
+	setSearchedItemSize()
+	centeringItems(book)
+})
+
 
 function initGame() {
 	const currentLanguage = getStorageLanguage()
-	if (currentLanguage === 'en') {
-		rulesTextModule.russianLanguageIcon.style.display = 'none'
-		rulesTextModule.englishLanguageIcon.style.display = 'block'
-		rulesTextModule.rulesText.innerHTML = rulesTextModule.rulesTextObject.en
-	}
-	else if (currentLanguage === 'ru') {
-		rulesTextModule.englishLanguageIcon.style.display = 'none'
-		rulesTextModule.russianLanguageIcon.style.display = 'block'
-		rulesTextModule.rulesText.innerHTML = rulesTextModule.rulesTextObject.ru
-	}
-
+	currentLanguage === 'en' ? changeRulesLanguage('block', 'none', 'en') : changeRulesLanguage('none', 'block', 'ru')
 	centeringItems(book)
-
-	window.addEventListener('resize', function () {
-		setSearchedItemSize()
-		centeringItems(book)
-	})
 }
 
 export function delay(ms) {
