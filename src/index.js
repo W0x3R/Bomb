@@ -10,6 +10,7 @@ import { clickEvents } from './js/eventHandlers/clickEvents.js';
 import { callEvents } from './js/eventHandlers/callEvents.js';
 import { setSearchedItemSize } from './js/searchedItem/setSearchedItemSize.js';
 import { setRulesLanguage } from './js/setRulesLanguage.js';
+import { delay } from './js/delay.js';
 
 const resultDisplay = document.querySelector('.result-display')
 const resultText = document.querySelector('.result-display__text')
@@ -33,10 +34,6 @@ window.addEventListener('resize', () => {
 })
 
 centeringItems(book)
-
-export function delay(ms) {
-	return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 export function getCenterOfDisplay(value) {
 	return getSizeOfItem(document.documentElement, value) / 2

@@ -1,6 +1,6 @@
-import { delay } from "..";
 import { addShowDevilStyles } from "./addShowDevilStyles";
 import { centeringItems, devil } from "./centeringItems";
+import { delay } from "./delay";
 import { getSizeOfItem } from "./getSizeOfItem";
 import { movingSearchedItem } from "./searchedItem/movingSearchedItem";
 import { setSearchedItemSize } from "./searchedItem/setSearchedItemSize";
