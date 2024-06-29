@@ -1,5 +1,5 @@
+import { winGame } from "../gameResult/winGame"
 import { controlGameSounds } from "../sounds/controlGameSounds"
-import { winGame } from "../winGame"
 
 const foundItemsBlock = document.querySelector('.found-items')
 const pento = document.querySelectorAll('.found-items__pento')

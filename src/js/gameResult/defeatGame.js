@@ -1,8 +1,8 @@
-import { showResultDisplay } from ".."
-import { delay } from "./delay"
-import { searchedItem } from "./showDevil"
-import { controlGameSounds } from "./sounds/controlGameSounds"
-import { clearTimerCheckEndGame } from "./timerCheckEndGame"
+import { showResultDisplay } from "../.."
+import { delay } from "../delay"
+import { searchedItem } from "../showDevil"
+import { controlGameSounds } from "../sounds/controlGameSounds"
+import { clearTimerCheckEndGame } from "../timerCheckEndGame"
 
 export const defeatGame = () => {
 	showResultDisplay('YOU DIED', 'result-display_defeat', 'result-display__button_defeat')

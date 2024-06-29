@@ -12,7 +12,7 @@ import { setRulesLanguage } from './js/setRulesLanguage.js';
 import { delay } from './js/delay.js';
 import { startTimerCheckEndGame } from './js/timerCheckEndGame.js';
 import { clickOnSearchedItem } from './js/searchedItem/clickOnSearchedItem.js';
-import { defeatGame } from './js/defeatGame.js';
+import { defeatGame } from './js/gameResult/defeatGame.js';
 
 const resultDisplay = document.querySelector('.result-display')
 const resultText = document.querySelector('.result-display__text')
