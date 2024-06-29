@@ -37,8 +37,8 @@ window.addEventListener('resize', () => {
 function initGame() {
 	const currentLanguage = getStorageLanguage()
 	currentLanguage === 'en' ? changeRulesLanguage('block', 'none', 'en') : changeRulesLanguage('none', 'block', 'ru')
-	centeringItems(book)
 }
+centeringItems(book)
 
 export function delay(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
