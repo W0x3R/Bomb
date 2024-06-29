@@ -1,4 +1,4 @@
-import { getSizeOfItem } from "./getSizeOfItem"
+import { getSizeOfItem } from "../getSizeOfItem"
 import { scaleCoefficientOfDevil } from "./scaleCoefficientOfDevil"
 
 export function getScaleCoefficientOfDevil() {

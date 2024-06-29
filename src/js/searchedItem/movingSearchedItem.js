@@ -1,5 +1,4 @@
-
-import { searchedItem } from "../showDevil"
+import { searchedItem } from "../devil/showDevil"
 import { generateSearcheedItemCoordinate } from "./generateSearcheedItemCoordinate"
 import { searchedItemSize } from "./setSearchedItemSize"
 import { setSearchItemSpeed } from "./setSearchItemSpeed"

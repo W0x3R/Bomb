@@ -1,10 +1,9 @@
 import './style.scss'
 import { startGameButton, addStartingStyles } from './js/addStartingStyles.js';
-import { searchedItem, showDevil } from './js/showDevil.js';
-import { setStartWidthOfDevil, startWidthOfDevil } from './js/setStartWidthOfDevil.js';
+import { searchedItem, showDevil } from './js/devil/showDevil.js';
+import { setStartWidthOfDevil, startWidthOfDevil } from './js/devil/setStartWidthOfDevil.js';
 import { centeringItems, devil } from './js/centeringItems.js';
 import { getSizeOfItem } from './js/getSizeOfItem.js';
-import { getScaleCoefficientOfDevil } from './js/getScaleCoefficientOfDevil.js';
 import { clickEvents } from './js/eventHandlers/clickEvents.js';
 import { callEvents } from './js/eventHandlers/callEvents.js';
 import { setSearchedItemSize } from './js/searchedItem/setSearchedItemSize.js';
@@ -13,6 +12,7 @@ import { delay } from './js/delay.js';
 import { startTimerCheckEndGame } from './js/timerCheckEndGame.js';
 import { clickOnSearchedItem } from './js/searchedItem/clickOnSearchedItem.js';
 import { defeatGame } from './js/gameResult/defeatGame.js';
+import { getScaleCoefficientOfDevil } from './js/devil/getScaleCoefficientOfDevil.js';
 
 const resultDisplay = document.querySelector('.result-display')
 const resultText = document.querySelector('.result-display__text')

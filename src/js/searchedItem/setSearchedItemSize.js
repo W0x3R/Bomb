@@ -1,4 +1,4 @@
-import { searchedItem } from "../showDevil"
+import { searchedItem } from "../devil/showDevil"
 
 export let searchedItemSize
 

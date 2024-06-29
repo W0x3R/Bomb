@@ -1,6 +1,6 @@
 import { showResultDisplay } from "../.."
 import { delay } from "../delay"
-import { searchedItem } from "../showDevil"
+import { searchedItem } from "../devil/showDevil"
 import { controlGameSounds } from "../sounds/controlGameSounds"
 import { clearTimerCheckEndGame } from "../timerCheckEndGame"
 
