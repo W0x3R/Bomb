@@ -1,0 +1,1 @@
+export const getSizeOfElement = (el, value) => el.getBoundingClientRect()[value]

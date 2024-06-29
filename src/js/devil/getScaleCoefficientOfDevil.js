@@ -1,9 +1,9 @@
-import { getSizeOfItem } from "../getSizeOfItem"
+import { getSizeOfElement } from "../sizesAndcentering/getSizeOfElement"
 import { scaleCoefficientOfDevil } from "./scaleCoefficientOfDevil"
 
 export function getScaleCoefficientOfDevil() {
-	const height = getSizeOfItem(document.documentElement, 'height')
-	const width = getSizeOfItem(document.documentElement, 'width')
+	const height = getSizeOfElement(document.documentElement, 'height')
+	const width = getSizeOfElement(document.documentElement, 'width')
 
 	for (const item of scaleCoefficientOfDevil) {
 		if (width <= item.width) {

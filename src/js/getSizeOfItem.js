@@ -1,1 +1,0 @@
-export const getSizeOfItem = (item, value) => item.getBoundingClientRect()[value]

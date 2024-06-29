@@ -2,8 +2,8 @@ import './style.scss'
 import { startGameButton, addStartingStyles } from './js/addStartingStyles.js';
 import { searchedItem, showDevil } from './js/devil/showDevil.js';
 import { setStartWidthOfDevil, startWidthOfDevil } from './js/devil/setStartWidthOfDevil.js';
-import { centeringItems, devil } from './js/centeringItems.js';
-import { getSizeOfItem } from './js/getSizeOfItem.js';
+import { centeringElement, devil } from './js/sizesAndcentering/centeringElement.js';
+import { getSizeOfElement } from './js/sizesAndcentering/getSizeOfElement.js';
 import { clickEvents } from './js/eventHandlers/clickEvents.js';
 import { callEvents } from './js/eventHandlers/callEvents.js';
 import { setSearchObjectSize } from './js/searchedObject/setSearchObjectSize.js';
@@ -26,13 +26,13 @@ window.addEventListener('click', (e) => callEvents(e, clickEvents))
 
 window.addEventListener('resize', () => {
 	setSearchObjectSize()
-	centeringItems(book)
+	centeringElement(book)
 })
 
-centeringItems(book)
+centeringElement(book)
 
 export function getCenterOfDisplay(value) {
-	return getSizeOfItem(document.documentElement, value) / 2
+	return getSizeOfElement(document.documentElement, value) / 2
 }
 
 searchedItem.addEventListener('click', clickOnSearchObject)
@@ -44,7 +44,7 @@ function scaleDevil() {
 			setStartWidthOfDevil(startWidthOfDevil + scaleWidth)
 			devil.style.width = startWidthOfDevil + 'px'
 			devil.style.left = getCenterOfDisplay('width') - startWidthOfDevil / 2 + 'px'
-			devil.style.bottom = getCenterOfDisplay('height') - getSizeOfItem(devil, 'height') / 2 + 'px'
+			devil.style.bottom = getCenterOfDisplay('height') - getSizeOfElement(devil, 'height') / 2 + 'px'
 		}, 200);
 	})
 }

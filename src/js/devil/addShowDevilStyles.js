@@ -1,5 +1,5 @@
 import { book } from "../..";
-import { devil } from "../centeringItems";
+import { devil } from "../sizesAndcentering/centeringElement";
 import { searchedItem } from "./showDevil";
 
 export const addShowDevilStyles = () => {
