@@ -14,7 +14,6 @@ module.exports = {
 		filename: '[name].[contenthash].js',
 		assetModuleFilename: "assets/[name][ext][query]",
 		clean: true,
-		publicPath: '/'
 	},
 	devServer: {
 		static: './dist',
