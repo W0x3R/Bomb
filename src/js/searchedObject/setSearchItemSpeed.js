@@ -1,10 +1,10 @@
 import { getSizeOfItem } from "../getSizeOfItem"
-import { speedOfSearchItem } from "./speedOfSearchItem"
+import { speedOfSearchObject } from "./speedOfSearchObject"
 
-export function setSearchItemSpeed() {
+export function setSearchObjectSpeed() {
 	const width = getSizeOfItem(document.documentElement, 'width')
 
-	for (const item of speedOfSearchItem) {
+	for (const item of speedOfSearchObject) {
 		if (width >= item.width) {
 			return item.speed
 		}

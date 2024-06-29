@@ -6,11 +6,11 @@ import { centeringItems, devil } from './js/centeringItems.js';
 import { getSizeOfItem } from './js/getSizeOfItem.js';
 import { clickEvents } from './js/eventHandlers/clickEvents.js';
 import { callEvents } from './js/eventHandlers/callEvents.js';
-import { setSearchedItemSize } from './js/searchedItem/setSearchedItemSize.js';
+import { setSearchObjectSize } from './js/searchedObject/setSearchObjectSize.js';
 import { setRulesLanguage } from './js/setRulesLanguage.js';
 import { delay } from './js/delay.js';
 import { startTimerCheckEndGame } from './js/timerCheckEndGame.js';
-import { clickOnSearchedItem } from './js/searchedItem/clickOnSearchedItem.js';
+import { clickOnSearchObject } from './js/searchedObject/clickOnSearchObject.js';
 import { defeatGame } from './js/gameResult/defeatGame.js';
 import { getScaleCoefficientOfDevil } from './js/devil/getScaleCoefficientOfDevil.js';
 
@@ -25,7 +25,7 @@ let timerScaleDevil
 window.addEventListener('click', (e) => callEvents(e, clickEvents))
 
 window.addEventListener('resize', () => {
-	setSearchedItemSize()
+	setSearchObjectSize()
 	centeringItems(book)
 })
 
@@ -35,7 +35,7 @@ export function getCenterOfDisplay(value) {
 	return getSizeOfItem(document.documentElement, value) / 2
 }
 
-searchedItem.addEventListener('click', clickOnSearchedItem)
+searchedItem.addEventListener('click', clickOnSearchObject)
 
 function scaleDevil() {
 	delay(9001).then(() => {
