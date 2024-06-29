@@ -11,6 +11,7 @@ import { clickEvents } from './js/eventHandlers/clickEvents.js';
 import { callEvents } from './js/eventHandlers/callEvents.js';
 import { getStorageLanguage } from './js/languageStorage.js';
 import { changeRulesLanguage } from './js/rules.js';
+import { initGame } from './js/setRulesLanguage.js';
 
 const resultDisplay = document.querySelector('.result-display')
 const resultText = document.querySelector('.result-display__text')
@@ -33,11 +34,6 @@ window.addEventListener('resize', () => {
 	centeringItems(book)
 })
 
-
-function initGame() {
-	const currentLanguage = getStorageLanguage()
-	currentLanguage === 'en' ? changeRulesLanguage('block', 'none', 'en') : changeRulesLanguage('none', 'block', 'ru')
-}
 centeringItems(book)
 
 export function delay(ms) {
@@ -111,4 +107,4 @@ function checkEndOfGame() {
 	}
 }
 
-initGame()
+setRulesLanguage()
