@@ -1,4 +1,4 @@
-import { getSizeOfItem } from "./getSizeOfItem";
+import { getSizeOfItem } from "../getSizeOfItem";
 
 export const generateSearcheedItemCoordinate = (min, value) => {
 	let max = Math.floor(getSizeOfItem(document.documentElement, value) - min);

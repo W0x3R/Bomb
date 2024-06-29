@@ -2,8 +2,8 @@ import { delay } from "..";
 import { addShowDevilStyles } from "./addShowDevilStyles";
 import { centeringItems, devil } from "./centeringItems";
 import { getSizeOfItem } from "./getSizeOfItem";
-import { movingSearchedItem } from "./movingSearchedItem";
-import { setSearchedItemSize } from "./setSearchedItemSize";
+import { movingSearchedItem } from "./searchedItem/movingSearchedItem";
+import { setSearchedItemSize } from "./searchedItem/setSearchedItemSize";
 import { setStartWidthOfDevil } from "./setStartWidthOfDevil";
 import { controlGameSounds } from "./sounds/controlGameSounds";
 

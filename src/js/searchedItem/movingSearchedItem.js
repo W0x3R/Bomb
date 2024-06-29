@@ -1,10 +1,11 @@
+
+import { searchedItem } from "../showDevil"
 import { generateSearcheedItemCoordinate } from "./generateSearcheedItemCoordinate"
 import { searchedItemSize } from "./setSearchedItemSize"
-import { setSpeedOfSearchItem } from "./setSpeedOfSearchItem"
-import { searchedItem } from "./showDevil"
+import { setSearchItemSpeed } from "./setSearchItemSpeed"
 
 export const movingSearchedItem = () => {
-	const getSpeedOfSearchItem = setSpeedOfSearchItem()
+	const getSpeedOfSearchItem = setSearchItemSpeed()
 	setInterval(() => {
 		searchedItem.style.left = generateSearcheedItemCoordinate(searchedItemSize, 'width') + 'px'
 		searchedItem.style.bottom = generateSearcheedItemCoordinate(searchedItemSize, 'height') + 'px'

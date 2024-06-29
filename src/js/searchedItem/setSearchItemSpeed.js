@@ -1,7 +1,7 @@
-import { getSizeOfItem } from "./getSizeOfItem"
+import { getSizeOfItem } from "../getSizeOfItem"
 import { speedOfSearchItem } from "./speedOfSearchItem"
 
-export function setSpeedOfSearchItem() {
+export function setSearchItemSpeed() {
 	const width = getSizeOfItem(document.documentElement, 'width')
 
 	for (const item of speedOfSearchItem) {
