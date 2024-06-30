@@ -1,4 +1,4 @@
-import { playStartGameSounds } from "./sounds/playStartGameSounds.js";
+import { playStartGameSounds } from "../sounds/playStartGameSounds"
 
 const rules = document.querySelector('.rules')
 

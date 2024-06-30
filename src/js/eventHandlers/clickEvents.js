@@ -1,4 +1,4 @@
-import { startGame } from "../startGame"
+import { startGame } from "../startGame/startGame"
 import { changeRulesLanguage } from "../rules/changeRulesLanguage"
 import { clickOnSearchObject } from "../searchedObject/clickOnSearchObject"
 import { controlGameSounds } from "../sounds/controlGameSounds"
