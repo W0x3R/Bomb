@@ -7,6 +7,7 @@ import { setRulesLanguage } from './js/setRulesLanguage.js';
 import { book } from './js/addStartingStyles.js';
 
 setRulesLanguage()
+centeringElement(book)
 
 window.addEventListener('click', (e) => callEvents(e, clickEvents))
 
