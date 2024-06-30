@@ -8,10 +8,10 @@ export const defeatGame = () => {
 	showResultDisplay('YOU DIED', 'result-display_defeat', 'result-display__button_defeat')
 	searchedItem.remove()
 	delay(8000).then(() => {
-		controlGameSounds('defeat', 'play')
+		controlGameSounds('defeatSecond', 'play')
 	})
 	delay(26000).then(() => {
-		controlGameSounds('defeatSecond', 'play')
+		controlGameSounds('defeat', 'play')
 	})
 	clearTimerCheckEndGame()
 }
