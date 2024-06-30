@@ -1,0 +1,20 @@
+@import './media';
+@import './mixins';
+
+%languageIcon {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	bottom: 6px;
+	right: 6px;
+	cursor: pointer;
+
+	@include mobile {
+		@include sizes(36px,36px)
+	}
+
+	@include smallestMobile {
+		@include sizes(32px,32px)
+	}
+	
+}
