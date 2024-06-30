@@ -1,4 +1,4 @@
-import { book } from "../..";
+import { book } from "../addStartingStyles";
 import { devil } from "../sizesAndcentering/centeringElement";
 import { searchedItem } from "../searchedObject/movingSearchObject";
 

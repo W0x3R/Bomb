@@ -1,8 +1,8 @@
-import { book } from "../index.js";
 import { playStartGameSounds } from "./sounds/playStartGameSounds.js";
 import { rules } from "./rules.js";
 
 export const startGameButton = document.querySelector('.play')
+export const book = document.querySelector('.book')
 const bookStar = document.querySelector('.book__star')
 const bookEllipse = document.querySelector('.book__ellipse')
 

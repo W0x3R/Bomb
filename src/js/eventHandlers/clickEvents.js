@@ -1,4 +1,4 @@
-import { loadGame } from "../.."
+import { startGame } from "../startGame"
 import { changeRulesLanguage } from "../rules"
 import { clickOnSearchObject } from "../searchedObject/clickOnSearchObject"
 import { controlGameSounds } from "../sounds/controlGameSounds"
@@ -13,7 +13,7 @@ export const clickEvents = {
 		controlGameSounds('changeLanguage', 'play')
 		changeRulesLanguage('block', 'none', 'en')
 	},
-	'.play': loadGame,
+	'.play': startGame,
 	'.result-display__button': () => {
 		location.reload()
 	},
