@@ -4,6 +4,7 @@
 @import './scss/media';
 @import './scss/keyframes';
 @import './scss/_fonts';
+@import './scss/rules';
 
 body {
 	background-image: url('./images/main-background.jpg');
@@ -163,82 +164,6 @@ body {
 
 		&_shake {
 			animation: questions-shake 1s infinite;
-		}
-	}
-}
-
-.rules {
-	width: 100vw;
-	height: 100vh;
-	background-image: url('./images/rules-background-big.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	position: absolute;
-	z-index: 2;
-
-	&__language-btn {
-		@extend %languageIcon;
-	}
-
-	&__inner {
-		@include sizes(920px,380px);
-		background-color: #ffffff96;
-		border-radius: 3%;
-		position: absolute;
-		left: 50%;
-		bottom: 50%;
-		transform: translate(-50%,50%);
-		padding: 8px;
-
-		@include desktop {
-			@include sizes(710px,350px);
-		}
-
-		@include tablet {
-			width: 580px;
-		}
-
-		@include mobile {
-			padding: 5px;
-			width: 436px;
-		}
-
-		@include smallMobile {
-			padding: 3px;
-			@include sizes(368px,340px);
-		}
-
-		@include smallestMobile {
-			@include sizes(312px,325px);
-		}
-
-		&-text {
-			font-family: 'Caveat', serif;
-			font-size: 31px;
-			text-align: center;
-			letter-spacing: 1.2px;
-			user-select: none;
-			color: black;
-
-			@include desktop {
-				font-size: 26px;
-			}
-
-			@include tablet {
-				font-size: 24px;
-			}
-
-			@include mobile {
-				font-size: 21px;
-			}
-
-			@include smallMobile {
-				font-size: 19px;
-			}
-
-			@include smallestMobile {
-				font-size: 17px;
-			}
 		}
 	}
 }
