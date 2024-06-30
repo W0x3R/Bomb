@@ -1,5 +1,5 @@
 import { startGame } from "../startGame"
-import { changeRulesLanguage } from "../rules"
+import { changeRulesLanguage } from "../rules/changeRulesLanguage"
 import { clickOnSearchObject } from "../searchedObject/clickOnSearchObject"
 import { controlGameSounds } from "../sounds/controlGameSounds"
 changeRulesLanguage
