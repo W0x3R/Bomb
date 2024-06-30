@@ -1,4 +1,4 @@
-import { defeatGame } from "./gameResult/defeatGame"
+import { defeatGame } from "../gameResult/defeatGame"
 
 let timer = 0
 

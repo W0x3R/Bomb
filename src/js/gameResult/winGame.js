@@ -2,7 +2,7 @@ import { showResultDisplay } from "../showResultDisplay"
 import { delay } from "../delay"
 import { searchedItem } from "../searchedObject/movingSearchObject"
 import { controlGameSounds } from "../sounds/controlGameSounds"
-import { clearTimerCheckEndGame } from "../timerCheckEndGame"
+import { clearTimerCheckEndGame } from "../checkEndGame/clearTimer"
 
 export const winGame = () => {
 	controlGameSounds('mainSound', 'pause')
