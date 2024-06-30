@@ -1,7 +1,8 @@
-import { searchedItem } from "../devil/showDevil"
 import { generateSearchObjectCoordinate } from "./generateSearchObjectCoordinate"
 import { searchObjectSize } from "./setSearchObjectSize"
 import { setSearchObjectSpeed } from "./setSearchItemSpeed"
+
+export const searchedItem = document.querySelector('.searched-item')
 
 export const movingSearchObject = () => {
 	const getSpeedOfSearchItem = setSearchObjectSpeed()

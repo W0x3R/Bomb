@@ -1,4 +1,4 @@
-import { searchedItem } from "../devil/showDevil"
+import { searchedItem } from "./movingSearchObject";
 
 export let searchObjectSize
 
