@@ -1,5 +1,5 @@
-import { getStorageLanguage } from "./languageStorage"
-import { changeRulesLanguage } from "./rules/changeRulesLanguage"
+import { getStorageLanguage } from "../languageStorage"
+import { changeRulesLanguage } from "./changeRulesLanguage"
 
 export function setRulesLanguage() {
 	const currentLanguage = getStorageLanguage()
