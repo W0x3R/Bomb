@@ -1,7 +1,7 @@
 import { getSizeOfElement } from "../sizesAndcentering/getSizeOfElement"
 import { scaleCoefficientOfDevil } from "./scaleCoefficientOfDevil"
 
-export function getScaleCoefficientOfDevil() {
+export const getScaleCoefficientOfDevil = () => {
 	const height = getSizeOfElement(document.documentElement, 'height')
 	const width = getSizeOfElement(document.documentElement, 'width')
 

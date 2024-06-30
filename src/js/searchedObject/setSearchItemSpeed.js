@@ -1,7 +1,7 @@
 import { getSizeOfElement } from "../sizesAndcentering/getSizeOfElement"
 import { speedOfSearchObject } from "./speedOfSearchObject"
 
-export function setSearchObjectSpeed() {
+export const setSearchObjectSpeed = () => {
 	const width = getSizeOfElement(document.documentElement, 'width')
 
 	for (const item of speedOfSearchObject) {

@@ -3,7 +3,7 @@ import { scaleDevil } from "../devil/scaleDevil"
 import { showDevil } from "../devil/showDevil"
 import { startTimerCheckEndGame } from "../checkEndGame/startTimer"
 
-export function startGame() {
+export const startGame = () => {
 	addStartingStyles()
 	showDevil()
 	scaleDevil()

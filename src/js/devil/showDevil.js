@@ -7,7 +7,7 @@ import { setSearchObjectSize } from "../searchedObject/setSearchObjectSize";
 import { setStartWidthOfDevil } from "./setStartWidthOfDevil";
 import { controlGameSounds } from "../sounds/controlGameSounds";
 
-export function showDevil() {
+export const showDevil = () => {
 	delay(8000).then(() => {
 		addShowDevilStyles()
 		setSearchObjectSize()
