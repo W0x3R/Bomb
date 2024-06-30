@@ -1,4 +1,4 @@
-import { showResultDisplay } from "../.."
+import { showResultDisplay } from "../showResultDisplay"
 import { delay } from "../delay"
 import { searchedItem } from "../searchedObject/movingSearchObject"
 import { controlGameSounds } from "../sounds/controlGameSounds"
