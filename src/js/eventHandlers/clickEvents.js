@@ -1,5 +1,6 @@
 import { loadGame } from "../.."
 import { changeRulesLanguage } from "../rules"
+import { clickOnSearchObject } from "../searchedObject/clickOnSearchObject"
 import { controlGameSounds } from "../sounds/controlGameSounds"
 changeRulesLanguage
 
@@ -16,4 +17,5 @@ export const clickEvents = {
 	'.result-display__button': () => {
 		location.reload()
 	},
+	'.searched-item': clickOnSearchObject,
 }

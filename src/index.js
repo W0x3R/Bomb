@@ -1,6 +1,6 @@
 import './style.scss'
 import { startGameButton, addStartingStyles } from './js/addStartingStyles.js';
-import { searchedItem, showDevil } from './js/devil/showDevil.js';
+import { showDevil } from './js/devil/showDevil.js';
 import { setStartWidthOfDevil, startWidthOfDevil } from './js/devil/setStartWidthOfDevil.js';
 import { centeringElement, devil } from './js/sizesAndcentering/centeringElement.js';
 import { getSizeOfElement } from './js/sizesAndcentering/getSizeOfElement.js';
@@ -10,7 +10,6 @@ import { setSearchObjectSize } from './js/searchedObject/setSearchObjectSize.js'
 import { setRulesLanguage } from './js/setRulesLanguage.js';
 import { delay } from './js/delay.js';
 import { startTimerCheckEndGame } from './js/timerCheckEndGame.js';
-import { clickOnSearchObject } from './js/searchedObject/clickOnSearchObject.js';
 import { defeatGame } from './js/gameResult/defeatGame.js';
 import { getScaleCoefficientOfDevil } from './js/devil/getScaleCoefficientOfDevil.js';
 import { getCenterOfDisplay } from './js/sizesAndcentering/getCenterOfDisplay.js';
@@ -31,8 +30,6 @@ window.addEventListener('resize', () => {
 })
 
 centeringElement(book)
-
-searchedItem.addEventListener('click', clickOnSearchObject)
 
 function scaleDevil() {
 	delay(9001).then(() => {
