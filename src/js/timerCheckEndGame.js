@@ -1,4 +1,4 @@
-import { checkEndOfGame } from ".."
+import { checkEndOfGame } from "./checkEndOfGame";
 
 let timerCheckEndGame
 
