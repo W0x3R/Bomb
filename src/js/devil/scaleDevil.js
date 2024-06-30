@@ -1,7 +1,6 @@
 import { delay } from "../delay";
 import { devil } from "../sizesAndcentering/centeringElement";
-import { getCenterOfDisplay } from "../sizesAndcentering/getCenterOfDisplay";
-import { getSizeOfElement } from "../sizesAndcentering/getSizeOfElement";
+import { centeringDevilOnScale } from "./centeringDevilOnScale";
 import { getScaleCoefficientOfDevil } from "./getScaleCoefficientOfDevil";
 import { setStartWidthOfDevil, startWidthOfDevil } from "./setStartWidthOfDevil";
 
@@ -13,8 +12,7 @@ export const scaleDevil = () => {
 			let scaleWidth = getScaleCoefficientOfDevil()
 			setStartWidthOfDevil(startWidthOfDevil + scaleWidth)
 			devil.style.width = startWidthOfDevil + 'px'
-			devil.style.left = getCenterOfDisplay('width') - startWidthOfDevil / 2 + 'px'
-			devil.style.bottom = getCenterOfDisplay('height') - getSizeOfElement(devil, 'height') / 2 + 'px'
+			centeringDevilOnScale()
 		}, 200);
 	})
 }
