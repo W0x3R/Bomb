@@ -13,6 +13,7 @@ import { startTimerCheckEndGame } from './js/timerCheckEndGame.js';
 import { clickOnSearchObject } from './js/searchedObject/clickOnSearchObject.js';
 import { defeatGame } from './js/gameResult/defeatGame.js';
 import { getScaleCoefficientOfDevil } from './js/devil/getScaleCoefficientOfDevil.js';
+import { getCenterOfDisplay } from './js/sizesAndcentering/getCenterOfDisplay.js';
 
 const resultDisplay = document.querySelector('.result-display')
 const resultText = document.querySelector('.result-display__text')
@@ -30,10 +31,6 @@ window.addEventListener('resize', () => {
 })
 
 centeringElement(book)
-
-export function getCenterOfDisplay(value) {
-	return getSizeOfElement(document.documentElement, value) / 2
-}
 
 searchedItem.addEventListener('click', clickOnSearchObject)
 
