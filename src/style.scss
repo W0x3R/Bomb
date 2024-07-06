@@ -124,18 +124,22 @@ body {
 .play {
 	position: absolute;
 	top: 2%;
-	left: calc(50% - 40px);
-	@include sizes(80px,80px);
+	left: calc(50% - 38px);
+	@include sizes(76px,76px);
 	fill: rgb(255 255 255);
 	z-index: 5;
-	background: none;
-	border: none;
-	outline: none;
-	cursor: pointer;
 
 	&_active {
 		animation: changeColor 1s infinite;
-		cursor:default;
+
+		& > svg {
+			cursor: default;
+		}
+	}
+
+	@include smallMobile {
+		@include sizes(68px,68px);
+		left: calc(50% - 34px);
 	}
 }
 
