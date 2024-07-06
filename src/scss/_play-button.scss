@@ -1,0 +1,21 @@
+.play {
+	position: absolute;
+	top: 2%;
+	left: calc(50% - 38px);
+	@include sizes(76px,76px);
+	fill: rgb(255 255 255);
+	z-index: 5;
+
+	&_active {
+		animation: changeColor 1s infinite;
+
+		& > svg {
+			cursor: default;
+		}
+	}
+
+	@include smallMobile {
+		@include sizes(68px,68px);
+		left: calc(50% - 34px);
+	}
+}
