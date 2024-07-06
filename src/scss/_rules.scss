@@ -1,6 +1,5 @@
 .rules {
-	width: 100vw;
-	height: 100vh;
+	@include sizes(100vw,100vh);
 	background-image: url('./images/rules-background-big.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -12,42 +11,41 @@
 	}
 
 	&__inner {
-		@include sizes(920px,380px);
-		background-color: #ffffff96;
-		border-radius: 3%;
 		position: absolute;
 		left: 50%;
 		bottom: 50%;
 		transform: translate(-50%,50%);
-		padding: 8px;
+		padding: 6px;
+		@include sizes(832px,355px);
+		background-color: #ffffff96;
+		border-radius: 3%;
 
 		@include desktop {
-			@include sizes(710px,350px);
+			@include sizes(640px,339px);
 		}
 
 		@include tablet {
-			width: 580px;
+			width: 560px;
 		}
 
 		@include mobile {
-			padding: 5px;
-			width: 436px;
+			@include sizes(430px,345px);
 		}
 
 		@include smallMobile {
 			padding: 3px;
-			@include sizes(368px,340px);
+			@include sizes(375px,310px);
 		}
 
 		@include smallestMobile {
-			@include sizes(312px,325px);
+			@include sizes(300px,318px);
 		}
 
 		&-text {
 			font-family: 'Caveat', serif;
-			font-size: 31px;
+			font-size: 30px;
 			text-align: center;
-			letter-spacing: 1.2px;
+			letter-spacing: 0.8px;
 			user-select: none;
 			color: black;
 
