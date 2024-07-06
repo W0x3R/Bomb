@@ -6,6 +6,7 @@
 @import './scss/_fonts';
 @import './scss/play-button';
 @import './scss/rules';
+@import './scss/book';
 
 body {
 	background-image: url('./images/main-background.jpg');
@@ -87,33 +88,6 @@ body {
 	fill: rgb(255, 255, 255);
 }
 
-.book {
-	width: clamp(230px, 40vw, 280px);
-	height: clamp(230px, 40vw, 280px);
-	position: absolute;
-	cursor: auto;
-
-	&_shake {
-		animation: shake 1s infinite;
-	}
-
-	&_hide {
-		display: none;
-	}
-
-	&__star_active {
-		animation: changeColor 1s infinite;
-	}
-
-	&__ellipse_active {
-		animation: changeColor 1s infinite;
-	}
-
-	@media screen and (max-height: 560px) {
-		@include sizes(180px,180px);
-	}
-}
-
 .devil {
 	position: absolute;
 	display: none;
@@ -125,8 +99,6 @@ body {
 		display: block;
 	}
 }
-
-
 
 .found-items {
 	position: absolute;

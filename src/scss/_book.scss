@@ -1,0 +1,26 @@
+.book {
+	width: clamp(230px, 40vw, 280px);
+	height: clamp(230px, 40vw, 280px);
+	position: absolute;
+	cursor: auto;
+
+	&_shake {
+		animation: shake 1s infinite;
+	}
+
+	&_hide {
+		display: none;
+	}
+
+	&__star_active {
+		animation: changeColor 1s infinite;
+	}
+
+	&__ellipse_active {
+		animation: changeColor 1s infinite;
+	}
+
+	@media screen and (max-height: 560px) {
+		@include sizes(180px,180px);
+	}
+}
