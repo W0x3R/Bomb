@@ -6,6 +6,7 @@ import { movingSearchObject } from "../searchedObject/movingSearchObject";
 import { setSearchObjectSize } from "../searchedObject/setSearchObjectSize";
 import { setStartWidthOfDevil } from "./setStartWidthOfDevil";
 import { controlGameSounds } from "../sounds/controlGameSounds";
+import { displayFoundItemsBlock } from '../displayFoundItemsBlock'
 
 export const showDevil = () => {
 	delay(8000).then(() => {
@@ -16,5 +17,6 @@ export const showDevil = () => {
 		centeringElement(devil)
 		controlGameSounds('mainSound', 'play')
 		movingSearchObject()
+		displayFoundItemsBlock('add')
 	})
 }
