@@ -4,6 +4,7 @@
 @import './scss/media';
 @import './scss/keyframes';
 @import './scss/_fonts';
+@import './scss/play-button';
 @import './scss/rules';
 
 body {
@@ -87,8 +88,8 @@ body {
 }
 
 .book {
-	width: clamp(235px, 35vw, 300px);
-	height: clamp(235px, 35vw, 300px);
+	width: clamp(230px, 40vw, 280px);
+	height: clamp(230px, 40vw, 280px);
 	position: absolute;
 	cursor: auto;
 
@@ -107,6 +108,10 @@ body {
 	&__ellipse_active {
 		animation: changeColor 1s infinite;
 	}
+
+	@media screen and (max-height: 560px) {
+		@include sizes(180px,180px);
+	}
 }
 
 .devil {
@@ -121,27 +126,7 @@ body {
 	}
 }
 
-.play {
-	position: absolute;
-	top: 2%;
-	left: calc(50% - 38px);
-	@include sizes(76px,76px);
-	fill: rgb(255 255 255);
-	z-index: 5;
 
-	&_active {
-		animation: changeColor 1s infinite;
-
-		& > svg {
-			cursor: default;
-		}
-	}
-
-	@include smallMobile {
-		@include sizes(68px,68px);
-		left: calc(50% - 34px);
-	}
-}
 
 .found-items {
 	position: absolute;
