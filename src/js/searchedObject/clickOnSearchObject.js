@@ -1,7 +1,7 @@
 import { winGame } from "../gameResult/winGame"
 import { controlGameSounds } from "../sounds/controlGameSounds"
 
-const foundObjectsBlock = document.querySelector('.found-items')
+export const foundObjectsBlock = document.querySelector('.found-items')
 const pento = document.querySelectorAll('.found-items__pento')
 let count = 0
 
