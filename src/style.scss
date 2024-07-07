@@ -87,6 +87,10 @@ body {
 	opacity: 0.25;
 	z-index: 1000000000;
 	fill: rgb(255, 255, 255);
+
+	@include mobile {
+		@include sizes(27px,27px)
+	}
 }
 
 .devil {
@@ -100,5 +104,3 @@ body {
 		display: block;
 	}
 }
-
-@import './scss/adaptive';
