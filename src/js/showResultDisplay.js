@@ -1,3 +1,4 @@
+import { controlDisplayDevil } from "./devil/controlDisplayDevil"
 import { timerScaleDevil } from "./devil/scaleDevil"
 
 const resultDisplay = document.querySelector('.result-display')
@@ -9,4 +10,5 @@ export const showResultDisplay = (value, classList, newGameStyle) => {
 	resultText.textContent = value
 	clearInterval(timerScaleDevil)
 	newGameButton.classList.add(newGameStyle)
+	controlDisplayDevil('remove')
 }
