@@ -8,7 +8,8 @@
 @import './scss/rules';
 @import './scss/book';
 @import './scss/found-items';
-@import './scss/_searched-item';
+@import './scss/searched-item';
+@import './scss/result-display';
 
 body {
 	background-image: url('./images/main-background.jpg');
@@ -22,55 +23,6 @@ body {
 	max-width: 1680px;
 	margin: 0 auto;
 	min-height: 100%;
-}
-
-.result-display {
-	position: absolute;
-	display: none;
-	@include sizes(100vw,100vh);
-	background: black;
-
-	&_win {
-		@include flexCenter;
-		animation: display-win 5s infinite;
-		z-index: 10;
-		color: #00ff04;
-	}
-
-	&_defeat {
-		@include flexCenter;
-		animation: display-defeat 5s infinite;
-		z-index: 10;
-		color: #ff0000;
-	}
-
-	&__text {
-		padding: 5px;
-		user-select: none;
-		letter-spacing: 5px;
-		font-size: clamp(30px, 9vw, 130px);
-		font-family: 'Rubik Maze', 'Merienda';
-	}
-
-	&__button {
-		position: absolute;
-		top: 5%;
-		@include sizes(54px,46px);
-		z-index: 25;
-		fill: white;
-
-		&_win {
-			animation:
-				shake 1s infinite,
-				changeColorWin 1s infinite;
-		}
-
-		&_defeat {
-			animation:
-				shake 1s infinite,
-				changeColorDefeat 1s infinite;
-		}
-	}
 }
 
 .devil {
