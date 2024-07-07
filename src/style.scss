@@ -27,23 +27,18 @@ body {
 .result-display {
 	position: absolute;
 	display: none;
-	width: 100vw;
-	height: 100vh;
+	@include sizes(100vw,100vh);
 	background: black;
 
 	&_win {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		@include flexCenter;
 		animation: display-win 5s infinite;
 		z-index: 10;
 		color: #00ff04;
 	}
 
 	&_defeat {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		@include flexCenter;
 		animation: display-defeat 5s infinite;
 		z-index: 10;
 		color: #ff0000;
@@ -60,8 +55,7 @@ body {
 	&__button {
 		position: absolute;
 		top: 5%;
-		width: 54px;
-		height: 46px;
+		@include sizes(54px,46px);
 		z-index: 25;
 		fill: white;
 
