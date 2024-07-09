@@ -14,7 +14,7 @@ export const clickEvents = {
 		changeRulesLanguage('block', 'none', 'en')
 	},
 	'.play': startGame,
-	'.result-display__button': () => {
+	'.result__button': () => {
 		location.reload()
 	},
 	'.searched-item': clickOnSearchObject,
