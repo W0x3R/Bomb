@@ -44,9 +44,10 @@
 		@include smallestMobile {
 			@include sizes(300px,318px);
 		}
-
-		&-text {
-			font-family: 'Caveat', serif;
+	}
+	
+	&__text {
+		font-family: 'Caveat', serif;
 			font-size: 30px;
 			text-align: center;
 			letter-spacing: 0.8px;
@@ -72,6 +73,5 @@
 			@include smallestMobile {
 				font-size: 17px;
 			}
-		}
 	}
 }

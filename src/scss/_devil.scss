@@ -4,6 +4,7 @@
 	width: 110px;
 	z-index: 1;
 	user-select: none;
+	pointer-events: none;
 
 	&_show {
 		display: block;

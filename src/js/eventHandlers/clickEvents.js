@@ -5,11 +5,11 @@ import { controlGameSounds } from "../sounds/controlGameSounds"
 changeRulesLanguage
 
 export const clickEvents = {
-	'.rules__inner_en': () => {
+	'.rules__btn-en': () => {
 		controlGameSounds('changeLanguage', 'play')
 		changeRulesLanguage('none', 'block', 'ru')
 	},
-	'.rules__inner_ru': () => {
+	'.rules__btn-ru': () => {
 		controlGameSounds('changeLanguage', 'play')
 		changeRulesLanguage('block', 'none', 'en')
 	},
