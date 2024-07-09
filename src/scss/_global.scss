@@ -1,0 +1,13 @@
+body {
+	background-image: url('./images/main-background.jpg');
+	background-size: cover;
+	overflow: hidden;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
+}
+
+.container {
+	max-width: 1680px;
+	margin: 0 auto;
+	min-height: 100%;
+}
