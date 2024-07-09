@@ -8,10 +8,7 @@
 
 	&_active {
 		animation: changeColor 1s infinite;
-
-		& > svg {
-			cursor: default;
-		}
+		cursor: default;
 	}
 
 	@include smallMobile {
