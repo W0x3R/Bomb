@@ -1,0 +1,11 @@
+.devil {
+	position: absolute;
+	display: none;
+	width: 110px;
+	z-index: 1;
+	user-select: none;
+
+	&_show {
+		display: block;
+	}
+}

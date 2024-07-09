@@ -9,6 +9,7 @@
 @import './scss/book';
 @import './scss/found-items';
 @import './scss/searched-item';
+@import './scss/_devil';
 @import './scss/result-display';
 
 body {
@@ -25,14 +26,3 @@ body {
 	min-height: 100%;
 }
 
-.devil {
-	position: absolute;
-	display: none;
-	width: 110px;
-	z-index: 1;
-	user-select: none;
-
-	&_show {
-		display: block;
-	}
-}
