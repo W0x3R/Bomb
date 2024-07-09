@@ -5,7 +5,10 @@
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 2;
-	display: none;
+
+	@include mobile {
+		background-image: url('./images/rules-background-small.jpg');
+	}
 
 	&__language-btn {
 		@extend %languageIcon;
