@@ -1,11 +1,11 @@
 import { timerScaleDevil } from "./devil/scaleDevil"
 
-const resultDisplay = document.querySelector('.result-display')
-const resultText = document.querySelector('.result-display__text')
-const newGameButton = document.querySelector('.result-display__button')
+const resultDisplay = document.querySelector('.result')
+const resultText = document.querySelector('.result__text')
+const newGameButton = document.querySelector('.result__button')
 const gameContainer = document.querySelector('.container')
 
-export const showResultDisplay = (value, classList, newGameStyle) => {
+export const showGameResult = (value, classList, newGameStyle) => {
 	resultDisplay.classList.add(classList)
 	resultText.textContent = value
 	clearInterval(timerScaleDevil)
