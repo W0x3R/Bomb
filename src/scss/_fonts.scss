@@ -3,7 +3,7 @@
 	src: url('./fonts/Caveat-Medium.woff2') format('woff2');
 	font-weight: 500;
 	font-style: normal;
-	font-display: swap;
+	font-display: fallback;
 }
 
 @font-face {
@@ -11,12 +11,12 @@
 	src: url('./fonts/Merienda-Regular.woff2') format('woff2');
 	font-weight: 400;
 	font-style: normal;
-	font-display: swap;
+	font-display: fallback;
 }
 @font-face {
 	font-family: 'Rubik Maze';
 	font-weight: 400;
 	font-style: normal;
-	font-display: swap;
+	font-display: fallback;
 	src: url('./fonts/RubikMaze-Regular.woff2') format('woff2');
 }
