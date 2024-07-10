@@ -16,6 +16,22 @@
 		animation: display-defeat 5s infinite;
 		z-index: 10;
 		color: #ff0000;
+		background-image: image-set(
+			url('images/defeat-background-b.avif') type('image/avif'),
+			url('images/defeat-background-b.webp') type('image/webp'),
+		url('images/defeat-background-b.jpg') type('image/jpg')
+		);
+		background-size: cover;
+		background-position:center;
+
+		@include mobile {
+			background-image: image-set(
+				url('images/defeat-background-s.avif') type('image/avif'),
+				url('images/defeat-background-s.webp') type('image/webp'),
+			url('images/defeat-background-s.jpg') type('image/jpg')
+			);
+			background-position: center top;
+		}
 	}
 
 	&__text {
