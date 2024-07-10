@@ -1,9 +1,9 @@
 .rules {
 	@include sizes(100vw,100vh);
 	background-image: image-set(
-		url('images/rules-background.avif') type('image/avif'),
-		url('images/rules-background.webp') type('image/webp'),
-	url('images/rules-background.jpg') type('image/jpg')
+		url('images/pictures/rules-background.avif') type('image/avif'),
+		url('images/pictures/rules-background.webp') type('image/webp'),
+	url('images/pictures/rules-background.jpg') type('image/jpg')
 	);
 	background-size: cover;
 	background-repeat: no-repeat;
