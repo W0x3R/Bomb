@@ -11,7 +11,7 @@ module.exports = {
 	entry: './src/index.js',
 	mode: mode,
 	output: {
-		filename: '[name].[contenthash].js',
+		filename: mode === 'development' ? '[name].js' : '[contenthash].js',
 		assetModuleFilename: "assets/[name][ext][query]",
 		clean: true,
 	},
@@ -31,7 +31,7 @@ module.exports = {
 				template: "./src/index.html",
 			}),
 			new MiniCssExtractPlugin({
-				filename: '[name].[contenthash].css'
+				filename: mode === 'development' ? '[name].css' : '[contenthash].css'
 			}),
 			new CopyWebpackPlugin({
 				patterns: [
@@ -69,17 +69,24 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.(png|svg|jpg|jpeg|gif)$/i,
+				test: /\.(png|jpg|jpeg|gif|webp|avif)$/i,
 				type: 'asset/resource',
 				generator: {
-					filename: 'assets/images/[name][ext]'
+					filename: mode === 'development' ? 'assets/images/pictures/[name][ext]' : 'assets/images/pictures/[contenthash][ext]'
+				}
+			},
+			{
+				test: /\.(svg)$/i,
+				type: 'asset/resource',
+				generator: {
+					filename: mode === 'development' ? 'assets/images/svg/[name][ext]' : 'assets/images/svg/[contenthash][ext]'
 				}
 			},
 			{
 				test: /\.(woff|woff2|eot|ttf|otf)$/i,
 				type: 'asset/resource',
 				generator: {
-					filename: 'assets/fonts/[name][ext]'
+					filename: mode === 'development' ? 'assets/fonts/[name][ext]' : 'assets/fonts/[contenthash][ext]'
 				}
 			},
 			{
@@ -96,7 +103,7 @@ module.exports = {
 				test: /\.(mp3|wav|ogg)$/i,
 				type: 'asset/resource',
 				generator: {
-					filename: 'assets/sounds/[name][ext]'
+					filename: mode === 'development' ? 'assets/sounds/[name][ext]' : 'assets/sounds/[contenthash][ext]'
 				}
 			},
 		]
