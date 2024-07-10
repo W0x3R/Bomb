@@ -1,5 +1,9 @@
 body {
-	background-image: url('./images/main-background.jpg');
+	background-image: image-set(
+		url('images/main-background.avif') type('image/avif'),
+		url('images/main-background.webp') type('image/webp'),
+	url('images/main-background.jpg') type('image/jpg')
+	);
 	background-size: cover;
 	overflow: hidden;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
