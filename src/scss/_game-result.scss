@@ -9,6 +9,22 @@
 		animation: display-win 5s infinite;
 		z-index: 10;
 		color: #00ff04;
+
+		background-image: image-set(
+			url('images/win-background-b.avif') type('image/avif'),
+			url('images/win-background-b.webp') type('image/webp'),
+		url('images/win-background-b.jpg') type('image/jpg')
+		);
+		background-position: center;
+    background-size: cover;
+
+		@include mobile {
+			background-image: image-set(
+				url('images/win-background-s.avif') type('image/avif'),
+				url('images/win-background-s.webp') type('image/webp'),
+			url('images/win-background-s.jpg') type('image/jpg')
+			);
+		}
 	}
 
 	&_defeat {

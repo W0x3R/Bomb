@@ -13,7 +13,7 @@ export const clickOnSearchObject = () => {
 	if (count === 5) {
 		foundObjectsBlock.classList.add('found-items__pento_shake')
 	}
-	if (count === 10) {
+	if (count === 1) {
 		winGame()
 	}
 }
