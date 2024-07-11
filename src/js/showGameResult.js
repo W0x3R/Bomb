@@ -7,6 +7,7 @@ const newGameButton = document.querySelector('.result__button')
 const devilPictureBlock = document.querySelector('.devil__picture')
 
 export const showGameResult = (value, classList, newGameStyle) => {
+	resultDisplay.classList.add('result_show')
 	resultDisplay.classList.add(classList)
 	resultText.textContent = value
 	clearInterval(timerScaleDevil)
