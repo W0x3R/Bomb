@@ -2,6 +2,7 @@
 	position: absolute;
 	display: none;
 	@include sizes(100vw,100vh);
+	@include supports(height,100dvh);
 
 	&_win {
 		@include flexCenter;
@@ -15,6 +16,7 @@
 		);
 		background-position: center;
     background-size: cover;
+
 		@include mobile {
 			background-image: image-set(
 				url('images/pictures/win-background-s.avif') type('image/avif'),
@@ -26,8 +28,8 @@
 
 	&_defeat {
 		@include flexCenter;
-		animation: display-defeat 5s 2.8s infinite;
 		z-index: 10;
+		animation: display-defeat 5s 2.8s infinite;
 		color: #ff0000;
 		background-image: image-set(
 			url('images/pictures/defeat-background-b.avif') type('image/avif'),
@@ -48,9 +50,7 @@
 	}
 
 	&__wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+		@include flexCenter;
 		width: 82%;
     border-radius: 15px;
 		animation: fall 2.1s ease-in-out 0s 1 normal forwards;
