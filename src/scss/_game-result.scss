@@ -48,13 +48,13 @@
 	}
 
 	&__wrapper {
-		background-color:rgba(0, 0, 0, 0.9215686275);
-		width: 82%;
     display: flex;
     justify-content: center;
     align-items: center;
+		width: 82%;
     border-radius: 15px;
-		animation: fall 2.2s ease-in-out 0s 1 normal forwards;
+		animation: fall 2.1s ease-in-out 0s 1 normal forwards;
+		background-color:rgba(0, 0, 0, 0.9215686275);
 
 		@include mobile {
 			width: 84%;
@@ -93,9 +93,8 @@
 	&__button {
 		position: absolute;
 		top: 5%;
-		@include sizes(48px,48px);
 		z-index: 25;
-		fill: white;
+		@include sizes(48px,48px);
 
 		&_win {
 			animation:
