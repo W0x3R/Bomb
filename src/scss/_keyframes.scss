@@ -1,126 +1,66 @@
-@keyframes display-defeat {
+@keyframes result-animation {
 	0% {
-		text-shadow: 4px 4px 1px #300000;
+		text-shadow: 0 2px 1px #300000;
 	}
 	5% {
-		text-shadow: 4px 6px 1px #400000;
+		text-shadow: 0 4px 1px #460000;
 	}
 	10% {
-		text-shadow: 4px 8px 1px #500000;
+		text-shadow: 0 6px 1px #520000;
 	}
 	15% {
-		text-shadow: 4px 10px 1px #600000;
+		text-shadow: 0 8px 1px #6e0000;
 	}
 	20% {
-		text-shadow: 4px 12px 1px #700000;
+		text-shadow: 0 10px 1px #660000;
 	}
 	25% {
-		text-shadow: 4px 14px 1px #800000;
+		text-shadow:0 12px 1px #7a0000;
 	}
 	30% {
-		text-shadow: 4px 16px 1px #900000;
+		text-shadow: 0 14px 1px #860000;
 	}
 	35% {
-		text-shadow: 4px 18px 1px #a00000;
+		text-shadow: 0 16px 1px #9b0000;
 	}
 	40% {
-		text-shadow: 4px 20px 1px #b00000;
+		text-shadow: 0 18px 1px #a70000;
 	}
 	45% {
-		text-shadow: 4px 22px 1px #c00000;
+		text-shadow: 0 20px 1px #cc0000;
 	}
 	50% {
-		text-shadow: 4px 24px 1px #d00000;
+		text-shadow: 0 22px 1px #ff0000;
 	}
 	55% {
-		text-shadow: 4px 26px 1px #e00000;
+		text-shadow: 0 20px 1px #eb0000;
 	}
 	60% {
-		text-shadow: 4px 28px 1px #f00000;
+		text-shadow: 0 18px 1px #e00000;
 	}
 	65% {
-		text-shadow: 4px 30px 1px #fa0000;
+		text-shadow: 0 16px 1px #b90000;
 	}
 	70% {
-		text-shadow: 4px 32px 1px #fb0000;
+		text-shadow: 0 14px 1px #ad0000;
 	}
 	75% {
-		text-shadow: 4px 34px 1px #fc0000;
+		text-shadow: 0 12px 1px #960000;
 	}
 	80% {
-		text-shadow: 4px 36px 1px #fd0000;
+		text-shadow: 0 10px 1px #800000;
 	}
 	85% {
-		text-shadow: 4px 38px 1px #fe0000;
+		text-shadow: 0 8px 1px #6e0000;
 	}
 	90% {
-		text-shadow: 4px 40px 2px #ff0000;
-	}
-}
-
-@keyframes display-win {
-	0% {
-		text-shadow: 0 2px 1px #ffffff;
-	}
-	5% {
-		text-shadow: 0 4px 1px #f5f2f2;
-	}
-	10% {
-		text-shadow: 0 6px 1px #ecdcdc;
-	}
-	15% {
-		text-shadow: 0 8px 1px #d3c6c6;
-	}
-	20% {
-		text-shadow: 0 10px 1px #bdaaaa;
-	}
-	25% {
-		text-shadow:0 12px 1px #4b0f0f;
-	}
-	30% {
-		text-shadow: 0 14px 1px #660e0e;
-	}
-	35% {
-		text-shadow: 0 16px 1px #750a0a;
-	}
-	40% {
-		text-shadow: 0 18px 1px #520303;
-	}
-	45% {
-		text-shadow: 0 20px 1px #350505;
-	}
-	50% {
-		text-shadow: 0 22px 1px #330303;
-	}
-	55% {
-		text-shadow: 0 20px 1px #4e0c0c;
-	}
-	60% {
-		text-shadow: 0 18px 1px #3d0d0d;
-	}
-	65% {
-		text-shadow: 0 16px 1px #3a0202;
-	}
-	70% {
-		text-shadow: 0 14px 1px #5c0707;
-	}
-	75% {
-		text-shadow: 0 12px 1px #2c0101;
-	}
-	80% {
-		text-shadow: 0 10px 1px #240101;
-	}
-	85% {
-		text-shadow: 0 8px 1px #350303;
-	}
-	90% {
-		text-shadow: 0 6px 1px #250606
+		text-shadow: 0 6px 1px #580000
 	}
 	95% {
-		text-shadow: 0 4px 1px #310606
+		text-shadow: 0 4px 1px #3d0000
 	}
 	100% {
-		text-shadow: 0 2px 1px #ffffff
+		text-shadow: 0 2px 1px #300000
 	}
 }
 
