@@ -13,10 +13,11 @@
 	font-style: normal;
 	font-display: fallback;
 }
+
 @font-face {
-	font-family: 'Rubik Maze';
-	font-weight: 400;
+	font-family: 'Caesar Dressing';
+	src: url('./fonts/CaesarDressing.woff2') format('woff2');
+	font-weight: normal;
 	font-style: normal;
 	font-display: fallback;
-	src: url('./fonts/RubikMaze-Regular.woff2') format('woff2');
 }
