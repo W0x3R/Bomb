@@ -46,3 +46,9 @@ $smallestMobile: 380px;
 		}
 	}
 }
+
+@mixin supports ($prop,$value) {
+	@supports (#{$prop} : #{$value}) {
+		#{$prop}: #{$value};
+	}
+}
