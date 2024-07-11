@@ -60,61 +60,67 @@
 
 @keyframes display-win {
 	0% {
-		text-shadow: 4px 4px 1px #003006;
+		text-shadow: 0 1px 1px #ffffff;
 	}
 	5% {
-		text-shadow: 4px 6px 1px #004006;
+		text-shadow: 0 2px 1px #f5f2f2;
 	}
 	10% {
-		text-shadow: 4px 8px 1px #005006;
+		text-shadow: 0 4px 1px #ecdcdc;
 	}
 	15% {
-		text-shadow: 4px 10px 1px #006006;
+		text-shadow: 0 6px 1px #d3c6c6;
 	}
 	20% {
-		text-shadow: 4px 12px 1px #007006;
+		text-shadow: 0 8px 1px #bdaaaa;
 	}
 	25% {
-		text-shadow: 4px 14px 1px #008006;
+		text-shadow:0 10px 1px #4b0f0f;
 	}
 	30% {
-		text-shadow: 4px 16px 1px #009006;
+		text-shadow: 0 12px 1px #660e0e;
 	}
 	35% {
-		text-shadow: 4px 18px 1px #019f06;
+		text-shadow: 0 14px 1px #750a0a;
 	}
 	40% {
-		text-shadow: 4px 20px 1px #019d06;
+		text-shadow: 0 16px 1px #520303;
 	}
 	45% {
-		text-shadow: 4px 22px 1px #02ac07;
+		text-shadow: 0 18px 1px #350505;
 	}
 	50% {
-		text-shadow: 4px 24px 1px #08ba0e;
+		text-shadow: 0 20px 1px #330303;
 	}
 	55% {
-		text-shadow: 4px 26px 1px #10c916;
+		text-shadow: 0 18px 1px #4e0c0c;
 	}
 	60% {
-		text-shadow: 4px 28px 1px #12d518;
+		text-shadow: 0 16px 1px #3d0d0d;
 	}
 	65% {
-		text-shadow: 4px 30px 1px #11df18;
+		text-shadow: 0 14px 1px #3a0202;
 	}
 	70% {
-		text-shadow: 4px 32px 1px #0edf15;
+		text-shadow: 0 12px 1px #5c0707;
 	}
 	75% {
-		text-shadow: 4px 34px 1px #0adf11;
+		text-shadow: 0 10px 1px #2c0101;
 	}
 	80% {
-		text-shadow: 4px 36px 1px #09e911;
+		text-shadow: 0 8px 1px #240101;
 	}
 	85% {
-		text-shadow: 4px 38px 1px #07f00f;
+		text-shadow: 0 6px 1px #350303;
 	}
 	90% {
-		text-shadow: 4px 40px 2px #00ff08;
+		text-shadow: 0 4px 1px #250606
+	}
+	95% {
+		text-shadow: 0 2px 1px #310606
+	}
+	100% {
+		text-shadow: 0 1px 1px #ffffff
 	}
 }
 
@@ -446,9 +452,53 @@
 
 @keyframes changeColorWin {
 	0% {
-		fill: rgb(255, 255, 255);
+		fill: rgb(0, 0, 0);
 	}
 	100% {
-		fill: rgb(0, 255, 30);
+		fill: rgb(255, 0, 0);
+	}
+}
+
+@keyframes fall {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 0;
+		transform: translateY(-550px);
+	}
+
+	38% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	55% {
+		animation-timing-function: ease-in;
+		transform: translateY(-65px);
+	}
+
+	72% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+	81% {
+		animation-timing-function: ease-in;
+		transform: translateY(-28px);
+	}
+
+	90% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+	95% {
+		animation-timing-function: ease-in;
+		transform: translateY(-8px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
 	}
 }
