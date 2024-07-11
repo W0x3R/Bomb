@@ -14,11 +14,3 @@
 		@include sizes(32px,32px)
 	}
 }
-
-%showResult {
-	@include flexCenter;
-	animation: result-animation 5s 2.8s infinite;
-	z-index: 10;
-	background-position: center;
-	background-size: cover;
-}
