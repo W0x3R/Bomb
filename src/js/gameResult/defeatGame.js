@@ -1,17 +1,19 @@
 import { showGameResult } from "../showGameResult"
 import { delay } from "../delay"
 import { searchedItem } from "../searchedObject/movingSearchObject"
-import { controlGameSounds } from "../sounds/controlGameSounds"
 import { clearTimerCheckEndGame } from "../checkEndGame/clearTimer"
+import { constructClickSound } from "../sounds/constructClickSound"
+import defeatSecondSound from '../../sounds/defeatSecondSound.mp3'
+import defeatSound from '../../sounds/defeatSound.mp3'
 
 export const defeatGame = () => {
 	showGameResult('YOU DIED', 'result_defeat', 'result__button_defeat')
 	searchedItem.remove()
-	delay(8000).then(() => {
-		controlGameSounds('defeatSecond', 'play')
+	delay(6000).then(() => {
+		constructClickSound(defeatSecondSound)
 	})
 	delay(26000).then(() => {
-		controlGameSounds('defeat', 'play')
+		constructClickSound(defeatSound)
 	})
 	clearTimerCheckEndGame()
 }
