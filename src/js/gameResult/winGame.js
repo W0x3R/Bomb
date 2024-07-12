@@ -7,7 +7,7 @@ import { clearTimerCheckEndGame } from "../checkEndGame/clearTimer"
 export const winGame = () => {
 	controlGameSounds('mainSound', 'pause')
 	searchedItem.remove()
-	delay(500).then(() => {
+	delay(800).then(() => {
 		showGameResult('YOU SURVIVED', 'result_win', 'result__button_win')
 		controlGameSounds('win', 'play')
 	})
