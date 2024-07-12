@@ -1,17 +1,17 @@
 import { startGame } from "../startGame/startGame"
 import { changeRulesLanguage } from "../rules/changeRulesLanguage"
 import { clickOnSearchObject } from "../searchedObject/clickOnSearchObject"
-import { constructClickSound } from "../sounds/constructClickSound"
+import { constructSound } from "../sounds/constructSound"
 import languageSound from '../../sounds/changeLanguageSound.mp3'
 
 
 export const clickEvents = {
 	'.rules__btn-en': () => {
-		constructClickSound(languageSound)
+		constructSound(languageSound)
 		changeRulesLanguage('none', 'block', 'ru')
 	},
 	'.rules__btn-ru': () => {
-		constructClickSound(languageSound)
+		constructSound(languageSound)
 		changeRulesLanguage('block', 'none', 'en')
 	},
 	'.play': startGame,

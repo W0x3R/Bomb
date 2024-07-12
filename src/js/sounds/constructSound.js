@@ -1,4 +1,4 @@
-export const constructClickSound = (src) => {
+export const constructSound = (src) => {
 	const audio = new Audio();
 	audio.src = src;
 	audio.play()
