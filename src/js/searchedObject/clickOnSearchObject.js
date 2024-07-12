@@ -1,4 +1,4 @@
-import foundSearchedItem from '../../sounds/foundSearchedItem.mp3'
+import foundSearchedItem from '../../sounds/foundSearchedItemSound.mp3'
 import { winGame } from "../gameResult/winGame"
 import { constructClickSound } from '../sounds/constructClickSound'
 
