@@ -1,7 +1,7 @@
 .book {
+	position: absolute;
 	width: clamp(230px, 40vw, 280px);
 	height: clamp(230px, 40vw, 280px);
-	position: absolute;
 	cursor: auto;
 
 	&_shake {

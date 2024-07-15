@@ -1,8 +1,8 @@
 .devil {
 	position: absolute;
+	z-index: 6;
 	display: none;
 	width: 110px;
-	z-index: 6;
 	user-select: none;
 	pointer-events: none;
 

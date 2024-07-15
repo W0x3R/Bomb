@@ -5,9 +5,9 @@
 	@include supports(height,100dvh);
 
 	&_show {
+		z-index: 10;
 		@include flexCenter;
 		animation: result-animation 5s 2.8s infinite;
-		z-index: 10;
 		background-position: center;
 		background-size: cover;
 	}

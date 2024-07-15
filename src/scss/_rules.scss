@@ -1,12 +1,12 @@
 .rules {
+	position: absolute;
+	z-index: 2;
 	@include sizes(100vw,100vh);
 	@include supports(height,100dvh);
 	@include imageSet('rules-background');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;;
-	position: absolute;
-	z-index: 2;
 
 	&__language-btn {
 		@extend %languageIcon;
