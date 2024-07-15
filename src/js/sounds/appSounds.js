@@ -1,5 +1,5 @@
 export const appSounds = {
-	mainSound: document.querySelector('.auido__main'),
-	callDevil: document.querySelector('.auido__call-devil'),
+	mainSound: document.querySelector('.audio__main'),
+	callDevil: document.querySelector('.audio__call-devil'),
 	shakeBook: document.querySelector('.audio__shake-book'),
 }

@@ -4,7 +4,6 @@ import { clickOnSearchObject } from "../searchObject/clickOnSearchObject"
 import { constructSound } from "../sounds/constructSound"
 import languageSound from '../../sounds/changeLanguageSound.mp3'
 
-
 export const clickEvents = {
 	'.rules__btn-en': () => {
 		constructSound(languageSound)
