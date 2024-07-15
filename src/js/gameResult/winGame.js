@@ -1,5 +1,5 @@
 import winSound from '../../sounds/winSound.mp3'
-import { showGameResult } from "../showGameResult"
+import { showGameResult } from "./showGameResult"
 import { delay } from "../delay"
 import { searchedItem } from "../searchedObject/movingSearchObject"
 import { controlGameSounds } from "../sounds/controlGameSounds"

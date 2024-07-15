@@ -1,5 +1,5 @@
-import { timerScaleDevil } from "./devil/scaleDevil"
-import { foundObjectsBlock } from "./searchedObject/clickOnSearchObject"
+import { timerScaleDevil } from "../devil/scaleDevil"
+import { foundObjectsBlock } from "../searchedObject/clickOnSearchObject"
 
 const resultDisplay = document.querySelector('.result')
 const resultText = document.querySelector('.result__text')

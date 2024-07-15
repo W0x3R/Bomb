@@ -1,4 +1,4 @@
-import { showGameResult } from "../showGameResult"
+import { showGameResult } from "./showGameResult"
 import { delay } from "../delay"
 import { searchedItem } from "../searchedObject/movingSearchObject"
 import { clearTimerCheckEndGame } from "../checkEndGame/clearTimer"
