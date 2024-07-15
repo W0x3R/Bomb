@@ -14,35 +14,19 @@
 
 	&_win {
 		color: #ffffff;
-		background-image: image-set(
-			url('images/pictures/win-background-b.avif') type('image/avif'),
-			url('images/pictures/win-background-b.webp') type('image/webp'),
-		url('images/pictures/win-background-b.jpg') type('image/jpg')
-		);
+		@include imageSet('win-background-b');
 
 		@include mobile {
-			background-image: image-set(
-				url('images/pictures/win-background-s.avif') type('image/avif'),
-				url('images/pictures/win-background-s.webp') type('image/webp'),
-			url('images/pictures/win-background-s.jpg') type('image/jpg')
-			);
+			@include imageSet('win-background-s');
 		}
 	}
 
 	&_defeat {
 		color: #ff0000;
-		background-image: image-set(
-			url('images/pictures/defeat-background-b.avif') type('image/avif'),
-			url('images/pictures/defeat-background-b.webp') type('image/webp'),
-		url('images/pictures/defeat-background-b.jpg') type('image/jpg')
-		);
+		@include imageSet('defeat-background-b');
 
 		@include mobile {
-			background-image: image-set(
-				url('images/pictures/defeat-background-s.avif') type('image/avif'),
-				url('images/pictures/defeat-background-s.webp') type('image/webp'),
-			url('images/pictures/defeat-background-s.jpg') type('image/jpg')
-			);
+			@include imageSet('defeat-background-s');
 			background-position: center top;
 		}
 	}

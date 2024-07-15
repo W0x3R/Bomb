@@ -8,3 +8,11 @@
 	justify-content: center;
 	align-items: center;
 }
+
+@mixin imageSet($path) {
+	background-image: image-set(
+		url('images/pictures/#{$path}.avif') type('image/avif'),
+		url('images/pictures/#{$path}.webp') type('image/webp'),
+	url('images/pictures/#{$path}.jpg') type('image/jpg')
+	);
+}
