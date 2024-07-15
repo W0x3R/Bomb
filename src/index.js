@@ -2,7 +2,7 @@ import './style.scss'
 import { centeringElement } from './js/sizesAndcentering/centeringElement.js';
 import { clickEvents } from './js/eventHandlers/clickEvents.js';
 import { callEvents } from './js/eventHandlers/callEvents.js';
-import { setSearchObjectSize } from './js/searchedObject/setSearchObjectSize.js';
+import { setSearchObjectSize } from './js/searchObject/setSearchObjectSize.js';
 import { setRulesLanguage } from './js/rules/setRulesLanguage.js';
 import { book } from './js/startGame/addStartingStyles.js';
 

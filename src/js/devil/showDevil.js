@@ -2,12 +2,12 @@ import { addShowDevilStyles } from "./addShowDevilStyles";
 import { centeringElement, devil } from "../sizesAndcentering/centeringElement";
 import { delay } from "../delay";
 import { getSizeOfElement } from "../sizesAndcentering/getSizeOfElement";
-import { movingSearchObject } from "../searchedObject/movingSearchObject";
+import { movingSearchObject } from "../searchObject/movingSearchObject";
 import { setStartWidthOfDevil } from "./setStartWidthOfDevil";
 import { controlGameSounds } from "../sounds/controlGameSounds";
 import { displayFoundItemsBlock } from '../displayFoundItemsBlock'
-import { setSearchObjectSize } from "../searchedObject/setSearchObjectSize";
-import { movingSearchObjectWithInterval } from "../searchedObject/movingSearchObjectWithInterval";
+import { setSearchObjectSize } from "../searchObject/setSearchObjectSize";
+import { movingSearchObjectWithInterval } from "../searchObject/movingSearchObjectWithInterval";
 
 export const showDevil = () => {
 	delay(8000).then(() => {
