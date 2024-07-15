@@ -1,6 +1,5 @@
 import { delay } from "../delay";
-import { devil } from "../sizesAndcentering/centeringElement";
-import { centeringDevilOnScale } from "./centeringDevilOnScale";
+import { devil, centeringDevilOnScale } from "./centeringDevilOnScale";
 import { getScaleCoefficientOfDevil } from "./getScaleCoefficientOfDevil";
 import { setStartWidthOfDevil, startWidthOfDevil } from "./setStartWidthOfDevil";
 

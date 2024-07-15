@@ -1,5 +1,6 @@
 import { addShowDevilStyles } from "./addShowDevilStyles";
-import { centeringElement, devil } from "../sizesAndcentering/centeringElement";
+import { centeringElement } from "../sizesAndcentering/centeringElement";
+import { devil } from "./centeringDevilOnScale";
 import { delay } from "../delay";
 import { getSizeOfElement } from "../sizesAndcentering/getSizeOfElement";
 import { movingSearchObject } from "../searchObject/movingSearchObject";

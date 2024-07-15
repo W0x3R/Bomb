@@ -1,7 +1,8 @@
-import { devil } from "../sizesAndcentering/centeringElement"
 import { getCenterOfDisplay } from "../sizesAndcentering/getCenterOfDisplay"
 import { getSizeOfElement } from "../sizesAndcentering/getSizeOfElement"
 import { startWidthOfDevil } from "./setStartWidthOfDevil"
+
+export const devil = document.querySelector('.devil')
 
 export const centeringDevilOnScale = () => {
 	devil.style.left = getCenterOfDisplay('width') - startWidthOfDevil / 2 + 'px'
