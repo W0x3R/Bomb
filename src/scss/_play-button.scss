@@ -1,9 +1,12 @@
+@use './mixins';
+@use './media';
+
 .play {
 	position: absolute;
 	top: 2%;
 	left: calc(50% - 38px);
 	z-index: 5;
-	@include sizes(76px,76px);
+	@include mixins.sizes(76px, 76px);
 	fill: rgb(255 255 255);
 
 	&_active {
@@ -11,8 +14,8 @@
 		cursor: default;
 	}
 
-	@include smallMobile {
-		@include sizes(68px,68px);
+	@include media.smallMobile {
+		@include mixins.sizes(68px, 68px);
 		left: calc(50% - 34px);
 	}
 }

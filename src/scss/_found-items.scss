@@ -1,10 +1,13 @@
+@use './mixins';
+@use './media';
+
 .found-items {
 	position: absolute;
 	bottom: 2%;
 	left: calc(50% - 360px);
 	display: none;
 	padding: 5px;
-	@include sizes(720px,62px);
+	@include mixins.sizes(720px, 62px);
 	border-radius: 20px;
 	border: 2px solid black;
 	background-color: grey;
@@ -14,46 +17,46 @@
 		align-items: center;
 		justify-content: space-evenly;
 	}
-	
-	@include tablet {
+
+	@include media.tablet {
 		left: calc(50% - 285px);
-		@include sizes(570px,52px);
+		@include mixins.sizes(570px, 52px);
 	}
 
-	@include mobile {
+	@include media.mobile {
 		left: calc(50% - 220px);
-		@include sizes(440px,46px);
+		@include mixins.sizes(440px, 46px);
 	}
 
-	@include smallMobile {
+	@include media.smallMobile {
 		left: calc(50% - 187.5px);
-		@include sizes(375px,42px);
+		@include mixins.sizes(375px, 42px);
 	}
-	
-	@include smallestMobile {
+
+	@include media.smallestMobile {
 		left: calc(50% - 156px);
-		@include sizes(312px,35px);
+		@include mixins.sizes(312px, 35px);
 	}
 
 	&__pento {
-		@include sizes(52px,52px);
+		@include mixins.sizes(52px, 52px);
 		cursor: auto;
 		fill: black;
 
-		@include tablet {
-			@include sizes(44px,44px);
-		}
-		
-		@include mobile {
-			@include sizes(36px,36px);
+		@include media.tablet {
+			@include mixins.sizes(44px, 44px);
 		}
 
-		@include smallMobile {
-			@include sizes(30px,30px);
+		@include media.mobile {
+			@include mixins.sizes(36px, 36px);
 		}
 
-		@include smallestMobile {
-			@include sizes(26px,26px);
+		@include media.smallMobile {
+			@include mixins.sizes(30px, 30px);
+		}
+
+		@include media.smallestMobile {
+			@include mixins.sizes(26px, 26px);
 		}
 
 		&_found {

@@ -1,16 +1,17 @@
-@import './media';
+@use './media';
+@use './mixins';
 
 %languageIcon {
 	position: absolute;
 	bottom: 6px;
 	right: 6px;
-	@include sizes(40px,40px);
+	@include mixins.sizes(40px, 40px);
 
-	@include mobile {
-		@include sizes(34px,34px)
+	@include media.mobile {
+		@include mixins.sizes(34px, 34px)
 	}
 
-	@include smallestMobile {
-		@include sizes(32px,32px)
+	@include media.smallestMobile {
+		@include mixins.sizes(32px, 32px)
 	}
 }

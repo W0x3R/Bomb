@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $widthSizes: (
 	"desktop": 1000px,
 	"tablet": 768px,
@@ -7,31 +9,31 @@ $widthSizes: (
 );
 
 @mixin desktop {
-	@media only screen and (max-width: map-get($widthSizes, 'desktop')) {
+	@media only screen and (max-width: map.get($widthSizes, 'desktop')) {
 		@content;
 	}
 }
 
 @mixin tablet {
-	@media only screen and (max-width: map-get($widthSizes, 'tablet')) {
+	@media only screen and (max-width: map.get($widthSizes, 'tablet')) {
 		@content;
 	}
 }
 
 @mixin mobile {
-	@media only screen and (max-width: map-get($widthSizes, 'mobile')) {
+	@media only screen and (max-width: map.get($widthSizes, 'mobile')) {
 		@content;
 	}
 }
 
 @mixin smallMobile {
-	@media only screen and (max-width: map-get($widthSizes, 'smallMobile')) {
+	@media only screen and (max-width: map.get($widthSizes, 'smallMobile')) {
 		@content;
 	}
 }
 
 @mixin smallestMobile {
-	@media only screen and (max-width: map-get($widthSizes, 'smallestMobile')) {
+	@media only screen and (max-width: map.get($widthSizes, 'smallestMobile')) {
 		@content;
 	}
 }
@@ -42,6 +44,7 @@ $widthSizes: (
 			@content;
 		}
 	}
+
 	@media (hover: none) {
 		&:active {
 			@content;
@@ -49,7 +52,7 @@ $widthSizes: (
 	}
 }
 
-@mixin supports ($prop,$value) {
+@mixin supports ($prop, $value) {
 	@supports (#{$prop} : #{$value}) {
 		#{$prop}: #{$value};
 	}

@@ -1,5 +1,7 @@
+@use './mixins';
+
 body {
-	@include imageSet('main-background');
+	@include mixins.imageSet('main-background');
 	background-size: cover;
 	overflow: hidden;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);

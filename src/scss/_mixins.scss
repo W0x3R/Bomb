@@ -1,4 +1,4 @@
-@mixin sizes($width,$height) {
+@mixin sizes($width, $height) {
 	width: $width;
 	height: $height;
 }
@@ -10,9 +10,7 @@
 }
 
 @mixin imageSet($path) {
-	background-image: image-set(
-		url('images/pictures/#{$path}.avif') type('image/avif'),
+	background-image: image-set(url('images/pictures/#{$path}.avif') type('image/avif'),
 		url('images/pictures/#{$path}.webp') type('image/webp'),
-	url('images/pictures/#{$path}.jpg') type('image/jpg')
-	);
+		url('images/pictures/#{$path}.jpg') type('image/jpg'));
 }

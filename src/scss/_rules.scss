@@ -1,12 +1,16 @@
+@use './mixins';
+@use './media';
+@use './template-selectors';
+
 .rules {
+	@include mixins.imageSet('rules-background');
 	position: absolute;
 	z-index: 2;
-	@include sizes(100vw,100vh);
-	@include supports(height,100dvh);
-	@include imageSet('rules-background');
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center;;
+	background-position: center;
+	@include mixins.sizes(100vw, 100vh);
+	@include media.supports(height, 100dvh);
 
 	&__language-btn {
 		@extend %languageIcon;
@@ -16,60 +20,60 @@
 		position: absolute;
 		left: 50%;
 		bottom: 50%;
-		transform: translate(-50%,50%);
+		transform: translate(-50%, 50%);
 		padding: 6px;
-		@include sizes(832px,355px);
+		@include mixins.sizes(832px, 355px);
 		background-color: #ffffff96;
 		border-radius: 3%;
 
-		@include desktop {
-			@include sizes(640px,339px);
+		@include media.desktop {
+			@include mixins.sizes(640px, 339px);
 		}
 
-		@include tablet {
+		@include media.tablet {
 			width: 560px;
 		}
 
-		@include mobile {
-			@include sizes(430px,345px);
+		@include media.mobile {
+			@include mixins.sizes(430px, 345px);
 		}
 
-		@include smallMobile {
+		@include media.smallMobile {
 			padding: 3px;
-			@include sizes(375px,310px);
+			@include mixins.sizes(375px, 310px);
 		}
 
-		@include smallestMobile {
-			@include sizes(300px,318px);
+		@include media.smallestMobile {
+			@include mixins.sizes(300px, 318px);
 		}
 	}
-	
+
 	&__text {
 		font-family: 'Caveat', serif;
-			font-size: 30px;
-			text-align: center;
-			letter-spacing: 0.8px;
-			user-select: none;
-			color: black;
+		font-size: 30px;
+		text-align: center;
+		letter-spacing: 0.8px;
+		user-select: none;
+		color: black;
 
-			@include desktop {
-				font-size: 26px;
-			}
+		@include media.desktop {
+			font-size: 26px;
+		}
 
-			@include tablet {
-				font-size: 24px;
-			}
+		@include media.tablet {
+			font-size: 24px;
+		}
 
-			@include mobile {
-				font-size: 21px;
-			}
+		@include media.mobile {
+			font-size: 21px;
+		}
 
-			@include smallMobile {
-				font-size: 19px;
-			}
+		@include media.smallMobile {
+			font-size: 19px;
+		}
 
-			@include smallestMobile {
-				font-size: 17px;
-			}
+		@include media.smallestMobile {
+			font-size: 17px;
+		}
 	}
 }

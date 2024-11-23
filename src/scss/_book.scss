@@ -1,3 +1,5 @@
+@use './mixins';
+
 .book {
 	position: absolute;
 	width: clamp(230px, 40vw, 280px);
@@ -21,6 +23,6 @@
 	}
 
 	@media screen and (max-height: 560px) {
-		@include sizes(180px,180px);
+		@include mixins.sizes(180px, 180px);
 	}
 }
